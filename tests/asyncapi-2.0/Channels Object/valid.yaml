@@ -14,8 +14,3 @@ channels:
             email:
               type: string
               format: email
-
-servers:
-  production:
-    url: development.gigantic-server.com
-    protocol: kafka

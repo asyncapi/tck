@@ -18,4 +18,5 @@ channels:
 servers:
   production:
     url: development.gigantic-server.com
-    protocol: kafka
+    protocolVersion: '1.0.0'
+    description: Development server

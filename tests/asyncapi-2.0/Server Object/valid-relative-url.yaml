@@ -16,6 +16,8 @@ channels:
               format: email
 
 servers:
-  production:
-    url: development.gigantic-server.com
+  dev:
+    url: /dev/pubserver/
     protocol: kafka
+    protocolVersion: '1.0.0'
+    description: Development server
