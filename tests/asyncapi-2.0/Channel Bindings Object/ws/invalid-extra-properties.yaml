@@ -1,0 +1,27 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    publish:
+      message:
+        payload:
+          type: string
+    bindings:
+      ws:
+        method: OPTIONS
+        query:
+          type: object
+          properties:
+            userId:
+              type: string
+        headers:
+          type: object
+          properties:
+            UserType:
+              type: string
+        bindingVersion: '1.1.1'
+        hello: 1
