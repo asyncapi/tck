@@ -1,13 +1,7 @@
 asyncapi: 2.0.0
 
-externalDocs:
-  description: Find more info here
-  url: https://example.com
-
 tags:
-  - name: user
-    description: user signed up
-  - name: signup
+  - description: user signed up
 
 info:
   title: Signup service example (internal)

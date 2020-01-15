@@ -20,7 +20,4 @@ channels:
       tags:
         - name: user
           description: user signed up
-        - name: signup
-      externalDocs:
-        description: Find more info here
-        url: https://example.com
+        - name: user

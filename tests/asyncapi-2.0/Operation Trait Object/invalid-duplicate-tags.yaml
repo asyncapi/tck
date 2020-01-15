@@ -25,10 +25,7 @@ components:
       tags:
         - name: user
           description: user signed up
-        - name: signup
-      externalDocs:
-        description: Find more info here
-        url: https://example.com
+        - name: user
       summary: user signed up
     userSignedUpDescTrait:
       description: user signed up to load some data
