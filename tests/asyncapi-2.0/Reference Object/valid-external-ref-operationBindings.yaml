@@ -15,18 +15,7 @@ channels:
               type: string
               format: email
 
-servers:
-  production:
-    url: development.gigantic-server.com
-    protocol: kafka
-    protocolVersion: '1.0.0'
-    description: Development server
-    security:
-      - simple: []
-
 components:
-  securitySchemes:
-    simple:
-      type: httpApiKey
-      name: Api-Key
-      in: header
+  operationBindings:
+    myOperationBindings:
+      $ref: "lib.yaml#/myOperationBindings"
