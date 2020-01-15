@@ -18,7 +18,7 @@ channels:
               type: string
               format: email
         traits:
-          - signedUpMessage
+          - $ref: "#/components/messageTraits/signedUpMessage"
 
 components:
   messageTraits:
@@ -30,22 +30,22 @@ components:
       contentType: application/json
       schemaFormat: application/vnd.oai.openapi;version=3.0.0
       correlationId:
-        $ref: "#/components/correlationIds/userSignedUpCorId"
+        description: Default Correlation ID
+        location: $message.header#/correlationId
       headers:
-        type: object
-        properties:
-          correlationId:
-            description: Correlation ID set by application
-            type: string
-          applicationInstanceId:
-            description: Unique identifier for a given instance of the publishing application
-            type: string
+        $ref: "#/components/schemas/userSignedUpHeaders"
       examples:
         - one:
             email: hello@foo.bar
         - two:
             email: bye@foo.bar
-  correlationIds:
-    userSignedUpCorId:
-      description: Default Correlation ID
-      location: $message.header#/correlationId
+  schemas:
+    userSignedUpHeaders:
+      type: object
+      properties:
+        correlationId:
+          description: Correlation ID set by application
+          type: string
+        applicationInstanceId:
+          description: Unique identifier for a given instance of the publishing application
+          type: string

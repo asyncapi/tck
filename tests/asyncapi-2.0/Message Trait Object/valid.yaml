@@ -18,7 +18,7 @@ channels:
               type: string
               format: email
         traits:
-          - signedUpMessage
+          - $ref: "#/components/messageTraits/signedUpMessage"
 
 components:
   messageTraits:

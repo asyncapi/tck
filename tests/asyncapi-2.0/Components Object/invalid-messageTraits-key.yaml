@@ -7,9 +7,6 @@ info:
 channels:
   /user/signedup:
     subscribe:
-      operationId: userSignedUp
-      summary: user signed up
-      description: user signed up to load some data
       message:
         payload:
           type: object
@@ -17,16 +14,10 @@ channels:
             email:
               type: string
               format: email
-        traits:
-          - $ref: "#/components/messageTraits/signedUpMessage"
 
 components:
   messageTraits:
-    signedUpMessage:
-      tags:
-        - name: user
-          description: user signed up
-        - name: user
+    inval#d:
       name: UserSignup
       title: User signup
       summary: Action to sign a user up.
@@ -39,14 +30,6 @@ components:
       headers:
         type: object
         properties:
-          correlationId:
-            description: Correlation ID set by application
-            type: string
           applicationInstanceId:
-            description: Unique identifier for a given instance of the publishing application
+            description: Unique identifier
             type: string
-      examples:
-        - one:
-            email: hello@foo.bar
-        - two:
-            email: bye@foo.bar

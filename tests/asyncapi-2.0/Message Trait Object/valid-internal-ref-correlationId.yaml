@@ -23,10 +23,6 @@ channels:
 components:
   messageTraits:
     signedUpMessage:
-      tags:
-        - name: user
-          description: user signed up
-        - name: user
       name: UserSignup
       title: User signup
       summary: Action to sign a user up.
@@ -34,8 +30,7 @@ components:
       contentType: application/json
       schemaFormat: application/vnd.oai.openapi;version=3.0.0
       correlationId:
-        description: Default Correlation ID
-        location: $message.header#/correlationId
+        $ref: "#/components/correlationIds/userSignedUpCorId"
       headers:
         type: object
         properties:
@@ -50,3 +45,7 @@ components:
             email: hello@foo.bar
         - two:
             email: bye@foo.bar
+  correlationIds:
+    userSignedUpCorId:
+      description: Default Correlation ID
+      location: $message.header#/correlationId
