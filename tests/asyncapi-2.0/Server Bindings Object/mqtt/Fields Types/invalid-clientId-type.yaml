@@ -17,7 +17,8 @@ servers:
     protocol: mqtt
     bindings:
       mqtt:
-        clientId: guest
+        clientId:
+          prop: 1
         cleanSession: true
         lastWill:
           topic: /last-wills

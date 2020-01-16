@@ -14,14 +14,7 @@ channels:
 servers:
   production:
     url: development.gigantic-server.com
-    protocol: mqtt
-    bindings:
-      mqtt:
-        clientId: guest
-        cleanSession: true
-        lastWill:
-          topic: /last-wills
-          qos: 2
-          retain: false
-        keepAlive: 60
-        bindingVersion: 0.1.0
+    protocol: kafka
+    protocolVersion: '1.0.0'
+    description:
+      prop: 1

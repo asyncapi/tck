@@ -21,7 +21,7 @@ servers:
         cleanSession: true
         lastWill:
           topic: /last-wills
-          qos: 2
+          qos: 1
           retain: false
-        keepAlive: 60
+        keepAlive: qwe
         bindingVersion: 0.1.0

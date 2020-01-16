@@ -1,0 +1,21 @@
+asyncapi: 2.0.0
+
+info:
+  title: AsyncAPI Sample App
+  version: 1.0.1
+  contact:
+    name: API Support
+    url:
+      prop: 1
+    email: support@asyncapi.org
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email

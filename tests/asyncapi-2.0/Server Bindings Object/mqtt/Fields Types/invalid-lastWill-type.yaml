@@ -19,9 +19,6 @@ servers:
       mqtt:
         clientId: guest
         cleanSession: true
-        lastWill:
-          topic: /last-wills
-          qos: 2
-          retain: false
+        lastWill: 123
         keepAlive: 60
         bindingVersion: 0.1.0

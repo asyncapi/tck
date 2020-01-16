@@ -20,7 +20,8 @@ servers:
         clientId: guest
         cleanSession: true
         lastWill:
-          topic: /last-wills
+          topic:
+            prop: 1
           qos: 2
           retain: false
         keepAlive: 60
