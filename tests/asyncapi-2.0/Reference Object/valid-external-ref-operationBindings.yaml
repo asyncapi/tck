@@ -18,4 +18,4 @@ channels:
 components:
   operationBindings:
     myOperationBindings:
-      $ref: "lib.yaml#/myOperationBindings"
+      $ref: "lib.yml#/myOperationBindings"

@@ -18,4 +18,4 @@ channels:
 components:
   correlationIds:
     myCorrelationId:
-      $ref: "lib.yaml#/myCorrelationId"
+      $ref: "lib.yml#/myCorrelationId"

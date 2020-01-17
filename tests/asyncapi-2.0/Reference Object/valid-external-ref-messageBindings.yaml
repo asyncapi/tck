@@ -18,4 +18,4 @@ channels:
 components:
   messageBindings:
     myMessageBindings:
-      $ref: "lib.yaml#/myMessageBindings"
+      $ref: "lib.yml#/myMessageBindings"

@@ -6,4 +6,4 @@ info:
 
 channels:
   /user/signedup:
-    $ref: referencedInvalid.yaml
+    $ref: referencedInvalid.yml

@@ -6,4 +6,4 @@ info:
 
 channels:
   /user/signedup:
-    $ref: referenced.yaml
+    $ref: referenced.yml

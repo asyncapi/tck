@@ -18,4 +18,4 @@ channels:
 components:
   parameters:
     myParam:
-      $ref: "lib.yaml#/myParam"
+      $ref: "lib.yml#/myParam"

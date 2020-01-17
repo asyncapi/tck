@@ -18,4 +18,4 @@ channels:
 components:
   messageTraits:
     myMessageTrait:
-      $ref: "lib.yaml#/myMessageTrait"
+      $ref: "lib.yml#/myMessageTrait"

@@ -9,4 +9,4 @@ channels:
     subscribe:
       message:
         payload:
-          $ref: common.yaml/#userSignUp
+          $ref: common.yml/#userSignUp

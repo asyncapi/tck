@@ -18,4 +18,4 @@ channels:
 components:
   operationTraits:
     myOperationTrait:
-      $ref: "lib.yaml#/myOperationTrait"
+      $ref: "lib.yml#/myOperationTrait"

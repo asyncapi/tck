@@ -11,6 +11,8 @@ Note that this repository contains a [manifest file](./manifest.json) that lists
 
 Names of folders' tests reside in correspond to AsyncAPI 2.0 Specification sections names.
 
+Non-AsyncAPI files (libraries, extensions, etc.) must have a `.yml` extension instead of `.yaml`.
+
 ## Contributing
 
 We welcome contributions! If you have a new test case in mind, feel free to submit a pull request. More info on how to do that [here](./CONTRIBUTING.md).

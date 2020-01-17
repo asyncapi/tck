@@ -18,4 +18,4 @@ channels:
 components:
   messages:
     myMessage:
-      $ref: "lib.yaml#/myMessage"
+      $ref: "lib.yml#/myMessage"
