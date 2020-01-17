@@ -58,23 +58,23 @@ components:
           const: hello
         oneOfProp:
           oneOf:
-            type: string
-            type: number
+            - type: string
+            - type: number
         allOfProp:
           allOf:
-            type: string
-            type: number
+            - type: string
+            - type: number
         notProp:
           allOf:
-            type: string
-            not:
+            - type: string
+            - not:
               type: number
         stringProp:
           type: string
           title: String property
           minLength: 1
           maxLength: 10
-          pattern: ^[a-zA-Z0-9\.\-_]+$
+          pattern: '^[a-zA-Z0-9\.\-_]+$'
           enum:
             - John
             - Doe
@@ -94,8 +94,8 @@ components:
           then:
             properties:
               postal_code:
-                pattern: [0-9]{5}(-[0-9]{4})?
+                pattern: '[0-9]{5}(-[0-9]{4})?'
           else:
             properties:
               postal_code:
-                pattern: [A-Z][0-9][A-Z] [0-9][A-Z][0-9]
+                pattern: '[A-Z][0-9][A-Z] [0-9][A-Z][0-9]'
