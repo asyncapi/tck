@@ -18,4 +18,4 @@ channels:
         mqtt:
           qos: 2
           retain: true
-          bindingVersion: 0.1.0
+          bindingVersion: '0.1.0'

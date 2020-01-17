@@ -1,0 +1,46 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      operationId: userSignedUp
+      summary: user signed up
+      description: user signed up to load some data
+      message:
+        name: UserSignup
+        title: User signup
+        summary: qwe
+        description: qwe
+        contentType: application/json
+        schemaFormat: application/vnd.oai.openapi;version=3.0.0
+        correlationId:
+          description: Default Correlation ID
+          location: $message.header#/correlationId
+        headers: qwe
+          type: object
+          properties:
+            correlationId:
+              description: Correlation ID set by application
+              type: string
+            applicationInstanceId:
+              description: Unique identifier for a given instance of the publishing application
+              type: string
+        tags: 123
+        externalDocs:
+          description: Find more info here
+          url: https://example.com
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email
+        examples:
+          - one:
+              email: hello@foo.bar
+          - two:
+              email: bye@foo.bar

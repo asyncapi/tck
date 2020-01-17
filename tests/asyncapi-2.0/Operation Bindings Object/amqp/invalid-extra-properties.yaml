@@ -27,4 +27,4 @@ channels:
           replyTo: user.signedup
           timestamp: true
           ack: false
-          bindingVersion: 0.1.0
+          bindingVersion: '0.1.0'

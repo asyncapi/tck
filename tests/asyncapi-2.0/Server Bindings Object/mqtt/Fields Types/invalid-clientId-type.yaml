@@ -25,4 +25,4 @@ servers:
           qos: 2
           retain: false
         keepAlive: 60
-        bindingVersion: 0.1.0
+        bindingVersion: '0.1.0'

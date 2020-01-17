@@ -1,0 +1,53 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      operationId: userSignedUp
+      summary: user signed up
+      description: user signed up to load some data
+      message:
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email
+        traits:
+          - $ref: "#/components/messageTraits/signedUpMessage"
+
+components:
+  messageTraits:
+    signedUpMessage:
+      tags:
+        - name: user
+          description: user signed up
+        - name: signup
+      externalDocs:
+        description: Find more info here
+        url: https://example.com
+      name: UserSignup
+      title: User signup
+      summary: Action to sign a user up.
+      description: A longer description
+      contentType: application/json
+      schemaFormat: application/vnd.oai.openapi;version=3.0.0
+      correlationId: 123
+      headers:
+        type: object
+        properties:
+          correlationId:
+            description: Correlation ID set by application
+            type: string
+          applicationInstanceId:
+            description: Unique identifier for a given instance of the publishing application
+            type: string
+      examples:
+        - one:
+            email: hello@foo.bar
+        - two:
+            email: bye@foo.bar

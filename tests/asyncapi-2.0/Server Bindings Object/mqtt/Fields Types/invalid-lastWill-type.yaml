@@ -21,4 +21,4 @@ servers:
         cleanSession: true
         lastWill: 123
         keepAlive: 60
-        bindingVersion: 0.1.0
+        bindingVersion: '0.1.0'

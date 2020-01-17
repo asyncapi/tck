@@ -18,5 +18,4 @@ channels:
           http:
             headers:
               type: string
-            meta:
-              version: '0.1.0'
+            bindingVersion: '0.1.0'

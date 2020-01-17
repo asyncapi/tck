@@ -24,4 +24,4 @@ servers:
           qos: 1
           retain: false
         keepAlive: qwe
-        bindingVersion: 0.1.0
+        bindingVersion: '0.1.0'

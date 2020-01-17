@@ -91,7 +91,7 @@ myServerBindings:
       message: Guest gone offline.
       retain: false
     keepAlive: 60
-    bindingVersion: 0.1.0
+    bindingVersion: '0.1.0'
 
 myChannelBindings:
   amqp:
@@ -122,10 +122,10 @@ myOperationBindings:
     replyTo: user.signedup
     timestamp: true
     ack: false
-    bindingVersion: 0.1.0
+    bindingVersion: '0.1.0'
 
 myMessageBindings:
   amqp:
     contentEncoding: gzip
     messageType: 'user.signup'
-    bindingVersion: 0.1.0
+    bindingVersion: '0.1.0'

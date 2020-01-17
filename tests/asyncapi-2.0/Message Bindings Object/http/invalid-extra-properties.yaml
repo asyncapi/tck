@@ -23,5 +23,4 @@ channels:
                 Content-Type:
                   type: string
                   enum: ['application/json']
-            meta:
-              version: '0.1.0'
+            bindingVersion: '0.1.0'

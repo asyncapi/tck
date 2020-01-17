@@ -19,4 +19,4 @@ channels:
           hello: 1
           qos: 1
           retain: true
-          bindingVersion: 0.1.0
+          bindingVersion: '0.1.0'

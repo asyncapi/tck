@@ -1,0 +1,32 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      operationId: userSignedUp
+      summary: user signed up
+      description: user signed up to load some data
+      message:
+        name: UserSignup
+        title: User signup
+        contentType: application/json
+        schemaFormat: application/vnd.oai.openapi;version=3.0.0
+        correlationId:
+          $ref: "#/components/correlationIds/userSignedUpCorId"
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email
+
+components:
+  correlationIds:
+    userSignedUpCorId:
+      description:
+        prop: 1
+      location: $message.header#/correlationId
