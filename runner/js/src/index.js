@@ -7,9 +7,7 @@ const TCK_DIR = path.resolve(path.join(
   __dirname, // tck/runner/js/src
   '..', // tck/runner/js
   '..', // tck/runner
-  '..', // tck
-  'tests', // tck/tests
-  'asyncapi-2.0' // tck/tests/asyncapi-2.0
+  '..' // tck
 ))
 
 const PARSERS = {

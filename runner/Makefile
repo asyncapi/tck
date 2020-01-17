@@ -32,7 +32,7 @@ report: report-js
 report-js:
 	cd $(JS_RUNNER_DIR)
 	node src/index.js --parser asyncapi-parser --outdir $(REPORTS_JSON) --branch $(TCK_BRANCH)
-# 	node src/index.js --parser amf-client-js --outdir $(REPORTS_JSON) --branch $(TCK_BRANCH)
+	node src/index.js --parser amf-client-js --outdir $(REPORTS_JSON) --branch $(TCK_BRANCH)
 
 generate-html:
 	cd $(REPORTER_DIR)
