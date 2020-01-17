@@ -18,6 +18,11 @@ $ cd tck/runner/js
 $ npm install .
 ```
 
+For testing parsers in local development, link them after the installation finishes:
+```sh
+$ npm link ~/projects/my-parser/
+```
+
 ## Run
 
 ```sh
