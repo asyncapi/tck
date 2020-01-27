@@ -1,5 +1,7 @@
 asyncapi: 2.0.0
 
+defaultContentType: application/json
+
 externalDocs:
   description: Find more info here
   url: https://example.com

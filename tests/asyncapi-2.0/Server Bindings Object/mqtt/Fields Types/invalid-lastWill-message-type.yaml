@@ -21,8 +21,9 @@ servers:
         cleanSession: true
         lastWill:
           topic: /last-wills
-          qos: 1
-          message: Guest gone offline.
-          retain: qwe
+          qos: 2
+          message:
+            prop: 1
+          retain: false
         keepAlive: 60
         bindingVersion: '0.1.0'

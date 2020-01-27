@@ -6,7 +6,7 @@ info:
 
 channels:
   /user/signedup:
-    subscribe:
+    publish:
       message:
         payload:
           type: object
@@ -14,12 +14,4 @@ channels:
             email:
               type: string
               format: email
-      bindings:
-        kafka:
-          groupId:
-            type: string
-            enum: ['myGroupId']
-          clientId:
-            type: string
-            enum: ['myClientId']
-          bindingVersion: '0.1.0'
+        bindings:

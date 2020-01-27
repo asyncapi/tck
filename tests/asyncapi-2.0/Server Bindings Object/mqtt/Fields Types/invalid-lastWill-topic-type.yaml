@@ -23,6 +23,7 @@ servers:
           topic:
             prop: 1
           qos: 2
+          message: Guest gone offline.
           retain: false
         keepAlive: 60
         bindingVersion: '0.1.0'

@@ -14,12 +14,10 @@ channels:
             email:
               type: string
               format: email
-      bindings:
-        kafka:
-          groupId:
-            type: string
-            enum: ['myGroupId']
-          clientId:
-            type: string
-            enum: ['myClientId']
-          bindingVersion: '0.1.0'
+      traits:
+        - $ref: "#/components/operationTraits/userSignedUpTrait"
+        - $ref: "#/components/operationTraits/userSignedUpDescTrait"
+
+components:
+  operationTraits:
+    userSignedUpTrait:

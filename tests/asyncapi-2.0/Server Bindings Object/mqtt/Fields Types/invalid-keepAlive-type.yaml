@@ -22,6 +22,7 @@ servers:
         lastWill:
           topic: /last-wills
           qos: 1
+          message: Guest gone offline.
           retain: false
         keepAlive: qwe
         bindingVersion: '0.1.0'

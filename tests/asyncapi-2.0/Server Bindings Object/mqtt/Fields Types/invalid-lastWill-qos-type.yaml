@@ -23,6 +23,7 @@ servers:
           topic: /last-wills
           qos:
             prop: 1
+          message: Guest gone offline.
           retain: false
         keepAlive: 60
         bindingVersion: '0.1.0'

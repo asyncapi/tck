@@ -1,0 +1,14 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  user/{userId}/signup:
+    parameters:
+      userId:
+    publish:
+      message:
+        payload:
+          type: string

@@ -14,12 +14,11 @@ channels:
             email:
               type: string
               format: email
-      bindings:
-        kafka:
-          groupId:
-            type: string
-            enum: ['myGroupId']
-          clientId:
-            type: string
-            enum: ['myClientId']
-          bindingVersion: '0.1.0'
+
+servers:
+  production:
+    url: '{username}.gigantic-server.com:{port}'
+    description: The production API server
+    protocol: secure-mqtt
+    variables:
+      username:

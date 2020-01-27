@@ -16,5 +16,7 @@ channels:
               format: email
         bindings:
           kafka:
-            key: myKey
+            key:
+              type: string
+              enum: ['myKey']
             bindingVersion: '0.1.0'

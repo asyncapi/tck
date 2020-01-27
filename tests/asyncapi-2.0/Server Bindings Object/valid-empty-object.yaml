@@ -16,13 +16,3 @@ servers:
     url: development.gigantic-server.com
     protocol: mqtt
     bindings:
-      mqtt:
-        clientId: guest
-        cleanSession: true
-        lastWill:
-          topic: /last-wills
-          qos: 1
-          message: Guest gone offline.
-          retain: qwe
-        keepAlive: 60
-        bindingVersion: '0.1.0'
