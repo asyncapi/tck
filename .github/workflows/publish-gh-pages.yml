@@ -9,14 +9,20 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout repository
+      uses: actions/checkout@v2
     - name: Build tck runner reports
       run: make
       working-directory: ./runner
     - name: Create .nojekyll file
       run: touch runner/reports/html/.nojekyll
-    - uses: JamesIves/github-pages-deploy-action@releases/v3
+    - name: Install SSH Client
+      uses: webfactory/ssh-agent@v0.2.0
       with:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        ssh-private-key: ${{ secrets.DEPLOY_KEY }}
+    - name: Deploy to Github Pages
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        SSH: true
         BRANCH: gh-pages # The branch the action should deploy to.
         FOLDER: runner/reports/html/ # The folder the action should deploy.
