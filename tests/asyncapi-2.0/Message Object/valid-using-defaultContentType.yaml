@@ -9,25 +9,4 @@ info:
 channels:
   /user/signedup:
     subscribe:
-      operationId: userSignedUp
-      summary: user signed up
-      description: user signed up to load some data
       message:
-        name: UserSignup
-        title: User signup
-        summary: Action to sign a user up.
-        description: A longer description
-        schemaFormat: application/vnd.oai.openapi;version=3.0.0
-        headers:
-          type: string
-        payload:
-          type: object
-          properties:
-            email:
-              type: string
-              format: email
-        examples:
-          - one:
-              email: hello@foo.bar
-          - two:
-              email: bye@foo.bar

@@ -16,7 +16,7 @@ channels:
               format: email
 
 components:
-  serverBindings:
+  channelBindings:
     inval#d:
       amqp:
         is: routingKey
