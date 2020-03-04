@@ -7,24 +7,10 @@ info:
 channels:
   /user/signedup:
     subscribe:
-      operationId: userSignedUp
-      summary: user signed up
-      description: user signed up to load some data
       message:
-        name: UserSignup
-        title: User signup
-        summary: Action to sign a user up.
-        description: A longer description
         contentType: application/json
-        schemaFormat: application/vnd.oai.openapi;version=3.0.0
         headers:
           $ref: "#/components/schemas/userSignedUpHeaders"
-        payload:
-          type: object
-          properties:
-            email:
-              type: string
-              format: email
 
 components:
   schemas:

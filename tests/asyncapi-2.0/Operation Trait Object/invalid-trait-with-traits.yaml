@@ -20,7 +20,5 @@ channels:
 components:
   operationTraits:
     userSignedUpTrait:
-      operationId: userSignedUp
-      summary: user signed up
       traits:
         - $ref: "#/components/operationTraits/userSignedUpTrait"

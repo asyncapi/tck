@@ -7,16 +7,8 @@ info:
 channels:
   /user/signedup:
     subscribe:
-      operationId: userSignedUp
-      summary: user signed up
-      description: user signed up to load some data
       message:
-        payload:
-          type: object
-          properties:
-            email:
-              type: string
-              format: email
+        contentType: application/json
         traits:
           - $ref: "#/components/messageTraits/signedUpMessage"
 

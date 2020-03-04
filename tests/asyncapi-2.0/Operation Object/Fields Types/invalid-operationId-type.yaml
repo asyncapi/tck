@@ -9,8 +9,6 @@ channels:
     subscribe:
       operationId:
         prop: 1
-      summary: user signed up
-      description: user signed up to load some data
       message:
         payload:
           type: object
@@ -18,10 +16,3 @@ channels:
             email:
               type: string
               format: email
-      tags:
-        - name: user
-          description: user signed up
-        - name: signup
-      externalDocs:
-        description: Find more info here
-        url: https://example.com

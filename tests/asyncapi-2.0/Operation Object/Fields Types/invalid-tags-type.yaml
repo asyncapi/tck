@@ -7,9 +7,6 @@ info:
 channels:
   /user/signedup:
     subscribe:
-      operationId: userSignedUp
-      summary: user signed up
-      description: user signed up to load some data
       message:
         payload:
           type: object
@@ -18,6 +15,3 @@ channels:
               type: string
               format: email
       tags: 123
-      externalDocs:
-        description: Find more info here
-        url: https://example.com

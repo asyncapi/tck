@@ -21,11 +21,8 @@ channels:
 components:
   operationTraits:
     userSignedUpTrait:
-      operationId: userSignedUp
       tags:
         - name: user
           description: user signed up
         - name: user
-      summary: user signed up
     userSignedUpDescTrait:
-      description: user signed up to load some data
