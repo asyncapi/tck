@@ -266,7 +266,6 @@
         "tests/asyncapi-2.0/Security Requirement Object/invalid-symmetricEncryption-non-empty-array.yaml",
         "tests/asyncapi-2.0/Security Requirement Object/invalid-userPassword-non-empty-array.yaml",
         "tests/asyncapi-2.0/Security Requirement Object/Fields Types/invalid-name-type.yaml",
-        "tests/asyncapi-2.0/Parameters Object/invalid-not-matching-param-name.yaml",
         "tests/asyncapi-2.0/Parameters Object/invalid-pattern-field.yaml",
         "tests/asyncapi-2.0/Parameters Object/valid-internal-ref.yaml",
         "tests/asyncapi-2.0/Parameters Object/valid.yaml",
