@@ -1,0 +1,20 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: string
+
+servers:
+  production:
+    url: development.gigantic-server.com
+    protocol: kafka
+    protocolVersion: '1.0.0'
+    description:
+      prop: 1

@@ -1,0 +1,37 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: string
+
+servers:
+  production:
+    url: development.gigantic-server.com
+    protocol: kafka
+    security:
+      - mainSecurity: []
+      - secondarySecurity: []
+      - thirdSecurity: []
+
+components:
+  securitySchemes:
+    mainSecurity:
+      type: httpApiKey
+      name: "My-Key-Header"
+      in:
+        prop: 1
+    secondarySecurity:
+      type: httpApiKey
+      name: "My-Key-Cookie"
+      in: cookie
+    thirdSecurity:
+      type: httpApiKey
+      name: "My-Key-Query"
+      in: query

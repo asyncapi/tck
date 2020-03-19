@@ -1,0 +1,14 @@
+asyncapi: 2.0.0
+
+info: 123
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email

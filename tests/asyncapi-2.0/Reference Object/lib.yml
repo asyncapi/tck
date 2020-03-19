@@ -1,0 +1,131 @@
+mySchema:
+  type: object
+  properties:
+    correlationId:
+      description: Correlation ID set by application
+      type: string
+    applicationInstanceId:
+      description: Unique identifier
+      type: string
+
+myMessage:
+  name: UserSignup
+  title: User signup
+  summary: Action to sign a user up.
+  description: A longer description
+  contentType: application/json
+  schemaFormat: application/vnd.oai.openapi;version=3.0.0
+  correlationId:
+    description: Default Correlation ID
+    location: $message.header#/correlationId
+  headers:
+    type: object
+    properties:
+      correlationId:
+        description: Correlation ID set by application
+        type: string
+      applicationInstanceId:
+        description: Unique identifier
+        type: string
+  tags:
+    - name: user
+      description: user signed up
+    - name: signup
+  externalDocs:
+    description: Find more info here
+    url: https://example.com
+  payload:
+    type: object
+    properties:
+      email:
+        type: string
+        format: email
+  examples:
+    - one:
+        email: hello@foo.bar
+    - two:
+        email: bye@foo.bar
+
+mySecurityScheme:
+  type: httpApiKey
+  name: Api-Key
+  in: header
+
+myParam:
+  description: Id of the user.
+  schema:
+    type: string
+  location: $message.payload#/user/id
+
+myCorrelationId:
+  description: Default Correlation ID
+  location: $message.header#/correlationId
+
+myOperationTrait:
+  description: user signed up to load some data
+
+myMessageTrait:
+  name: UserSignup
+  title: User signup
+  summary: Action to sign a user up.
+  description: A longer description
+  contentType: application/json
+  schemaFormat: application/vnd.oai.openapi;version=3.0.0
+  correlationId:
+    description: Default Correlation ID
+    location: $message.header#/correlationId
+  headers:
+    type: object
+    properties:
+      applicationInstanceId:
+        description: Unique identifier
+        type: string
+
+myServerBindings:
+  mqtt:
+    clientId: guest
+    cleanSession: true
+    lastWill:
+      topic: /last-wills
+      qos: 2
+      message: Guest gone offline.
+      retain: false
+    keepAlive: 60
+    bindingVersion: '0.1.0'
+
+myChannelBindings:
+  amqp:
+    is: routingKey
+    queue:
+      name: my-queue-name
+      durable: true
+      exclusive: true
+      autoDelete: false
+      vhost: /
+    exchange:
+      name: myExchange
+      type: topic
+      durable: true
+      autoDelete: false
+      vhost: /
+    bindingVersion: '0.1.0'
+
+myOperationBindings:
+  amqp:
+    expiration: 100000
+    userId: guest
+    cc: ['user.logs']
+    priority: 10
+    deliveryMode: 2
+    mandatory: false
+    bcc: ['external.audit']
+    replyTo: user.signedup
+    timestamp: true
+    ack: false
+    bindingVersion: '0.1.0'
+
+myMessageBindings:
+  amqp:
+    contentEncoding: gzip
+    messageType: 'user.signup'
+    bindingVersion: '0.1.0'

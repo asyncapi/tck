@@ -1,0 +1,149 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+servers:
+  production:
+    url: development.gigantic-server.com
+    protocol: kafka
+    protocolVersion: '1.0.0'
+    description: Development server
+    security:
+      - simple: []
+    bindings:
+      $ref: "#/components/serverBindings/myServerBindings"
+
+channels:
+  /user/{userId}/signedup:
+    parameters:
+      userId:
+        $ref: "#/components/parameters/userId"
+    bindings:
+      $ref: "#/components/channelBindings/myChannelBindings"
+    subscribe:
+      bindings:
+        $ref: "#/components/operationBindings/myOperationBindings"
+      traits:
+        - $ref: "#/components/operationTraits/userSignedUpTrait"
+      message:
+        $ref: "#/components/messages/userSignedUpMessage"
+
+components:
+  schemas:
+    userSignedUpHeaders:
+      type: object
+      properties:
+        correlationId:
+          description: Correlation ID set by application
+          type: string
+        applicationInstanceId:
+          description: Unique identifier
+          type: string
+  messages:
+    userSignedUpMessage:
+      name: UserSignup
+      title: User signup
+      summary: Action to sign a user up.
+      description: A longer description
+      contentType: application/json
+      schemaFormat: application/vnd.oai.openapi;version=3.0.0
+      correlationId:
+        $ref: "#/components/correlationIds/userSignedUpCorId"
+      headers:
+        $ref: "#/components/schemas/userSignedUpHeaders"
+      traits:
+        - $ref: "#/components/messageTraits/signedUpMessageTrait"
+      bindings:
+        $ref: "#/components/messageBindings/myMessageBindings"
+      payload:
+        type: object
+        properties:
+          email:
+            type: string
+            format: email
+  securitySchemes:
+    simple:
+      type: httpApiKey
+      name: Api-Key
+      in: header
+  parameters:
+    userId:
+      description: Id of the user.
+      schema:
+        type: string
+      location: $message.payload#/user/id
+  correlationIds:
+    userSignedUpCorId:
+      description: Default Correlation ID
+      location: $message.header#/correlationId
+  operationTraits:
+    userSignedUpTrait:
+      description: user signed up to load some data
+  messageTraits:
+    signedUpMessageTrait:
+      name: UserSignup
+      title: User signup
+      summary: Action to sign a user up.
+      description: A longer description
+      contentType: application/json
+      schemaFormat: application/vnd.oai.openapi;version=3.0.0
+      correlationId:
+        description: Default Correlation ID
+        location: $message.header#/correlationId
+      headers:
+        type: object
+        properties:
+          applicationInstanceId:
+            description: Unique identifier
+            type: string
+  serverBindings:
+    myServerBindings:
+      mqtt:
+        clientId: guest
+        cleanSession: true
+        lastWill:
+          topic: /last-wills
+          qos: 2
+          message: Guest gone offline.
+          retain: false
+        keepAlive: 60
+        bindingVersion: '0.1.0'
+  channelBindings:
+    myChannelBindings:
+      amqp:
+        is: routingKey
+        queue:
+          name: my-queue-name
+          durable: true
+          exclusive: true
+          autoDelete: false
+          vhost: /
+        exchange:
+          name: myExchange
+          type: topic
+          durable: true
+          autoDelete: false
+          vhost: /
+        bindingVersion: '0.1.0'
+  operationBindings:
+    myOperationBindings:
+      amqp:
+        expiration: 100000
+        userId: guest
+        cc: ['user.logs']
+        priority: 10
+        deliveryMode: 2
+        mandatory: false
+        bcc: ['external.audit']
+        replyTo: user.signedup
+        timestamp: true
+        ack: false
+        bindingVersion: '0.1.0'
+  messageBindings:
+    myMessageBindings:
+      amqp:
+        contentEncoding: gzip
+        messageType: 'user.signup'
+        bindingVersion: '0.1.0'

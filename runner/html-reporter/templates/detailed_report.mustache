@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Detailed report: {{parser}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <style type="text/css">
+    .parser-error {
+      display: none;
+    }
+    .danger {
+      cursor: pointer;
+    }
+  </style>
+  <script type="text/javascript">
+    function toggleErrorLog (row) {
+      const nextEl = row.nextElementSibling
+      const visible = nextEl.style.display === 'table-row'
+      nextEl.style.display = visible ? 'none' : 'table-row'
+    }
+    function toggleSuccessRows (checkbox) {
+      const els = document.getElementsByClassName('success main-row')
+      const display = checkbox.checked ? 'table-row' : 'none'
+      Array.from(els).forEach((el) => {
+        el.style.display = display
+      })
+    }
+    function toggleDangerRows (checkbox) {
+      let els, display
+      if (checkbox.checked) {
+        els = document.getElementsByClassName('danger main-row')
+        display = 'table-row'
+      } else {
+        els = document.getElementsByClassName('danger')
+        display = 'none'
+      }
+      Array.from(els).forEach((el) => {
+        el.style.display = display
+      })
+    }
+  </script>
+</head>
+  <body>
+    <div class="container-fluid">
+      <h3><a href="index.html">Overview</a> > Detailed report: {{parser}}</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>
+              Success <br>
+              <label>
+                Yes
+                <input type="checkbox" checked="true" onchange="toggleSuccessRows(this)">
+              </label>
+              <label>
+                No
+                <input type="checkbox" checked="true" onchange="toggleDangerRows(this)">
+              </label>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#results}}
+            <tr
+              class="{{#success}}success{{/success}}{{^success}}danger{{/success}} main-row"
+              {{^success}}onclick="toggleErrorLog(this)" {{/success}}
+              {{^success}}title="Click to show/hide error log"{{/success}}
+              >
+              <td>
+                <a href="{{fileUrl}}" title="View file on Github" target="blank">{{file}}</a>
+              </td>
+              <td>
+                {{#success}}Yes{{/success}}
+                {{^success}}No{{/success}}
+              </td>
+            </tr>
+            {{#error}}
+              <tr class="danger parser-error">
+                <td colspan="2"><pre>{{error}}</pre></td>
+              </tr>
+            {{/error}}
+          {{/results}}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email
+
+servers:
+  production:
+    url: '{username}.gigantic-server.com:{port}'
+    description: The production API server
+    protocol: secure-mqtt
+    variables:
+      username:
+        default: demo
+        description: Active user name
+        examples:
+          - 'admin'
+          - 'user123'

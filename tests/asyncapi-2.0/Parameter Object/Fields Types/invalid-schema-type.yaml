@@ -1,0 +1,17 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  user/{userId}/signup:
+    parameters:
+      userId:
+        description: Id of the user.
+        schema: 123
+        location: $message.payload#/user/id
+    publish:
+      message:
+        payload:
+          type: string

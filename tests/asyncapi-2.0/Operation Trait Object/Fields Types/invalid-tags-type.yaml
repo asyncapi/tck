@@ -1,0 +1,31 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email
+      traits:
+        - $ref: "#/components/operationTraits/userSignedUpTrait"
+        - $ref: "#/components/operationTraits/userSignedUpDescTrait"
+
+components:
+  operationTraits:
+    userSignedUpTrait:
+      operationId: userSignedUp
+      tags: 123
+      externalDocs:
+        description: Find more info here
+        url: https://example.com
+      summary: hello
+    userSignedUpDescTrait:
+      description: user signed up to load some data

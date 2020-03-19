@@ -1,0 +1,18 @@
+asyncapi: 2.0.0
+
+info:
+  title: AsyncAPI Sample App
+  version: 1.0.1
+  description: This is a sample server.
+  termsOfService: http://asyncapi.org/terms/
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email

@@ -1,0 +1,12 @@
+subscribe:
+  message:
+    payload:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+publish:
+  message:
+    payload:
+      type: string

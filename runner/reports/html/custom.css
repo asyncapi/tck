@@ -1,0 +1,7 @@
+.stat-nums {
+  color: #afafaf;
+  opacity: 0;
+}
+tr:hover .stat-nums {
+  opacity: 1;
+}

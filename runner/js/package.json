@@ -1,0 +1,19 @@
+{
+  "name": "asyncapi-tck-runner-js",
+  "version": "1.0.0",
+  "description": "Simple test of few AsyncAPI JS parsers.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "MuleSoft",
+  "license": "ISC",
+  "dependencies": {
+    "amf-client-js": "^4.0.4",
+    "asyncapi-parser": "^0.13.0",
+    "minimist": "^1.2.0",
+    "mustache": "^3.0.1"
+  },
+  "devDependencies": {}
+}

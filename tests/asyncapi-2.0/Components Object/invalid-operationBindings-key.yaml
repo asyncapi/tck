@@ -1,0 +1,32 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email
+
+components:
+  operationBindings:
+    inval#d:
+      amqp:
+        expiration: 100000
+        userId: guest
+        cc: ['user.logs']
+        priority: 10
+        deliveryMode: 2
+        mandatory: false
+        bcc: ['external.audit']
+        replyTo: user.signedup
+        timestamp: true
+        ack: false
+        bindingVersion: '0.1.0'

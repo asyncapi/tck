@@ -1,0 +1,22 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: object
+          properties:
+            email:
+              type: string
+              format: email
+      bindings:
+        kafka:
+          groupId: myGroupId
+          clientId: myClientId
+          bindingVersion: '0.1.0'
+          hello: 1

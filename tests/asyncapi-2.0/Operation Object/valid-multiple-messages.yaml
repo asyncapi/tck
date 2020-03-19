@@ -1,0 +1,26 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        oneOf:
+          - $ref: '#/components/messages/signup'
+          - $ref: '#/components/messages/login'
+
+components:
+  messages:
+    signup:
+      payload:
+        type: object
+        properties:
+          email:
+            type: string
+            format: email
+    login:
+      payload:
+        type: string

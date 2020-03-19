@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Features stats: {{parser}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link rel="stylesheet" href="./custom.css">
+</head>
+  <body>
+    <div class="container-fluid">
+      <h3><a href="index.html">Overview</a> > Features stats: {{parser}}</h3>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Valid Files <span class="stat-nums">(passed/all)</span></th>
+            <th>Invalid Files <span class="stat-nums">(passed/all)</span></th>
+            <th>Total <span class="stat-nums">(passed/all)</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#stats}}
+            <tr>
+              <td>{{feature}}</td>
+              <td>
+                {{valid.successPerc}}%
+                <span class="stat-nums">({{valid.success}}/{{valid.total}})</span>
+              </td>
+              <td>
+                {{invalid.successPerc}}%
+                <span class="stat-nums">({{invalid.success}}/{{invalid.total}})</span>
+              </td>
+              <td>
+                {{all.successPerc}}%
+                <span class="stat-nums">({{all.success}}/{{all.total}})</span>
+              </td>
+            </tr>
+          {{/stats}}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

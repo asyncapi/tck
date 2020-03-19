@@ -1,0 +1,33 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: string
+
+servers:
+  production:
+    url: development.gigantic-server.com
+    protocol: kafka
+    security:
+      - mainSecurity:
+        - write:pets
+        - read:pets
+
+components:
+  securitySchemes:
+    mainSecurity:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://example.com/api/oauth/auth
+          refreshUrl: https://example.com/api/oauth/refresh
+          scopes:
+            write:pets: modify pets in your account
+            read:pets: read your pets

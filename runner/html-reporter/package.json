@@ -1,0 +1,14 @@
+{
+  "name": "asyncapi-tck-runner-reporter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "AsyncAPI Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "mustache": "^3.0.1"
+  },
+  "devDependencies": {}
+}
