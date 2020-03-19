@@ -9,7 +9,9 @@ async function asyncapiParse (fpath) {
   // According to parser's API, it:
   // "Parses and validate an AsyncAPI document from YAML or JSON"
   try {
-    await asyncapi.parse(content)
+    await asyncapi.parse(content, {
+      path: fpath
+    })
   } catch (e) {
     throw new Error(e.message || e.toString())
   }
