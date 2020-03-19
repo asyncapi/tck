@@ -9,4 +9,4 @@ channels:
     subscribe:
       message:
         payload:
-          $ref: inexistingFile.yml#/userSignUp
+          $ref: common.yml/#userSignUp
