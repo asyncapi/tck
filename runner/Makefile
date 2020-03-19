@@ -5,7 +5,7 @@ JS_RUNNER_DIR:=$(ROOT_DIR)/js
 
 
 # asyncapi/tck branch with manifest.json in its root
-TCK_BRANCH:=add_tck_tests
+TCK_BRANCH:=master
 
 
 .ONESHELL:
