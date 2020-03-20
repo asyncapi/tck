@@ -2,7 +2,7 @@
   "name": "tck",
   "description": "AsyncAPI test compatibility kit",
   "version": "1.1.0",
-  "main": "genmanifest.js tests/asyncapi-2.0",
+  "main": "",
   "private": true,
   "author": "AsyncAPI Team",
   "repository": {
@@ -14,10 +14,5 @@
     "test framework"
   ],
   "license": "Apache-2.0",
-  "dependencies": {
-    "walk": "^2.3.14"
-  },
-  "scripts": {
-    "gen-manifest": "node genmanifest.js tests/asyncapi-2.0"
-  }
+  "dependencies": {}
 }

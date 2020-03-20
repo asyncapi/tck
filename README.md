@@ -7,8 +7,6 @@ AsyncAPI's Test Compatibility Kit (AsyncAPI TCK) provides a way for any AsyncAPI
 - `*valid*.yaml`: valid AsyncAPI file expected to be successfully processed
 - `*invalid*.yaml`: invalid AsyncAPI file with syntax/semantic/spec error(s), expected to be unsuccessfully processed (error or exit code returned)
 
-Note that this repository contains a [manifest file](./manifest.json) that lists all tests in the order their respective tested features appear in the AsyncAPI 2.0 Specification.
-
 Names of folders' tests reside in correspond to AsyncAPI 2.0 Specification sections names.
 
 Non-AsyncAPI files (libraries, extensions, etc.) must have a `.yml` extension instead of `.yaml`.
