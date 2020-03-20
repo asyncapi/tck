@@ -20,23 +20,23 @@ install: install-html-reporter \
 		 install-js
 
 install-html-reporter:
-	cd $(REPORTER_DIR)
-	npm install .
+	cd $(REPORTER_DIR) \
+	&& npm install .
 
 install-js: clean-js
-	cd $(JS_RUNNER_DIR)
-	npm install .
+	cd $(JS_RUNNER_DIR) \
+	&& npm install .
 
 report: report-js
 
 report-js:
-	cd $(JS_RUNNER_DIR)
-	node src/index.js --parser asyncapi-parser --outdir $(REPORTS_JSON) --branch $(TCK_BRANCH)
-	node src/index.js --parser amf-client-js --outdir $(REPORTS_JSON) --branch $(TCK_BRANCH)
+	cd $(JS_RUNNER_DIR) \
+	&& node src/index.js --parser asyncapi-parser --outdir $(REPORTS_JSON) --branch $(TCK_BRANCH) \
+	&& node src/index.js --parser amf-client-js --outdir $(REPORTS_JSON) --branch $(TCK_BRANCH)
 
 generate-html:
-	cd $(REPORTER_DIR)
-	node src/index.js
+	cd $(REPORTER_DIR) \
+	&& node src/index.js
 
 clean: clean-js
 	rm -f $(REPORTS_JSON)/*
