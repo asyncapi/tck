@@ -3,7 +3,7 @@ const path = require('path')
 const parsers = require('./parsers')
 const utils = require('./utils')
 
-const TCK_DIR = path.resolve(path.join(
+const ROOT_DIR = path.resolve(path.join(
   __dirname, // tck/runner/js/src
   '..', // tck/runner/js
   '..', // tck/runner
@@ -23,7 +23,8 @@ async function main () {
     return
   }
 
-  const fileList = utils.listFiles(TCK_DIR)
+  const fileList = utils.listYamlFiles(
+    path.resolve(ROOT_DIR, 'tests', 'asyncapi-2.0'))
   let report = {
     parser: argv.parser + '(js)',
     results: [],
@@ -41,7 +42,7 @@ async function main () {
       error = e
     }
     report.results.push({
-      file: fpath.replace(TCK_DIR, ''),
+      file: fpath.replace(ROOT_DIR, ''),
       success: success,
       error: error ? error.toString() : error
     })

@@ -5,6 +5,9 @@ const Mustache = require('mustache')
 /* Runs all the logic */
 function main () {
   const reportsDir = path.join(__dirname, '..', '..', 'reports', 'json')
+  if (!fs.existsSync(reportsDir)) {
+    fs.mkdirSync(reportsDir)
+  }
   let stats = []
   fs.readdirSync(reportsDir).forEach(fpath => {
     if (!fpath.endsWith('.json')) {
