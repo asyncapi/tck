@@ -2,6 +2,7 @@ const parseArgs = require('minimist')
 const path = require('path')
 const parsers = require('./parsers')
 const utils = require('./utils')
+const package = require('../package.json')
 
 const ROOT_DIR = path.resolve(path.join(
   __dirname, // tck/runner/js/src
@@ -9,6 +10,21 @@ const ROOT_DIR = path.resolve(path.join(
   '..', // tck/runner
   '..' // tck
 ))
+
+/**
+ * Parsers meta-data which helps generating pretty reports.
+ * Required fields are: url, version.
+ */
+const PARSERS_META = {
+  'amf-client-js': {
+    url: 'https://github.com/aml-org/amf',
+    version: package.dependencies['amf-client-js']
+  },
+  'asyncapi-parser': {
+    url: 'https://github.com/asyncapi/parser-js',
+    version: package.dependencies['asyncapi-parser']
+  }
+}
 
 const PARSERS = {
   'amf-client-js': parsers.amfParse,
@@ -26,7 +42,11 @@ async function main () {
   const fileList = utils.listYamlFiles(
     path.resolve(ROOT_DIR, 'tests', 'asyncapi-2.0'))
   let report = {
-    parser: argv.parser + '(js)',
+    parser: {
+      name: argv.parser,
+      language: 'js',
+      ...PARSERS_META[argv.parser]
+    },
     results: [],
     branch: argv.branch
   }

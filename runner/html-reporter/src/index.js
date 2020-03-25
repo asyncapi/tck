@@ -20,12 +20,12 @@ function main () {
     stats.push(composeReportStats(report))
     renderTemplate(
       report, 'detailed_report',
-      `${report.parser}_detailed_report`)
+      `${report.parser.name}_detailed_report`)
 
     let featuresStats = composeFeaturesStats(report)
     renderTemplate(
       featuresStats, 'features_stats',
-      `${report.parser}_features_stats`)
+      `${report.parser.name}_features_stats`)
   })
   renderTemplate({stats: stats}, 'index', 'index')
 }
