@@ -27,8 +27,7 @@ async function main () {
     path.resolve(ROOT_DIR, 'tests', 'asyncapi-2.0'))
   let report = {
     parser: argv.parser + '(js)',
-    results: [],
-    branch: argv.branch
+    results: []
   }
 
   for (let i = 0; i < fileList.length; i++) {

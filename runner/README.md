@@ -10,6 +10,9 @@ $ make
 
 Then you can open generated HTML report (`reports/html/index.html`) in your browser.
 
+## Note about branches
+By default links to asyncapi/tck files on Github point to `master` branch. To point to a different branch, provide `tck_branch` option to `make` commands. E.g. `make tck_branch=develop all-js`.
+
 ## JavaScript
 Parsers tested:
 * [asyncapi-parser](https://github.com/asyncapi/parser-js)
