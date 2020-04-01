@@ -4,6 +4,7 @@ const Mustache = require('mustache')
 
 /* Runs all the logic */
 function main () {
+  const branch = process.argv.slice(2)[0]
   const reportsDir = path.join(__dirname, '..', '..', 'reports', 'json')
   if (!fs.existsSync(reportsDir)) {
     fs.mkdirSync(reportsDir)
@@ -16,7 +17,7 @@ function main () {
     let fullPath = path.join(reportsDir, fpath)
     console.log(`Processing report: ${fullPath}`)
     let report = JSON.parse(fs.readFileSync(fullPath))
-    interpretReport(report)
+    interpretReport(report, branch)
     stats.push(composeReportStats(report))
     renderTemplate(
       report, 'detailed_report',
@@ -35,8 +36,8 @@ function main () {
   * Composes repo url from relative file path;
   * Extracts "feature" name from file path;
 */
-function interpretReport (report) {
-  const repo = `https://github.com/asyncapi/tck/tree/${report.branch}`
+function interpretReport (report, branch) {
+  const repo = `https://github.com/asyncapi/tck/blob/${branch}`
   report.results.forEach(result => {
     result.invalid = shouldFail(result.file)
     if (result.invalid) {

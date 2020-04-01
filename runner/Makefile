@@ -3,11 +3,6 @@ REPORTER_DIR:=$(ROOT_DIR)/html-reporter
 REPORTS_JSON:=$(ROOT_DIR)/reports/json
 JS_RUNNER_DIR:=$(ROOT_DIR)/js
 
-
-# asyncapi/tck branch with manifest.json in its root
-TCK_BRANCH:=master
-
-
 .ONESHELL:
 all: clean install report generate-html
 
@@ -31,12 +26,15 @@ report: report-js
 
 report-js:
 	cd $(JS_RUNNER_DIR) \
-	&& node src/index.js --parser asyncapi-parser --outdir $(REPORTS_JSON) --branch $(TCK_BRANCH) \
-	&& node src/index.js --parser amf-client-js --outdir $(REPORTS_JSON) --branch $(TCK_BRANCH)
+	&& node src/index.js --parser asyncapi-parser --outdir $(REPORTS_JSON) \
+	&& node src/index.js --parser amf-client-js --outdir $(REPORTS_JSON)
 
 generate-html:
-	cd $(REPORTER_DIR) \
-	&& node src/index.js
+ifdef tck_branch
+	cd $(REPORTER_DIR) && node src/index.js $(tck_branch)
+else
+	cd $(REPORTER_DIR) && node src/index.js master
+endif
 
 clean: clean-js
 	rm -f $(REPORTS_JSON)/*

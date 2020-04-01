@@ -47,8 +47,7 @@ async function main () {
       language: 'js',
       ...PARSERS_META[argv.parser]
     },
-    results: [],
-    branch: argv.branch
+    results: []
   }
 
   for (let i = 0; i < fileList.length; i++) {
