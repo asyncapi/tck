@@ -23,7 +23,11 @@
         <tbody>
           {{#stats}}
             <tr>
-              <td>{{parser}}</td>
+              <td>
+                <a href="{{{parser.url}}}" target="blank" title="Visit parser's web-page">
+                  {{parser.name}} ({{parser.language}}, {{parser.version}})
+                </a>
+              </td>
               <td>
                 {{valid.successPerc}}%
                 <span class="stat-nums">({{valid.success}}/{{valid.total}})</span>
@@ -34,8 +38,8 @@
               <td>
                 {{all.successPerc}}%
                 <span class="stat-nums">({{all.success}}/{{all.total}})</span></td>
-              <td><a href="{{parser}}_detailed_report.html" title="View {{parser}} detailed report">Detailed report</a></td>
-              <td><a href="{{parser}}_features_stats.html" title="View {{parser}} features stats">Features stats</a></td>
+              <td><a href="{{parser.name}}_detailed_report.html" title="View {{parser.name}} detailed report">Detailed report</a></td>
+              <td><a href="{{parser.name}}_features_stats.html" title="View {{parser.name}} features stats">Features stats</a></td>
             </tr>
           {{/stats}}
         </tbody>
