@@ -15,7 +15,7 @@ install: install-tck-reporter \
 		 install-js
 
 install-tck-reporter:
-	npm install -g postatum/tck-reporter
+	npm install -g postatum/tck-reporter#v1.0.0
 
 install-js: clean-js
 	cd $(JS_RUNNER_DIR) \
