@@ -15,7 +15,7 @@ install: install-tck-reporter \
 		 install-js
 
 install-tck-reporter:
-	npm install -g jstoiko/tck-reporter#v1.1.0
+	cd ($ROOT_DIR) && npm install
 
 install-js: clean-js
 	cd $(JS_RUNNER_DIR) \
@@ -30,9 +30,9 @@ report-js:
 
 generate-html:
 ifdef tck_branch
-	tck-reporter $(REPORTS_JSON) $(REPORTS_HTML) --repoBranchUrl https://github.com/asyncapi/tck/blob/$(tck_branch)
+	./node_modules/tck-reporter/bin/tck-reporter.js $(REPORTS_JSON) $(REPORTS_HTML) --repoBranchUrl https://github.com/asyncapi/tck/blob/$(tck_branch)
 else
-	tck-reporter $(REPORTS_JSON) $(REPORTS_HTML) --repoBranchUrl https://github.com/asyncapi/tck/blob/master
+	./node_modules/tck-reporter/bin/tck-reporter.js $(REPORTS_JSON) $(REPORTS_HTML) --repoBranchUrl https://github.com/asyncapi/tck/blob/master
 endif
 
 clean: clean-js

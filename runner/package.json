@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "tck-reporter": "github:jstoiko/tck-reporter#v1.1.0"
+  }
+}
