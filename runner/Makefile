@@ -15,7 +15,7 @@ install: install-tck-reporter \
 		 install-js
 
 install-tck-reporter:
-	cd ($ROOT_DIR) && npm install
+	cd $(ROOT_DIR) && npm install
 
 install-js: clean-js
 	cd $(JS_RUNNER_DIR) \
