@@ -1,22 +1,21 @@
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
-REPORTER_DIR:=$(ROOT_DIR)/html-reporter
 REPORTS_JSON:=$(ROOT_DIR)/reports/json
+REPORTS_HTML:=$(ROOT_DIR)/reports/html
 JS_RUNNER_DIR:=$(ROOT_DIR)/js
 
 .ONESHELL:
 all: clean install report generate-html
 
-all-js:	install-html-reporter \
+all-js:	install-tck-reporter \
 		install-js \
 		report-js \
 		generate-html
 
-install: install-html-reporter \
+install: install-tck-reporter \
 		 install-js
 
-install-html-reporter:
-	cd $(REPORTER_DIR) \
-	&& npm install .
+install-tck-reporter:
+	cd $(ROOT_DIR) && npm install
 
 install-js: clean-js
 	cd $(JS_RUNNER_DIR) \
@@ -31,9 +30,9 @@ report-js:
 
 generate-html:
 ifdef tck_branch
-	cd $(REPORTER_DIR) && node src/index.js $(tck_branch)
+	./node_modules/tck-reporter/bin/tck-reporter.js $(REPORTS_JSON) $(REPORTS_HTML) --repoBranchUrl https://github.com/asyncapi/tck/blob/$(tck_branch)
 else
-	cd $(REPORTER_DIR) && node src/index.js master
+	./node_modules/tck-reporter/bin/tck-reporter.js $(REPORTS_JSON) $(REPORTS_HTML) --repoBranchUrl https://github.com/asyncapi/tck/blob/master
 endif
 
 clean: clean-js

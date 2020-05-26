@@ -64,5 +64,4 @@ typings/
 .gradle
 java/build/
 
-reports/json/
-reports/html/*.html
+reports/
