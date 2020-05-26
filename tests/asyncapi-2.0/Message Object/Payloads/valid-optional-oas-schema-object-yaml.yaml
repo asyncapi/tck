@@ -8,6 +8,6 @@ channels:
   /user/signedup:
     subscribe:
       message:
-        schemaFormat: application/vnd.apache.avro+yaml;version=1.9.0
+        schemaFormat: application/vnd.oai.openapi+yaml;version=3.0.0
         payload:
-          $ref: includes/user-avro-schema.yaml
+          $ref: includes/user-oas-schema-object-optional.yaml

@@ -10,4 +10,4 @@ channels:
       message:
         schemaFormat: application/schema+yaml;version=draft-07
         payload:
-          $ref: includes/user-json-schema.yaml
+          $ref: includes/user-json-schema-optional.yaml
