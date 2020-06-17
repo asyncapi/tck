@@ -49,10 +49,8 @@ components:
             default: 3
             format: int32
             multipleOf: 1
-            maximum: 99
-            exclusiveMaximum: true
-            minimum: 1
-            exclusiveMinimum: true
+            exclusiveMaximum: 99
+            exclusiveMinimum: 1
         anotherString:
           type: string
           const: hello
