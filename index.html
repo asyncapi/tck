@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>AsyncAPI Parsers Overview</title>
+  <title>RAML Parsers Overview</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./bootstrap.min.css">
-  <link rel="stylesheet" href="./custom.css">
+  <link rel="stylesheet" href="./static/bootstrap.min.css">
+  <link rel="stylesheet" href="./static/custom.css">
+  <link rel="stylesheet" href="./static/user-styles.css">
 </head>
   <body>
     <div class="container-fluid">
@@ -14,9 +15,18 @@
         <thead>
           <tr>
             <th>Parser</th>
-            <th>Valid Files <span class="stat-nums">(passed/all)</span></th>
-            <th>Invalid Files <span class="stat-nums">(passed/all)</span></th>
-            <th>Total <span class="stat-nums">(passed/all)</span></th>
+            <th title="Valid tests success percentage and numbers.">
+              Valid Files <span class="stat-nums">(passed/all)</span>
+            </th>
+            <th title="Invalid tests success percentage and numbers.">
+              Invalid Files <span class="stat-nums">(passed/all)</span>
+            </th>
+            <th title="Total success percentage and numbers. Does not include optional tests.">
+              Total <span class="stat-nums">(passed/all)</span>
+            </th>
+            <th title="Optional tests success percentage and numbers.">
+              Optional Files<span class="stat-nums">(passed/all)</span>
+            </th>
             <th colspan="2"></th>
           </tr>
         </thead>
@@ -28,17 +38,23 @@
                 </a>
               </td>
               <td>
-                77%
-                <span class="stat-nums">(74/96)</span>
+                78%
+                <span class="stat-nums">(76/98)</span>
               </td>
               <td>
                 64%
-                <span class="stat-nums">(182/285)</span></td>
+                <span class="stat-nums">(182/285)</span>
+              </td>
               <td>
                 67%
-                <span class="stat-nums">(256/381)</span></td>
-              <td><a href="amf-client-js_detailed_report.html" title="View amf-client-js detailed report">Detailed report</a></td>
-              <td><a href="amf-client-js_features_stats.html" title="View amf-client-js features stats">Features stats</a></td>
+                <span class="stat-nums">(258/383)</span>
+              </td>
+              <td>
+                70%
+                <span class="stat-nums">(7/10)</span>
+              </td>
+              <td><a href="amf-client-js_js_detailed_report.html" title="View amf-client-js detailed report">Detailed report</a></td>
+              <td><a href="amf-client-js_js_features_stats.html" title="View amf-client-js features stats">Features stats</a></td>
             </tr>
             <tr>
               <td>
@@ -47,17 +63,23 @@
                 </a>
               </td>
               <td>
-                79%
-                <span class="stat-nums">(76/96)</span>
+                81%
+                <span class="stat-nums">(79/98)</span>
               </td>
               <td>
                 59%
-                <span class="stat-nums">(168/285)</span></td>
+                <span class="stat-nums">(168/285)</span>
+              </td>
               <td>
                 64%
-                <span class="stat-nums">(244/381)</span></td>
-              <td><a href="asyncapi-parser_detailed_report.html" title="View asyncapi-parser detailed report">Detailed report</a></td>
-              <td><a href="asyncapi-parser_features_stats.html" title="View asyncapi-parser features stats">Features stats</a></td>
+                <span class="stat-nums">(247/383)</span>
+              </td>
+              <td>
+                0%
+                <span class="stat-nums">(0/10)</span>
+              </td>
+              <td><a href="asyncapi-parser_js_detailed_report.html" title="View asyncapi-parser detailed report">Detailed report</a></td>
+              <td><a href="asyncapi-parser_js_features_stats.html" title="View asyncapi-parser features stats">Features stats</a></td>
             </tr>
         </tbody>
       </table>
