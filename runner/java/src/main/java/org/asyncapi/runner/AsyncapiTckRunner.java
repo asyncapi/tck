@@ -8,7 +8,6 @@ import picocli.CommandLine;
 import picocli.CommandLine.ParameterException;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
-import picocli.CommandLine.Parameters;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 
