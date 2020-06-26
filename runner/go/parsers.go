@@ -1,8 +1,11 @@
 package main
 
 import (
+	"bufio"
+	"bytes"
 	"fmt"
-	// asyncapi "github.com/postatum/go-raml/raml"
+	asyncapi "github.com/asyncapi/parser/pkg/parser"
+	"os"
 )
 
 // Parser is a parsing type function
@@ -16,7 +19,15 @@ func recovery() {
 
 // Asyncapi runs https://github.com/asyncapi/parser-go
 func Asyncapi(fpath string) (error, bool) {
-	// defer recovery()
-	// apiDef := &asyncapi.APIDefinition{}
-	// return asyncapi.ParseFile(fpath, apiDef), true
+	defer recovery()
+	noopMessageProcessor := func(_ *map[string]interface{}) error { return nil }
+	parse := noopMessageProcessor.BuildParse()
+	f, err := os.Open(fpath)
+	defer f.Close()
+	if err != nil {
+		return err, true
+	}
+	var b bytes.Buffer
+	noopWriter := bufio.NewWriter(&b)
+	return parse(f, noopWriter), true
 }

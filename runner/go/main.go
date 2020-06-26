@@ -4,8 +4,8 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"strings"
 	"path/filepath"
+	"strings"
 )
 
 // FileResult represents a single file parsing result

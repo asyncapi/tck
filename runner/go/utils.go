@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 type manifest struct {
@@ -15,8 +16,26 @@ type manifest struct {
 
 // ListYamls lists YAML files in :folderPath: folder;
 func ListYamls(folderPath string) ([]string, error) {
-
-
+	fileList := []string{}
+	err := filepath.Walk(
+		folderPath,
+		func(path string, info os.FileInfo, err error) error {
+			if err != nil {
+				return err
+			}
+			if !info.IsDir() && strings.HasSuffix(path, ".yaml") {
+				absPath, err := filepath.Abs(path)
+				if err != nil {
+					return err
+				}
+				fileList = append(fileList, absPath)
+			}
+			return nil
+		})
+	if err != nil {
+		return fileList, err
+	}
+	return fileList, nil
 }
 
 // SaveReport writes parsing run report as JSON file
