@@ -14,15 +14,28 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.util.stream.Stream;
 
 
 public class Utils {
 
-  // Lists YAML files in `folderPath`
-  // Produces paths similar to: tests/asyncapi-2.0/Format/valid.yaml
-  public static List<String> listYamls(String folderPath) {
-
-
+  /*
+    Lists YAML files in `folderPath` recursively.
+    Returned paths are sorted and absolute.
+  */
+  public static Stream<String> listYamls(String folderPath) {
+    Stream<Path> fpaths = Stream.empty();
+    try {
+      fpaths = Files.walk(Paths.get(folderPath));
+    } catch (IOException e) {
+      System.out.println("Failed to list YAML files: " + e.toString());
+      System.exit(1);
+    }
+    return fpaths.filter(Files::isRegularFile)
+      .map(el -> el.toAbsolutePath().toString())
+      .filter(el -> el.endsWith(".yaml"))
+      .sorted();
   }
 
   // Saves JSON report as JSON files to the `outdir` directory

@@ -15,6 +15,7 @@ import org.json.simple.JSONArray;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Stream;
 
 
 @Command(name = "asyncapi-tck-runner", mixinStandardHelpOptions = true, version = "1.0.0")
@@ -70,31 +71,28 @@ public class AsyncapiTckRunner implements Runnable {
     // tck/runner/java
     Path rootDirRel = Paths.get("../../");
     String rootDir = rootDirRel.toAbsolutePath().toString();
-    String testsDir = Paths.get(rootDir, 'tests', 'asyncapi-2.0').toString();
-    List<String> fileList = Utils.listYamls(testsDir);
+    String testsDir = Paths.get(rootDir, "tests", "asyncapi-2.0").toString();
+    Stream<String> fileList = Utils.listYamls(testsDir);
 
     JSONObject report = new JSONObject();
     report.put("parser", parserMeta);
     JSONArray results = new JSONArray();
 
-    Boolean success;
-    String error;
-    JSONObject result;
-    for (String fpath : fileList) {
-      success = true;
-      error = "";
+    fileList.forEach(fpath -> {
+      Boolean success = true;
+      String error = "";
       try {
         parser.parse(fpath);
       } catch (Exception e) {
         success = false;
         error = e.getMessage();
       }
-      result = new JSONObject();
+      JSONObject result = new JSONObject();
       result.put("file", fpath.replaceAll(rootDir, ""));
       result.put("success", success);
       result.put("error", error);
       results.add(result);
-    }
+    });
 
     report.put("results", results);
     Utils.saveReport(report, outdir);
