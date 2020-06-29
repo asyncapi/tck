@@ -20,7 +20,7 @@ func recovery() {
 // Asyncapi runs https://github.com/asyncapi/parser-go
 func Asyncapi(fpath string) (error, bool) {
 	defer recovery()
-	noopMessageProcessor := func(_ *map[string]interface{}) error { return nil }
+	var noopMessageProcessor asyncapi.MessageProcessor = func(_ *map[string]interface{}) error { return nil }
 	parse := noopMessageProcessor.BuildParse()
 	f, err := os.Open(fpath)
 	defer f.Close()

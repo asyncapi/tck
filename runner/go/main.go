@@ -31,14 +31,14 @@ type Report struct {
 
 func main() {
 	parserFl := flag.String(
-		"parser", "asyncapi-parser-go",
-		"Parser to test. Supported: asyncapi-parser-go.")
+		"parser", "asyncapi-parser",
+		"Parser to test. Supported: asyncapi-parser.")
 	outdirFl := flag.String(
 		"outdir", "./", "Output report directory path.")
 	flag.Parse()
 
 	parsersRunners := map[string]Parser{
-		"asyncapi-parser-go": Asyncapi,
+		"asyncapi-parser": Asyncapi,
 	}
 
 	/**
@@ -47,9 +47,9 @@ func main() {
 	 * Name and language are used in links creation.
 	 */
 	parsersMeta := map[string]ParserMeta{
-		"asyncapi-parser-go": {
+		"asyncapi-parser": {
 			Language: "go",
-			Name:     "asyncapi-parser-go",
+			Name:     "asyncapi-parser",
 			Url:      "https://github.com/asyncapi/parser-go",
 			Version:  "0.3.0",
 		},

@@ -41,12 +41,12 @@ install-js: clean-js
 	&& npm install .
 
 install-go:
-	mkdir -p ${GOPATH}/src \
-	&& mkdir -p ${GOPATH}/bin \
-	&& mkdir -p ${GOPATH}/pkg \
-	&& mkdir -p $(GO_PROJECT_DIR)
+	mkdir -p ${GOPATH}/src
+	mkdir -p ${GOPATH}/bin
+	mkdir -p ${GOPATH}/pkg
+	mkdir -p $(GO_PROJECT_DIR)
 	cp $(GO_RUNNER_DIR)/* $(GO_PROJECT_DIR)
-	cd $(GO_PROJECT_DIR) &&	go get
+	cd $(GO_PROJECT_DIR) && go get
 	cd $(GO_PROJECT_DIR) && go install
 
 install-java:
@@ -63,7 +63,7 @@ report-js:
 	&& node src/index.js --parser amf-client-js --outdir $(REPORTS_JSON)
 
 report-go:
-	$(GOBIN)/$(GO_PROJECT_NAME) -parser asyncapi-parser-go -outdir $(REPORTS_JSON)
+	$(GOBIN)/$(GO_PROJECT_NAME) -parser asyncapi-parser -outdir $(REPORTS_JSON)
 
 report-java:
 	cd $(JAVA_RUNNER_DIR) \
