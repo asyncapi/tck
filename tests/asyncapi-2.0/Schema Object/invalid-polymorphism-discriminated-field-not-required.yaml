@@ -15,6 +15,7 @@ components:
   schemas:
     Pet:
       type: object
+      discriminator: petType
       properties:
         name:
           type: string
@@ -22,7 +23,6 @@ components:
           type: string
       required:
       - name
-      - petType
     Cat:
       description: A representation of a cat
       allOf:
