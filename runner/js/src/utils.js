@@ -22,7 +22,7 @@ function listYamlFiles (dirPath) {
 /* Writes JSON report to output folder */
 function saveReport (report, outdir) {
   outdir = path.resolve(outdir)
-  try { fs.mkdirSync(outdir) } catch (e) {}
+  try { fs.mkdirSync(outdir, { recursive: true }) } catch (e) {}
   const fpath = path.join(outdir, `${report.parser.name}.json`)
   fs.writeFileSync(fpath, JSON.stringify(report, null, 2))
 }
