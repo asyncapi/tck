@@ -42,8 +42,8 @@ channels:
             email:
               type: string
               format: email
-        examples:
-          - one:
-              email: hello@foo.bar
-          - two:
-              email: bye@foo.bar
+          examples:
+            - one:
+                email: hello@foo.bar
+            - two:
+                email: bye@foo.bar
