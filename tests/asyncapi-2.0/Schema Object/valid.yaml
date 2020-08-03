@@ -66,7 +66,7 @@ components:
           allOf:
             - type: string
             - not:
-              type: number
+                type: number
         stringProp:
           type: string
           title: String property
