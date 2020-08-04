@@ -22,7 +22,7 @@ const PARSERS_META = {
   },
   'asyncapi-parser': {
     url: 'https://github.com/asyncapi/parser-js',
-    version: package.dependencies['asyncapi-parser']
+    version: package.dependencies['@asyncapi/parser']
   }
 }
 
