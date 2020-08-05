@@ -16,7 +16,6 @@ channels:
               format: email
       traits:
         - $ref: "#/components/operationTraits/userSignedUpTrait"
-        - $ref: "#/components/operationTraits/userSignedUpDescTrait"
 
 components:
   operationTraits:
@@ -25,4 +24,3 @@ components:
         - name: user
           description: user signed up
         - name: user
-    userSignedUpDescTrait:
