@@ -13,4 +13,4 @@ channels:
 
 components:
   messageTraits:
-    signedUpMessage:
+    signedUpMessage: {}

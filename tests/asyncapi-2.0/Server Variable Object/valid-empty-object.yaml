@@ -21,4 +21,4 @@ servers:
     description: The production API server
     protocol: secure-mqtt
     variables:
-      username:
+      username: {}
