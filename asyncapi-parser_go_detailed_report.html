@@ -2468,10 +2468,10 @@ channels.&#x2F;user&#x2F;signedup.publish.message.bindings: Invalid type. Expect
                 <td colspan="2"><pre>(root): asyncapi is required
 (root): info is required
 (root): channels is required
-(root): Additional property fields is not allowed
-(root): Additional property name is not allowed
 (root): Additional property namespace is not allowed
-(root): Additional property type is not allowed</pre></td>
+(root): Additional property type is not allowed
+(root): Additional property fields is not allowed
+(root): Additional property name is not allowed</pre></td>
               </tr>
             <tr
               class="danger main-row"
@@ -2515,9 +2515,9 @@ channels.&#x2F;user&#x2F;signedup.publish.message.bindings: Invalid type. Expect
                 <td colspan="2"><pre>(root): asyncapi is required
 (root): info is required
 (root): channels is required
+(root): Additional property type is not allowed
 (root): Additional property properties is not allowed
-(root): Additional property required is not allowed
-(root): Additional property type is not allowed</pre></td>
+(root): Additional property required is not allowed</pre></td>
               </tr>
             <tr
               class="danger main-row"
@@ -4064,19 +4064,22 @@ channels.&#x2F;user&#x2F;signedup.subscribe.message: Invalid type. Expected: obj
                 <td colspan="2"><pre>Parsing expected to fail but succeeded</pre></td>
               </tr>
             <tr
-              class="success main-row"
-              
-              
+              class="danger main-row"
+              onclick="toggleErrorLog(this)" 
+              title="Click to show/hide error log"
               >
               <td>
                   <a href="https:&#x2F;&#x2F;github.com&#x2F;asyncapi&#x2F;tck&#x2F;blob&#x2F;master&#x2F;tests&#x2F;asyncapi-2.0&#x2F;Operation Trait Object&#x2F;invalid-duplicate-tags.yaml" title="View file on Github" target="blank">tests&#x2F;asyncapi-2.0&#x2F;Operation Trait Object&#x2F;invalid-duplicate-tags.yaml</a>
               </td>
               <td>
-                Yes
                 
+                No
                 
               </td>
             </tr>
+              <tr class="danger parser-error">
+                <td colspan="2"><pre>Parsing expected to fail but succeeded</pre></td>
+              </tr>
             <tr
               class="success main-row"
               
@@ -4611,8 +4614,6 @@ channels.&#x2F;user&#x2F;signedup.subscribe.message: Invalid type. Expected: obj
             </tr>
               <tr class="danger parser-error">
                 <td colspan="2"><pre>components.schemas.Main.properties.notProp.allOf.1.not: Invalid type. Expected: [object,boolean], given: null
-components.schemas.Main.additionalProperties: Invalid type. Expected: object, given: boolean
-components.schemas.Main.additionalProperties: Must validate all the schemas (allOf)
 components.schemas.Main.properties.notProp.allOf.1.not: Invalid type. Expected: [object,boolean], given: null
 components.schemas.Main.properties.notProp.allOf.1.not: Invalid type. Expected: [object,boolean], given: null
 components.schemas.Main.properties.notProp.allOf.1.not: Invalid type. Expected: [object,boolean], given: null
@@ -4620,6 +4621,8 @@ components.schemas.Main.properties.notProp.allOf.1.not: Invalid type. Expected: 
 components.schemas.Main.properties.notProp.allOf.1.not: Must validate all the schemas (allOf)
 components.schemas.Main.properties.notProp.allOf.1: Must validate all the schemas (allOf)
 components.schemas.Main.properties.notProp: Must validate all the schemas (allOf)
+components.schemas.Main.additionalProperties: Invalid type. Expected: object, given: boolean
+components.schemas.Main.additionalProperties: Must validate all the schemas (allOf)
 components.schemas.Main: Must validate all the schemas (allOf)</pre></td>
               </tr>
             <tr
