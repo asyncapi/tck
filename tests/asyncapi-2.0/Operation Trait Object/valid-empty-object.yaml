@@ -20,4 +20,4 @@ channels:
 
 components:
   operationTraits:
-    userSignedUpTrait:
+    userSignedUpTrait: {}

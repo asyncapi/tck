@@ -1,5 +1,7 @@
 asyncapi: 2.0.0
 
+defaultContentType: application/json
+
 info:
   title: Signup service example (internal)
   version: 0.1.0
@@ -7,4 +9,4 @@ info:
 channels:
   /user/signedup:
     subscribe:
-      message:
+      message: {}

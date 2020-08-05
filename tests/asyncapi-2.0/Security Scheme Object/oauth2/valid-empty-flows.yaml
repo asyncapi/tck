@@ -24,4 +24,4 @@ components:
   securitySchemes:
     mainSecurity:
       type: oauth2
-      flows:
+      flows: {}

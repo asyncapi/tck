@@ -14,4 +14,4 @@ channels:
             email:
               type: string
               format: email
-      bindings:
+      bindings: {}

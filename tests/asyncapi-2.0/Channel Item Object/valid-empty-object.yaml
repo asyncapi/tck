@@ -5,4 +5,4 @@ info:
   version: 0.1.0
 
 channels:
-  /user/signedup:
+  /user/signedup: {}
