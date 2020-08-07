@@ -3,7 +3,7 @@ asyncapi: 2.0.0
 info:
   title: AsyncAPI Sample App
   version: 1.0.1
-  contact:
+  contact: {}
 
 channels:
   /user/signedup:
