@@ -1415,22 +1415,19 @@
               </td>
             </tr>
             <tr
-              class="danger main-row"
-              onclick="toggleErrorLog(this)" 
-              title="Click to show/hide error log"
+              class="success main-row"
+              
+              
               >
               <td>
                   <a href="https:&#x2F;&#x2F;github.com&#x2F;asyncapi&#x2F;tck&#x2F;blob&#x2F;master&#x2F;tests&#x2F;asyncapi-2.0&#x2F;Contact Object&#x2F;valid-empty-object.yaml" title="View file on Github" target="blank">tests&#x2F;asyncapi-2.0&#x2F;Contact Object&#x2F;valid-empty-object.yaml</a>
               </td>
               <td>
+                Yes
                 
-                No
                 
               </td>
             </tr>
-              <tr class="danger parser-error">
-                <td colspan="2"><pre>info.contact: Invalid type. Expected: object, given: null</pre></td>
-              </tr>
             <tr
               class="success main-row"
               
@@ -2483,11 +2480,11 @@
                 <td colspan="2"><pre>(root): asyncapi is required
 (root): info is required
 (root): channels is required
+(root): Additional property title is not allowed
 (root): Additional property type is not allowed
 (root): Additional property $schema is not allowed
 (root): Additional property properties is not allowed
-(root): Additional property required is not allowed
-(root): Additional property title is not allowed</pre></td>
+(root): Additional property required is not allowed</pre></td>
               </tr>
             <tr
               class="danger main-row"
@@ -2507,9 +2504,9 @@
                 <td colspan="2"><pre>(root): asyncapi is required
 (root): info is required
 (root): channels is required
+(root): Additional property type is not allowed
 (root): Additional property properties is not allowed
-(root): Additional property required is not allowed
-(root): Additional property type is not allowed</pre></td>
+(root): Additional property required is not allowed</pre></td>
               </tr>
             <tr
               class="danger main-row"
@@ -4577,15 +4574,7 @@
               </td>
             </tr>
               <tr class="danger parser-error">
-                <td colspan="2"><pre>components.schemas.Main.properties.notProp.allOf.1.not: Invalid type. Expected: [object,boolean], given: null
-components.schemas.Main.properties.notProp.allOf.1.not: Invalid type. Expected: [object,boolean], given: null
-components.schemas.Main.properties.notProp.allOf.1.not: Invalid type. Expected: [object,boolean], given: null
-components.schemas.Main.properties.notProp.allOf.1.not: Invalid type. Expected: [object,boolean], given: null
-components.schemas.Main.properties.notProp.allOf.1.not: Invalid type. Expected: object, given: null
-components.schemas.Main.properties.notProp.allOf.1.not: Must validate all the schemas (allOf)
-components.schemas.Main.properties.notProp.allOf.1: Must validate all the schemas (allOf)
-components.schemas.Main.properties.notProp: Must validate all the schemas (allOf)
-components.schemas.Main.additionalProperties: Invalid type. Expected: object, given: boolean
+                <td colspan="2"><pre>components.schemas.Main.additionalProperties: Invalid type. Expected: object, given: boolean
 components.schemas.Main.additionalProperties: Must validate all the schemas (allOf)
 components.schemas.Main: Must validate all the schemas (allOf)</pre></td>
               </tr>
