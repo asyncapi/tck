@@ -35,7 +35,6 @@ components:
       summary: Action to sign a user up.
       description: A longer description
       contentType: application/json
-      schemaFormat: application/vnd.oai.openapi;version=3.0.0
       correlationId:
         description: Default Correlation ID
         location: $message.header#/correlationId
