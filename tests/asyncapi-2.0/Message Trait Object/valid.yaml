@@ -48,7 +48,5 @@ components:
             description: Unique identifier for a given instance of the publishing application
             type: string
       examples:
-        - one:
-            email: hello@foo.bar
-        - two:
-            email: bye@foo.bar
+        - email: hello@foo.bar
+        - email: bye@foo.bar
