@@ -1,6 +1,6 @@
 const fs = require('fs')
 
-const asyncapi = require('asyncapi-parser')
+const asyncapi = require('@asyncapi/parser')
 const amf = require('amf-client-js')
 
 // https://github.com/asyncapi/parser-js

@@ -10,4 +10,4 @@ channels:
       message:
         payload:
           type: string
-    bindings:
+    bindings: {}

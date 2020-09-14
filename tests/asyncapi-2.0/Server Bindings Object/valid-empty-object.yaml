@@ -15,4 +15,4 @@ servers:
   production:
     url: development.gigantic-server.com
     protocol: mqtt
-    bindings:
+    bindings: {}

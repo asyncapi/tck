@@ -9,4 +9,4 @@ info:
 channels:
   /user/signedup:
     subscribe:
-      message:
+      message: {}

@@ -6,4 +6,4 @@ info:
 
 channels:
   /user/signedup:
-    subscribe:
+    subscribe: {}

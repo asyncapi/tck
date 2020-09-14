@@ -17,8 +17,8 @@ channels:
 
 servers:
   production:
-    url: '{username}.gigantic-server.com:{port}'
+    url: '{username}.gigantic-server.com'
     description: The production API server
     protocol: secure-mqtt
     variables:
-      username:
+      username: {}
