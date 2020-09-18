@@ -8,6 +8,11 @@ channels:
   /user/signedup:
     subscribe:
       message:
+        payload:
+          type: object
+          properties:
+            one:
+              type: string
         traits:
           - $ref: "#/components/messageTraits/signedUpMessage"
 
