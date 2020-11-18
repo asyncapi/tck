@@ -41,9 +41,12 @@ myMessage:
         type: string
         format: email
   examples:
-    - one:
+    - payload:
         email: hello@foo.bar
-    - two:
+      headers:
+        correlationId: some id
+        applicationInstanceId: other id
+    - payload:
         email: bye@foo.bar
 
 mySecurityScheme:
