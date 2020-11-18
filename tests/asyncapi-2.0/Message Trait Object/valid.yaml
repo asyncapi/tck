@@ -48,7 +48,10 @@ components:
             description: Unique identifier for a given instance of the publishing application
             type: string
       examples:
-        - one:
+        - payload:
             email: hello@foo.bar
-        - two:
+          headers:
+            correlationId: some id
+            applicationInstanceId: other id
+        - payload:
             email: bye@foo.bar
