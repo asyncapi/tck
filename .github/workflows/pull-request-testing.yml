@@ -18,7 +18,10 @@ jobs:
           node-version: 14
       - name: Install dependencies
         run: npm ci
+        working-directory: ./runner/js
       - name: Run linter
         run: npm run lint
+        working-directory: ./runner/js
       - name: Run tests
         run: npm test
+        working-directory: ./runner/js
