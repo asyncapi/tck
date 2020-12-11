@@ -17,7 +17,7 @@ jobs:
     - name: Create .nojekyll file
       run: touch runner/reports/html/.nojekyll
     - name: Install SSH Client
-      uses: webfactory/ssh-agent@v0.2.0
+      uses: webfactory/ssh-agent@v0.4.1
       with:
         ssh-private-key: ${{ secrets.DEPLOY_KEY }}
     - name: Deploy to Github Pages
