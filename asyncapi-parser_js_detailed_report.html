@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Detailed report: asyncapi-parser (js, ^1.2.0)</title>
+  <title>Detailed report: asyncapi-parser (js, ^1.3.1)</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./static/bootstrap.min.css">
@@ -37,7 +37,7 @@
 </head>
   <body>
     <div class="container-fluid">
-      <h3><a href="index.html">Overview</a> > Detailed report: asyncapi-parser (js, ^1.2.0)</h3>
+      <h3><a href="index.html">Overview</a> > Detailed report: asyncapi-parser (js, ^1.3.1)</h3>
       <table class="table table-striped">
         <thead>
           <tr>
@@ -4308,19 +4308,22 @@
               </td>
             </tr>
             <tr
-              class="success main-row"
-              
-              
+              class="danger main-row"
+              onclick="toggleErrorLog(this)" 
+              title="Click to show/hide error log"
               >
               <td>
                   <a href="https:&#x2F;&#x2F;github.com&#x2F;asyncapi&#x2F;tck&#x2F;blob&#x2F;master&#x2F;tests&#x2F;asyncapi-2.0&#x2F;Reference Object&#x2F;valid-external-ref-message.yaml" title="View file on Github" target="blank">tests&#x2F;asyncapi-2.0&#x2F;Reference Object&#x2F;valid-external-ref-message.yaml</a>
               </td>
               <td>
-                Yes
                 
+                No
                 
               </td>
             </tr>
+              <tr class="danger parser-error">
+                <td colspan="2"><pre>Error: PARSERS[String(...)] is not a function</pre></td>
+              </tr>
             <tr
               class="success main-row"
               
