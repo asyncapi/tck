@@ -16,6 +16,5 @@ channels:
               format: email
         bindings:
           kafka:
-            key:
-              prop: 1
+            key: 1
             bindingVersion: '0.1.0'
