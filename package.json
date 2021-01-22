@@ -12,5 +12,12 @@
     "asyncapi",
     "test framework"
   ],
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint": "echo 'No linter configured yet'",
+    "test": "echo 'No tests yet'",
+    "release": "echo 'This package is not yet released'",
+    "bump:version": "echo 'No automated version bump as we do not release this package yet'",
+    "generate:assets": "echo 'No assets to generate yet'"
+  }
 }
