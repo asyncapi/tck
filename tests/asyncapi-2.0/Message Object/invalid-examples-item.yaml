@@ -9,6 +9,11 @@ channels:
     subscribe:
       message:
         contentType: application/json
+        payload:
+          type: object
+          properties:
+            one:
+              type: string
         examples:
           - one:
               foobar: 123
