@@ -10,7 +10,7 @@ channels:
       message:
         payload:
           type: string
-    bindings:
-      ibmmq:
-        bindingVersion:
-          prop: 1
+        bindings:
+          ibmmq:
+            bindingVersion:
+              prop: 1

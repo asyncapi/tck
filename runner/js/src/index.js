@@ -40,7 +40,7 @@ async function main () {
   }
 
   const fileList = utils.listYamlFiles(
-    path.resolve(ROOT_DIR, 'tests', 'asyncapi-2.0'))
+    path.resolve(ROOT_DIR, 'tests'))
   let report = {
     parser: {
       name: argv.parser,
