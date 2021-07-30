@@ -1,0 +1,26 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    subscribe:
+      message:
+        payload:
+          type: string
+
+servers:
+  production:
+    url: ibmmq://qmgr1host:1414/qm1/DEV.APP.SVRCONN
+    protocol: ibmmq
+    bindings:
+      ibmmq:
+        hello: 1
+        groupId: PRODCLSTR1
+        cipherSpec: ANY_TLS12_OR_HIGHER
+        ccdtQueueManagerName: qm1
+        multiEndpointServer: true
+        heartBeatInterval: 1337
+        bindingVersion: 0.1.0

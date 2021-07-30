@@ -70,7 +70,7 @@ public class AsyncapiTckRunner implements Runnable {
     // tck/runner/java
     Path rootDirRel = Paths.get("../../");
     String rootDir = rootDirRel.toAbsolutePath().toString();
-    String testsDir = Paths.get(rootDir, "tests", "asyncapi-2.0").toString();
+    String testsDir = Paths.get(rootDir, "tests").toString();
     Stream<String> fileList = Utils.listYamls(testsDir);
 
     JSONObject report = new JSONObject();

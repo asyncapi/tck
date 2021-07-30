@@ -1,0 +1,18 @@
+asyncapi: 2.0.0
+
+info:
+  title: Signup service example (internal)
+  version: 0.1.0
+
+channels:
+  /user/signedup:
+    publish:
+      message:
+        payload:
+          type: string
+    bindings:
+      ibmmq:
+        destinationType: queue
+        queue:
+          isPartitioned: wrong
+        bindingVersion: 0.1.0

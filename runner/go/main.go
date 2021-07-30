@@ -65,7 +65,7 @@ func main() {
 	// asyncapi/tck/runner
 	rootFl, _ := filepath.Abs(filepath.Join(".."))
 
-	testsFl, _ := filepath.Abs(filepath.Join(rootFl, "tests", "asyncapi-2.0"))
+	testsFl, _ := filepath.Abs(filepath.Join(rootFl, "tests"))
 	fileList, err := ListYamls(testsFl)
 	if err != nil {
 		fmt.Printf("Failed to list YAML files: %s\n", err)
