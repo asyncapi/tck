@@ -11,7 +11,7 @@
   "author": "MuleSoft",
   "license": "ISC",
   "dependencies": {
-    "@asyncapi/parser": "^3.0.10",
+    "@asyncapi/parser": "^3.0.11",
     "amf-client-js": "^5.2.0",
     "minimist": "^1.2.6",
     "mustache": "^3.0.1",
