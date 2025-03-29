@@ -14,90 +14,91 @@ import org.json.simple.JSONArray;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 
 @Command(name = "asyncapi-tck-runner", mixinStandardHelpOptions = true, version = "1.0.0")
 public class AsyncapiTckRunner implements Runnable {
-  @Option(names = "--parser", description = "name of a parser to run")
-  String parserName;
+    @Option(names = "--parser", description = "name of a parser to run", required = true)
+    String parserName;
 
-  @Option(names = "--outdir", description = "output JSON report directory")
-  String outdir = "./";
+    @Option(names = "--outdir", description = "output JSON report directory")
+    String outdir = "./";
 
-  public IParser pickParser() {
-    IParser parser;
-    switch (parserName) {
-      case "amf":
-        parser = new AmfParser();
-        break;
-      default:
-        throw new ParameterException(
-          new CommandLine(this),
-          "Not supported parser: " + parserName);
+    private static final Map<String, IParser> PARSER_MAP = new ConcurrentHashMap<>();
+
+    static {
+        PARSER_MAP.put("amf", new AmfParser());
     }
-    return parser;
-  }
 
-
-  /**
-   * Parsers meta-data which helps generating pretty reports.
-   * Required fields are: name, language, url, version.
-   * Name and language are used in links creation.
-   */
-  public JSONObject pickParserMeta() {
-    JSONObject parserMeta = new JSONObject();
-    parserMeta.put("name", parserName);
-    parserMeta.put("language", "java");
-    switch (parserName) {
-      case "amf":
-        parserMeta.put("url", "https://github.com/aml-org/amf");
-        parserMeta.put("version", "4.1.2");
-        break;
-      default:
-        throw new ParameterException(
-          new CommandLine(this),
-          "Not supported parser: " + parserName);
+    public IParser pickParser() {
+        if (parserName == null || parserName.isEmpty()) {
+            throw new ParameterException(new CommandLine(this), "Parser name cannot be null or empty");
+        }
+        IParser parser = PARSER_MAP.get(parserName);
+        if (parser == null) {
+            throw new ParameterException(new CommandLine(this), "Not supported parser: " + parserName);
+        }
+        return parser;
     }
-    return parserMeta;
-  }
 
-  public void run() {
-    IParser parser = this.pickParser();
-    JSONObject parserMeta = this.pickParserMeta();
+    /**
+     * Returns metadata about the parser for generating reports.
+     */
+    public JSONObject pickParserMeta() {
+        JSONObject parserMeta = new JSONObject();
+        parserMeta.put("name", parserName);
+        parserMeta.put("language", "java");
+        if ("amf".equals(parserName)) {
+            parserMeta.put("url", "https://github.com/aml-org/amf");
+            parserMeta.put("version", "4.1.2");
+        } else {
+            throw new ParameterException(new CommandLine(this), "Not supported parser: " + parserName);
+        }
+        return parserMeta;
+    }
 
-    // Get asyncapi/tck root path. When running via Makefile paths are relative to
-    // tck/runner/java
-    Path rootDirRel = Paths.get("../../");
-    String rootDir = rootDirRel.toAbsolutePath().toString();
-    String testsDir = Paths.get(rootDir, "tests").toString();
-    Stream<String> fileList = Utils.listYamls(testsDir);
+    public void run() {
+        IParser parser = this.pickParser();
+        JSONObject parserMeta = this.pickParserMeta();
 
-    JSONObject report = new JSONObject();
-    report.put("parser", parserMeta);
-    JSONArray results = new JSONArray();
+        // Get asyncapi/tck root path
+        Path rootDirRel = Paths.get("../../");
+        String rootDir = rootDirRel.toAbsolutePath().toString();
+        String testsDir = Paths.get(rootDir, "tests").toString();
+        Stream<String> fileList = Utils.listYamls(testsDir);
 
-    fileList.forEach(fpath -> {
-      Boolean success = true;
-      String error = "";
-      try {
-        parser.parse(fpath);
-      } catch (Exception e) {
-        success = false;
-        error = e.getMessage();
-      }
-      JSONObject result = new JSONObject();
-      result.put("file", fpath.replaceAll(rootDir, ""));
-      result.put("success", success);
-      result.put("error", error);
-      results.add(result);
-    });
+        JSONObject report = new JSONObject();
+        report.put("parser", parserMeta);
+        JSONArray results = new JSONArray();
 
-    report.put("results", results);
-    Utils.saveReport(report, outdir);
-  }
+        List<JSONObject> resultsList = Collections.synchronizedList(new ArrayList<>());
+        fileList.forEach(fpath -> {
+            boolean success = true;
+            String error = "";
+            try {
+                parser.parse(fpath);
+            } catch (Exception e) {
+                success = false;
+                error = (e.getMessage() != null) ? e.getMessage() : "Unknown parsing error";
+                e.printStackTrace(); // Log the error for debugging
+            }
+            JSONObject result = new JSONObject();
+            Path relativePath = Paths.get(rootDir).relativize(Paths.get(fpath));
+            result.put("file", relativePath.toString());
+            result.put("success", success);
+            result.put("error", error);
+            resultsList.add(result);
+        });
 
-  public static void main(String[] args) {
-    CommandLine.run(new AsyncapiTckRunner(), args);
-  }
+        results.addAll(resultsList);
+        report.put("results", results);
+        Utils.saveReport(report, outdir);
+    }
+
+    public static void main(String[] args) {
+        int exitCode = new CommandLine(new AsyncapiTckRunner()).execute(args);
+        System.exit(exitCode);
+    }
 }
