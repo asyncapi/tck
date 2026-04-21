@@ -1,0 +1,24 @@
+asyncapi: 3.0.0
+
+info:
+  title: Message Test
+  version: 1.0.0
+
+channels:
+  user/signup:
+    address: user/signup
+    messages:
+      UserSignedUp:
+        headers:
+          type: object
+          properties:
+            correlationId:
+              type: string
+            timestamp:
+              type: string
+              format: date-time
+        payload:
+          type: object
+          properties:
+            userId:
+              type: string

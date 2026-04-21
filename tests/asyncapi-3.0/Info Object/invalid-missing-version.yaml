@@ -1,0 +1,14 @@
+asyncapi: 3.0.0
+
+info:
+  title: Test Service
+  # Missing required 'version' field
+  description: Invalid info object
+
+channels:
+  test/channel:
+    address: test/channel
+    messages:
+      TestMessage:
+        payload:
+          type: object

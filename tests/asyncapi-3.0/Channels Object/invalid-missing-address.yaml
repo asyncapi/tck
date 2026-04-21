@@ -1,0 +1,13 @@
+asyncapi: 3.0.0
+
+info:
+  title: Invalid Channel Test
+  version: 1.0.0
+
+channels:
+  user/signup:
+    # Missing required 'address' field
+    messages:
+      UserSignedUp:
+        payload:
+          type: object

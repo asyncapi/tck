@@ -1,0 +1,19 @@
+asyncapi: 3.0.0
+
+info:
+  title: Invalid Operations Test
+  version: 1.0.0
+
+channels:
+  user/signup:
+    address: user/signup
+    messages:
+      UserSignedUp:
+        payload:
+          type: object
+
+operations:
+  onUserSignup:
+    action: receive
+    # Missing required 'channel' field
+    summary: Invalid operation without channel reference

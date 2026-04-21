@@ -1,0 +1,30 @@
+asyncapi: 3.0.0
+
+info:
+  title: Message Test
+  version: 1.0.0
+
+channels:
+  user/signup:
+    address: user/signup
+    messages:
+      UserSignedUp:
+        name: UserSignedUp
+        title: User Signed Up Event
+        summary: Triggered when a user signs up
+        contentType: application/json
+        payload:
+          type: object
+          required:
+            - userId
+            - email
+          properties:
+            userId:
+              type: string
+              description: Unique user identifier
+            email:
+              type: string
+              format: email
+            timestamp:
+              type: string
+              format: date-time

@@ -1,0 +1,38 @@
+asyncapi: 3.0.0
+
+info:
+  title: Components Test
+  version: 1.0.0
+
+channels:
+  user/events:
+    address: user/events
+    messages:
+      UserSignedUp:
+        $ref: '#/components/messages/UserSignedUp'
+      UserUpdated:
+        $ref: '#/components/messages/UserUpdated'
+
+components:
+  messages:
+    UserSignedUp:
+      name: UserSignedUp
+      title: User Signed Up
+      payload:
+        type: object
+        properties:
+          userId:
+            type: string
+    
+    UserUpdated:
+      name: UserUpdated
+      title: User Updated
+      payload:
+        type: object
+        properties:
+          userId:
+            type: string
+          updatedFields:
+            type: array
+            items:
+              type: string
