@@ -1,0 +1,77 @@
+asyncapi: 3.0.0
+
+info:
+  title: Complex Integration Test
+  version: 2.1.0
+  description: A comprehensive test covering multiple v3.0 features
+  contact:
+    name: API Team
+    email: api@example.com
+  license:
+    name: MIT
+
+servers:
+  production:
+    host: '{env}.kafka.example.com:9092'
+    protocol: kafka
+    description: Production Kafka cluster
+    variables:
+      env:
+        default: prod
+        enum: [prod, staging]
+
+channels:
+  user/notifications:
+    address: user/notifications
+    messages:
+      NotificationSent:
+        $ref: '#/components/messages/NotificationSent'
+
+operations:
+  sendUserNotification:
+    action: send
+    channel:
+      $ref: '#/channels/user~1notifications'
+    summary: Send notification to user
+  
+  receiveUserNotification:
+    action: receive
+    channel:
+      $ref: '#/channels/user~1notifications'
+    summary: Receive user notifications
+
+components:
+  messages:
+    NotificationSent:
+      name: NotificationSent
+      title: Notification Sent Event
+      contentType: application/json
+      headers:
+        type: object
+        properties:
+          correlationId:
+            type: string
+      payload:
+        $ref: '#/components/schemas/Notification'
+  
+  schemas:
+    Notification:
+      type: object
+      required:
+        - id
+        - userId
+        - message
+      properties:
+        id:
+          type: string
+          format: uuid
+        userId:
+          type: string
+        message:
+          type: string
+        priority:
+          type: string
+          enum: [low, medium, high]
+        timestamp:
+          type: string
+          format: date-time

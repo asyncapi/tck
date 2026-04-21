@@ -1,0 +1,31 @@
+asyncapi: 3.0.0
+
+info:
+  title: Message Traits Test
+  version: 1.0.0
+
+channels:
+  user/events:
+    address: user/events
+    messages:
+      UserEvent:
+        traits:
+          - $ref: '#/components/messageTraits/commonHeaders'
+        payload:
+          type: object
+          properties:
+            userId:
+              type: string
+
+components:
+  messageTraits:
+    commonHeaders:
+      headers:
+        type: object
+        properties:
+          correlationId:
+            type: string
+            description: Correlation ID for tracking
+          timestamp:
+            type: string
+            format: date-time
