@@ -78,7 +78,7 @@ async function runTests() {
     grouped[component].push(result);
   });
   
-  Object.keys(grouped).sort().forEach(component => {
+  Object.keys(grouped).sort((left, right) => left.localeCompare(right)).forEach(component => {
     console.log(`\n📁 ${component}`);
     grouped[component].forEach(result => {
       const icon = result.passed ? '✅' : '❌';
