@@ -1,0 +1,9 @@
+{
+  "key": {
+    "type": "string",
+    "description": "Customer ID used as the message key",
+    "pattern": "^cust-[0-9]{10}$",
+    "examples": ["cust-0123456789"]
+  },
+  "bindingVersion": "0.1.0"
+}

@@ -1,0 +1,13 @@
+{
+  "groupId": {
+    "type": "string",
+    "enum": ["order-processing-group"],
+    "description": "Consumer group ID for order processing service"
+  },
+  "clientId": {
+    "type": "string",
+    "enum": ["order-processor-client"],
+    "description": "Client ID for the order processing service"
+  },
+  "bindingVersion": "0.3.0"
+}

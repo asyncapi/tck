@@ -1,0 +1,17 @@
+{
+  "key": {
+    "type": "string",
+    "description": "Product ID used as the message key",
+    "pattern": "^prod-[a-z0-9]{8}$",
+    "examples": ["prod-ab12cd34"]
+  },
+  "bindingVersion": "0.1.0",
+  "x-kafka-header-encoding": "UTF-8",
+  "x-kafka-key-serializer": "org.apache.kafka.common.serialization.StringSerializer",
+  "x-kafka-value-serializer": "org.apache.kafka.common.serialization.StringSerializer",
+  "x-metadata": {
+    "description": "Message with extension properties",
+    "version": "1.0.0",
+    "environment": "production"
+  }
+}

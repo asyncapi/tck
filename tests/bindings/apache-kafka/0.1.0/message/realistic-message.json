@@ -1,0 +1,8 @@
+{
+  "key": {
+    "type": "string",
+    "description": "User ID as the Kafka message key",
+    "examples": ["user-1234"]
+  },
+  "bindingVersion": "0.1.0"
+} 

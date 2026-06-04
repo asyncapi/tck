@@ -1,0 +1,13 @@
+{
+  "groupId": {
+    "type": "string",
+    "description": "Kafka consumer group for user event processing",
+    "examples": ["user-event-consumers"]
+  },
+  "clientId": {
+    "type": "string",
+    "description": "Kafka client ID for a specific microservice",
+    "examples": ["user-service-1"]
+  },
+  "bindingVersion": "0.1.0"
+} 
