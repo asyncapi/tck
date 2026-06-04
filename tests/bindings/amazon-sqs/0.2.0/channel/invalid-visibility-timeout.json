@@ -1,0 +1,9 @@
+{
+  "queue": {
+    "name": "invalid-visibility-timeout-queue",
+    "fifoQueue": false,
+    "visibilityTimeout": 50000,
+    "messageRetentionPeriod": 345600
+  },
+  "bindingVersion": "0.2.0"
+}

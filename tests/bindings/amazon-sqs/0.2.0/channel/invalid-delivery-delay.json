@@ -1,0 +1,10 @@
+{
+  "queue": {
+    "name": "invalid-delivery-delay-queue",
+    "fifoQueue": false,
+    "deliveryDelay": 1200,
+    "visibilityTimeout": 30,
+    "messageRetentionPeriod": 345600
+  },
+  "bindingVersion": "0.2.0"
+}
