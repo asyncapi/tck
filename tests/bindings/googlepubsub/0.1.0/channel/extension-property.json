@@ -1,0 +1,8 @@
+{
+  "schemaSettings": {
+    "encoding": "json",
+    "name": "projects/your-project-id/schemas/your-schema"
+  },
+  "topic": "projects/your-project-id/topics/your-topic",
+  "x-channel-type": "fifo"
+} 
