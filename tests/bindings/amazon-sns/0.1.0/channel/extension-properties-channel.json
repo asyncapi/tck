@@ -1,0 +1,26 @@
+{
+  "name": "extended-topic",
+  "x-custom-property": "custom value",
+  "ordering": {
+    "type": "standard",
+    "x-ordering-metadata": {
+      "priority": "high"
+    }
+  },
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": "*",
+        "action": "SNS:Publish",
+        "x-condition": {
+          "StringEquals": {
+            "aws:SourceVpc": "vpc-1234abcd"
+          }
+        }
+      }
+    ],
+    "x-policy-version": "2023-01-01"
+  },
+  "bindingVersion": "0.1.0"
+}

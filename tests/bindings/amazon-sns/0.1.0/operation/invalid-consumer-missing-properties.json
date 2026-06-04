@@ -1,0 +1,11 @@
+{
+  "consumers": [
+    {
+      "protocol": "sqs",
+      "endpoint": {
+        "name": "my-queue"
+      }
+    }
+  ],
+  "bindingVersion": "0.1.0"
+}

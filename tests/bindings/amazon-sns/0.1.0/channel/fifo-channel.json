@@ -1,0 +1,21 @@
+{
+  "name": "my-fifo-topic.fifo",
+  "ordering": {
+    "type": "FIFO",
+    "contentBasedDeduplication": true
+  },
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": "arn:aws:iam::123456789012:root",
+        "action": "SNS:Publish"
+      }
+    ]
+  },
+  "tags": {
+    "environment": "development",
+    "type": "fifo"
+  },
+  "bindingVersion": "0.1.0"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "invalid-property-topic",
+  "invalidProperty": "This property is not allowed",
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": "*",
+        "action": "SNS:Publish"
+      }
+    ]
+  },
+  "bindingVersion": "0.1.0"
+}

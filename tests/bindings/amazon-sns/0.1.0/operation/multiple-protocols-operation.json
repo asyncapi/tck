@@ -1,0 +1,44 @@
+{
+  "topic": {
+    "name": "multi-protocol-topic"
+  },
+  "consumers": [
+    {
+      "protocol": "http",
+      "endpoint": {
+        "url": "https://example.com/webhook"
+      },
+      "rawMessageDelivery": true,
+      "deliveryPolicy": {
+        "numRetries": 3,
+        "backoffFunction": "exponential"
+      }
+    },
+    {
+      "protocol": "email",
+      "endpoint": {
+        "email": "user@example.com"
+      },
+      "rawMessageDelivery": false,
+      "displayName": "Email Notification"
+    },
+    {
+      "protocol": "sms",
+      "endpoint": {
+        "phone": "+1234567890"
+      },
+      "rawMessageDelivery": true
+    },
+    {
+      "protocol": "lambda",
+      "endpoint": {
+        "arn": "arn:aws:lambda:us-east-1:123456789012:function:my-function"
+      },
+      "rawMessageDelivery": true,
+      "filterPolicy": {
+        "event_type": ["order_created", "order_updated"]
+      }
+    }
+  ],
+  "bindingVersion": "0.1.0"
+}

@@ -1,0 +1,38 @@
+{
+  "x-custom-property": "custom value",
+  "topic": {
+    "name": "extended-topic",
+    "x-topic-metadata": {
+      "region": "us-west-2"
+    }
+  },
+  "consumers": [
+    {
+      "protocol": "sqs",
+      "endpoint": {
+        "arn": "arn:aws:sqs:us-west-2:123456789012:my-queue",
+        "x-endpoint-metadata": {
+          "created-by": "system"
+        }
+      },
+      "rawMessageDelivery": true,
+      "x-consumer-priority": "high",
+      "filterPolicy": {
+        "event_type": ["order_created"],
+        "x-filter-version": "2.0"
+      },
+      "deliveryPolicy": {
+        "numRetries": 5,
+        "backoffFunction": "geometric",
+        "x-custom-retry-logic": true
+      }
+    }
+  ],
+  "deliveryPolicy": {
+    "numRetries": 3,
+    "x-global-retry-config": {
+      "enabled": true
+    }
+  },
+  "bindingVersion": "0.1.0"
+}
