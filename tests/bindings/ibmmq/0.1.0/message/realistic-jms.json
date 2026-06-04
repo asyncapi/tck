@@ -1,0 +1,6 @@
+{
+  "type": "jms",
+  "description": "JMS stream message",
+  "expiry": 120000,
+  "bindingVersion": "0.1.0"
+} 

@@ -1,0 +1,7 @@
+{
+  "type": "binary",
+  "headers": "MQMD",
+  "description": "A binary message with MQMD header.",
+  "expiry": 30000,
+  "bindingVersion": "0.1.0"
+} 
