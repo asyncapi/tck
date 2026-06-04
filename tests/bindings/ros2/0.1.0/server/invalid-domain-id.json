@@ -1,0 +1,5 @@
+{
+  "bindingVersion": "0.1.0",
+  "domainId": 300,
+  "rmwImplementation": "rmw_fastrtps_cpp"
+} 

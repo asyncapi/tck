@@ -1,0 +1,6 @@
+{
+  "bindingVersion": "0.1.0",
+  "domainId": 0,
+  "rmwImplementation": "rmw_fastrtps_cpp",
+  "unsupportedProperty": "this-should-fail"
+} 
