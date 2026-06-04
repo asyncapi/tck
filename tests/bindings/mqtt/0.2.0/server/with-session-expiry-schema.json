@@ -1,0 +1,12 @@
+{
+  "clientId": "schema-client",
+  "cleanSession": true,
+  "sessionExpiryInterval": {
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 86400,
+    "description": "Session expiry in seconds (max 24 hours)"
+  },
+  "maximumPacketSize": 2048,
+  "bindingVersion": "0.2.0"
+} 

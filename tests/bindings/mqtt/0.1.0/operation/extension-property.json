@@ -1,0 +1,9 @@
+{
+  "qos": 1,
+  "retain": false,
+  "bindingVersion": "0.1.0",
+  "x-custom-extension": "custom-value",
+  "x-another-extension": {
+    "nested": "value"
+  }
+} 

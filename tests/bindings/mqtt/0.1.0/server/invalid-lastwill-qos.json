@@ -1,0 +1,10 @@
+{
+  "clientId": "test-client",
+  "lastWill": {
+    "topic": "/test/topic",
+    "qos": 3,
+    "message": "Test message",
+    "retain": false
+  },
+  "bindingVersion": "0.1.0"
+} 

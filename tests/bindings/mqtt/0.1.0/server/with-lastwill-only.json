@@ -1,0 +1,9 @@
+{
+  "lastWill": {
+    "topic": "/system/status",
+    "qos": 1,
+    "message": "System offline",
+    "retain": true
+  },
+  "bindingVersion": "0.1.0"
+} 

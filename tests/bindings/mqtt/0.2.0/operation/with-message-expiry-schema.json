@@ -1,0 +1,11 @@
+{
+  "qos": 0,
+  "retain": false,
+  "messageExpiryInterval": {
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 86400,
+    "description": "Message expiry in seconds (max 24 hours)"
+  },
+  "bindingVersion": "0.2.0"
+} 

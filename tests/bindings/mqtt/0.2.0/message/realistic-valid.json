@@ -1,0 +1,11 @@
+{
+  "payloadFormatIndicator": 1,
+  "correlationData": {
+    "type": "string",
+    "format": "uuid",
+    "description": "Request correlation ID"
+  },
+  "contentType": "application/json",
+  "responseTopic": "api/responses/{requestId}",
+  "bindingVersion": "0.2.0"
+} 
