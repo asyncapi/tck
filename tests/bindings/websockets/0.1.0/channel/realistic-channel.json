@@ -1,0 +1,16 @@
+{
+  "method": "POST",
+  "query": {
+    "type": "object",
+    "properties": {
+      "token": { "type": "string" }
+    }
+  },
+  "headers": {
+    "type": "object",
+    "properties": {
+      "X-Request-ID": { "type": "string" }
+    }
+  },
+  "bindingVersion": "0.1.0"
+} 
