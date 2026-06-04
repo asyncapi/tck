@@ -1,0 +1,9 @@
+{
+  "bindingVersion": "0.3.0",
+  "destinations": [
+    {
+      "destinationType": "stream",
+      "deliveryMode": "direct"
+    }
+  ]
+} 

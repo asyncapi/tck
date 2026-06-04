@@ -1,0 +1,12 @@
+{
+  "bindingVersion": "0.2.0",
+  "destinations": [
+    {
+      "destinationType": "queue",
+      "deliveryMode": "guaranteed",
+      "queue": {
+        "name": "queue1"
+      }
+    }
+  ]
+} 
