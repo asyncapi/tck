@@ -1,0 +1,23 @@
+{
+  "headers": {
+    "type": "object",
+    "properties": {
+      "messageId": {
+        "type": "string",
+        "description": "Unique identifier for the message"
+      },
+      "contentType": {
+        "type": "string",
+        "description": "MIME type of the message content"
+      }
+    }
+  },
+  "bindingVersion": "0.0.1",
+  "x-custom-property": "custom value",
+  "x-metadata": {
+    "description": "Message with extension properties",
+    "version": "1.0.0",
+    "environment": "production"
+  },
+  "x-tracing-id": "trace-123456789"
+}

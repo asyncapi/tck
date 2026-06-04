@@ -1,0 +1,11 @@
+{
+  "headers": {
+    "type": "object",
+    "properties": {
+      "messageId": {
+        "type": "string"
+      }
+    }
+  },
+  "bindingVersion": "1.0.0"
+}
