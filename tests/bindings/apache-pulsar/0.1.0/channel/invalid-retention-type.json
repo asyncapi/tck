@@ -1,0 +1,8 @@
+{
+  "namespace": "ns1",
+  "persistence": "persistent",
+  "retention": {
+    "time": "forever",
+    "size": 1000
+  }
+} 
