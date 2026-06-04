@@ -1,0 +1,10 @@
+{
+  "contentEncoding": "gzip",
+  "messageType": "user.signup",
+  "bindingVersion": "0.1.0",
+  "x-custom-property": "custom value",
+  "x-metadata": {
+    "description": "User signup event",
+    "version": "1.0.0"
+  }
+}

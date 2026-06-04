@@ -1,0 +1,11 @@
+{
+  "is": "queue",
+  "queue": {
+    "name": "orders-processing",
+    "durable": true,
+    "exclusive": false,
+    "autoDelete": false,
+    "vhost": "/"
+  },
+  "bindingVersion": "0.3.0"
+}
