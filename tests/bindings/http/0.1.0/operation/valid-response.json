@@ -1,0 +1,12 @@
+{
+  "type": "response",
+  "query": {
+    "type": "object",
+    "required": ["status"],
+    "properties": {
+      "status": { "type": "string", "enum": ["ok", "error"] }
+    },
+    "additionalProperties": false
+  },
+  "bindingVersion": "0.1.0"
+} 

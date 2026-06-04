@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "type": "object",
+    "properties": {
+      "Accept": {
+        "type": "string",
+        "default": "application/json"
+      }
+    }
+  },
+  "statusCode": 201,
+  "bindingVersion": "0.3.0",
+  "x-custom-header-extension": "custom-value",
+  "x-another-extension": {
+    "nested": "value"
+  }
+} 

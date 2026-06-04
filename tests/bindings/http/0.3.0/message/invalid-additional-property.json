@@ -1,0 +1,13 @@
+{
+  "headers": {
+    "type": "object",
+    "properties": {
+      "Content-Type": {
+        "type": "string"
+      }
+    }
+  },
+  "statusCode": 200,
+  "bindingVersion": "0.3.0",
+  "invalidProperty": "should-not-be-allowed"
+} 
