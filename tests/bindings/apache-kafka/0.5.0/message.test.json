@@ -1,0 +1,46 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/apache-kafka/0.5.0/message.json",
+  "$comment": "Apache Kafka 0.5.0 message binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid Kafka 0.5.0 message binding (all properties)",
+      "valid": true,
+      "dataPath": "./message/realistic-message.json"
+    },
+    {
+      "description": "Minimal valid Kafka 0.5.0 message binding",
+      "valid": true,
+      "dataPath": "./message/minimal-valid.json"
+    },
+    {
+      "description": "Valid Kafka 0.5.0 message binding with extension property",
+      "valid": true,
+      "dataPath": "./message/extension-property.json"
+    },
+    {
+      "description": "Valid Kafka 0.5.0 message binding with key as $ref",
+      "valid": true,
+      "dataPath": "./message/valid-key-ref.json"
+    },
+    {
+      "description": "Invalid Kafka 0.5.0 message binding with additional property",
+      "valid": false,
+      "dataPath": "./message/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid Kafka 0.5.0 message binding with wrong key type",
+      "valid": false,
+      "dataPath": "./message/invalid-key-type.json"
+    },
+    {
+      "description": "Invalid Kafka 0.5.0 message binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./message/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid Kafka 0.5.0 message binding with invalid schemaIdLocation",
+      "valid": false,
+      "dataPath": "./message/invalid-schemaIdLocation.json"
+    }
+  ]
+} 

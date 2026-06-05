@@ -1,0 +1,41 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/apache-kafka/0.1.0/operation.json",
+  "$comment": "Apache Kafka operation binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid Kafka operation binding",
+      "valid": true,
+      "dataPath": "./operation/realistic-operation.json"
+    },
+    {
+      "description": "Minimal valid Kafka operation binding",
+      "valid": true,
+      "dataPath": "./operation/minimal-valid.json"
+    },
+    {
+      "description": "Valid Kafka operation binding with extension property",
+      "valid": true,
+      "dataPath": "./operation/extension-property.json"
+    },
+    {
+      "description": "Another valid Kafka operation binding",
+      "valid": true,
+      "dataPath": "./operation/valid-operation.json"
+    },
+    {
+      "description": "Invalid Kafka operation binding with additional property",
+      "valid": false,
+      "dataPath": "./operation/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid Kafka operation binding with wrong groupId type",
+      "valid": false,
+      "dataPath": "./operation/invalid-groupId-type.json"
+    },
+    {
+      "description": "Invalid Kafka operation binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./operation/invalid-binding-version.json"
+    }
+  ]
+} 
