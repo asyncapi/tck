@@ -1,0 +1,36 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/jms/0.0.1/channel.json",
+  "$comment": "JMS 0.0.1 channel binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid JMS 0.0.1 channel binding (all properties)",
+      "valid": true,
+      "dataPath": "./channel/realistic-channel.json"
+    },
+    {
+      "description": "Minimal valid JMS 0.0.1 channel binding (only bindingVersion)",
+      "valid": true,
+      "dataPath": "./channel/minimal-valid.json"
+    },
+    {
+      "description": "Valid JMS 0.0.1 channel binding with extension property",
+      "valid": true,
+      "dataPath": "./channel/extension-property.json"
+    },
+    {
+      "description": "Invalid JMS 0.0.1 channel binding with additional property",
+      "valid": false,
+      "dataPath": "./channel/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid JMS 0.0.1 channel binding with invalid destinationType enum",
+      "valid": false,
+      "dataPath": "./channel/invalid-destinationType-enum.json"
+    },
+    {
+      "description": "Invalid JMS 0.0.1 channel binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./channel/invalid-binding-version.json"
+    }
+  ]
+} 
