@@ -1,0 +1,61 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/mqtt/0.2.0/operation.json",
+  "$comment": "MQTT 0.2.0 operation binding test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid operation with all properties",
+      "valid": true,
+      "dataPath": "./operation/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid operation with only binding version",
+      "valid": true,
+      "dataPath": "./operation/minimal-valid.json"
+    },
+    {
+      "description": "Valid operation with extension properties",
+      "valid": true,
+      "dataPath": "./operation/extension-property.json"
+    },
+    {
+      "description": "Valid operation with messageExpiryInterval as schema",
+      "valid": true,
+      "dataPath": "./operation/with-message-expiry-schema.json"
+    },
+    {
+      "description": "Valid operation with messageExpiryInterval as reference",
+      "valid": true,
+      "dataPath": "./operation/with-message-expiry-reference.json"
+    },
+    {
+      "description": "Invalid operation with incorrect QoS value",
+      "valid": false,
+      "dataPath": "./operation/invalid-qos.json"
+    },
+    {
+      "description": "Invalid operation with negative messageExpiryInterval",
+      "valid": false,
+      "dataPath": "./operation/invalid-message-expiry-negative.json"
+    },
+    {
+      "description": "Invalid operation with messageExpiryInterval exceeding maximum",
+      "valid": false,
+      "dataPath": "./operation/invalid-message-expiry-too-large.json"
+    },
+    {
+      "description": "Invalid operation with incorrect binding version",
+      "valid": false,
+      "dataPath": "./operation/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid operation with additional property",
+      "valid": false,
+      "dataPath": "./operation/invalid-additional-property.json"
+    }
+  ]
+} 

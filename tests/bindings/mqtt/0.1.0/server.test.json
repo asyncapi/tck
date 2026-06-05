@@ -1,0 +1,71 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/mqtt/0.1.0/server.json",
+  "$comment": "MQTT 0.1.0 server binding test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid server with all properties",
+      "valid": true,
+      "dataPath": "./server/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid server with only binding version",
+      "valid": true,
+      "dataPath": "./server/minimal-valid.json"
+    },
+    {
+      "description": "Valid server with extension properties",
+      "valid": true,
+      "dataPath": "./server/extension-property.json"
+    },
+    {
+      "description": "Valid server with only lastWill and binding version",
+      "valid": true,
+      "dataPath": "./server/with-lastwill-only.json"
+    },
+    {
+      "description": "Invalid server with incorrect lastWill QoS value",
+      "valid": false,
+      "dataPath": "./server/invalid-lastwill-qos.json"
+    },
+    {
+      "description": "Invalid server with incorrect lastWill QoS type",
+      "valid": false,
+      "dataPath": "./server/invalid-lastwill-qos-type.json"
+    },
+    {
+      "description": "Invalid server with incorrect lastWill retain type",
+      "valid": false,
+      "dataPath": "./server/invalid-lastwill-retain-type.json"
+    },
+    {
+      "description": "Invalid server with incorrect cleanSession type",
+      "valid": false,
+      "dataPath": "./server/invalid-cleansession-type.json"
+    },
+    {
+      "description": "Invalid server with incorrect keepAlive type",
+      "valid": false,
+      "dataPath": "./server/invalid-keepalive-type.json"
+    },
+    {
+      "description": "Invalid server with incorrect binding version",
+      "valid": false,
+      "dataPath": "./server/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid server with additional property",
+      "valid": false,
+      "dataPath": "./server/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid server with lastWill missing required topic",
+      "valid": false,
+      "dataPath": "./server/invalid-lastwill-missing-topic.json"
+    }
+  ]
+} 
