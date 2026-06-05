@@ -1,0 +1,31 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/ibmmq/0.1.0/server.json",
+  "$comment": "IBM MQ 0.1.0 server binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid IBM MQ 0.1.0 server binding (all properties)",
+      "valid": true,
+      "dataPath": "./server/realistic-server.json"
+    },
+    {
+      "description": "Minimal valid IBM MQ 0.1.0 server binding (only bindingVersion)",
+      "valid": true,
+      "dataPath": "./server/minimal-valid.json"
+    },
+    {
+      "description": "Valid IBM MQ 0.1.0 server binding with extension property",
+      "valid": true,
+      "dataPath": "./server/extension-property.json"
+    },
+    {
+      "description": "Invalid IBM MQ 0.1.0 server binding with additional property",
+      "valid": false,
+      "dataPath": "./server/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid IBM MQ 0.1.0 server binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./server/invalid-binding-version.json"
+    }
+  ]
+} 

@@ -1,0 +1,56 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/ibmmq/0.1.0/message.json",
+  "$comment": "IBM MQ 0.1.0 message binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid IBM MQ 0.1.0 message binding for type 'string' (all properties)",
+      "valid": true,
+      "dataPath": "./message/realistic-string.json"
+    },
+    {
+      "description": "Realistic valid IBM MQ 0.1.0 message binding for type 'jms' (all properties)",
+      "valid": true,
+      "dataPath": "./message/realistic-jms.json"
+    },
+    {
+      "description": "Realistic valid IBM MQ 0.1.0 message binding for type 'binary' (all properties)",
+      "valid": true,
+      "dataPath": "./message/realistic-binary.json"
+    },
+    {
+      "description": "Minimal valid IBM MQ 0.1.0 message binding for type 'string'",
+      "valid": true,
+      "dataPath": "./message/minimal-string.json"
+    },
+    {
+      "description": "Minimal valid IBM MQ 0.1.0 message binding for type 'jms'",
+      "valid": true,
+      "dataPath": "./message/minimal-jms.json"
+    },
+    {
+      "description": "Minimal valid IBM MQ 0.1.0 message binding for type 'binary'",
+      "valid": true,
+      "dataPath": "./message/minimal-binary.json"
+    },
+    {
+      "description": "Valid IBM MQ 0.1.0 message binding with extension property",
+      "valid": true,
+      "dataPath": "./message/extension-property.json"
+    },
+    {
+      "description": "Invalid IBM MQ 0.1.0 message binding with additional property",
+      "valid": false,
+      "dataPath": "./message/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid IBM MQ 0.1.0 message binding with invalid type enum",
+      "valid": false,
+      "dataPath": "./message/invalid-type-enum.json"
+    },
+    {
+      "description": "Invalid IBM MQ 0.1.0 message binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./message/invalid-binding-version.json"
+    }
+  ]
+} 
