@@ -1,0 +1,31 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/http/0.1.0/message.json",
+  "$comment": "HTTP 0.1.0 message binding tests",
+  "tests": [
+    {
+      "description": "Valid HTTP 0.1.0 message binding (all properties)",
+      "valid": true,
+      "dataPath": ".//message/valid.json"
+    },
+    {
+      "description": "Minimal valid HTTP 0.1.0 message binding",
+      "valid": true,
+      "dataPath": ".//message/minimal.json"
+    },
+    {
+      "description": "Valid HTTP 0.1.0 message binding with extension property",
+      "valid": true,
+      "dataPath": ".//message/extension-property.json"
+    },
+    {
+      "description": "Invalid HTTP 0.1.0 message binding with additional property",
+      "valid": false,
+      "dataPath": ".//message/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid HTTP 0.1.0 message binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": ".//message/invalid-binding-version.json"
+    }
+  ]
+} 
