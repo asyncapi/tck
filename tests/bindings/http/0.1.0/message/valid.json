@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "type": "object",
+    "properties": {
+      "Content-Type": {
+        "type": "string",
+        "enum": ["application/json"]
+      },
+      "X-Request-ID": {
+        "type": "string"
+      }
+    },
+    "required": ["Content-Type"],
+    "additionalProperties": false
+  },
+  "bindingVersion": "0.1.0"
+} 

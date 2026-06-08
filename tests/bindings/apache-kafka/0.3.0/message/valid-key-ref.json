@@ -1,0 +1,8 @@
+{
+  "key": {
+    "$ref": "path/to/user-create.avsc#/UserCreate"
+  },
+  "schemaIdLocation": "payload",
+  "schemaIdPayloadEncoding": "4",
+  "bindingVersion": "0.3.0"
+} 

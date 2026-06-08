@@ -1,0 +1,15 @@
+{
+  "is": "routingKey",
+  "exchange": {
+    "name": "events",
+    "type": "topic",
+    "durable": true,
+    "autoDelete": false
+  },
+  "x-custom-property": "custom value",
+  "x-metadata": {
+    "description": "Exchange for event routing",
+    "version": "1.0.0"
+  },
+  "bindingVersion": "0.3.0"
+}

@@ -1,0 +1,38 @@
+{
+  "name": "extended-topic",
+  "x-custom-property": "custom value",
+  "x-metadata": {
+    "description": "Topic for extended testing",
+    "version": "1.0.0"
+  },
+  "ordering": {
+    "type": "standard",
+    "x-ordering-metadata": {
+      "priority": "high"
+    }
+  },
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": {
+          "AWS": "arn:aws:iam::123456789012:role/SNSPublisherRole"
+        },
+        "action": "sns:Publish",
+        "resource": "arn:aws:sns:us-east-1:123456789012:extended-topic",
+        "condition": {
+          "StringEquals": {
+            "aws:SourceVpc": "vpc-1234abcd"
+          }
+        },
+        "x-statement-id": "AllowPublishFromVPC"
+      }
+    ],
+    "x-policy-version": "2023-01-01"
+  },
+  "tags": {
+    "environment": "production",
+    "x-custom-tag": "special-value"
+  },
+  "bindingVersion": "0.2.0"
+}

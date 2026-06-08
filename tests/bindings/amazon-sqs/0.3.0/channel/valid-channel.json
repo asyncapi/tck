@@ -1,0 +1,80 @@
+{
+  "queue": {
+    "name": "my-standard-queue",
+    "fifoQueue": false,
+    "deliveryDelay": 30,
+    "visibilityTimeout": 60,
+    "receiveMessageWaitTime": 20,
+    "messageRetentionPeriod": 345600,
+    "redrivePolicy": {
+      "deadLetterQueue": {
+        "arn": "arn:aws:sqs:us-east-1:123456789012:my-dead-letter-queue"
+      },
+      "maxReceiveCount": 5
+    },
+    "policy": {
+      "statements": [
+        {
+          "effect": "Allow",
+          "principal": {
+            "AWS": "arn:aws:iam::123456789012:role/SQSConsumerRole"
+          },
+          "action": [
+            "sqs:ReceiveMessage",
+            "sqs:DeleteMessage",
+            "sqs:GetQueueAttributes"
+          ],
+          "resource": "arn:aws:sqs:us-east-1:123456789012:my-standard-queue",
+          "condition": {
+            "StringEquals": {
+              "aws:SourceAccount": "123456789012"
+            },
+            "ArnLike": {
+              "aws:SourceArn": "arn:aws:*:us-east-1:123456789012:*"
+            }
+          }
+        },
+        {
+          "effect": "Allow",
+          "principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "action": "sqs:SendMessage",
+          "resource": "arn:aws:sqs:us-east-1:123456789012:my-standard-queue"
+        }
+      ]
+    },
+    "tags": {
+      "environment": "production",
+      "application": "order-processing",
+      "owner": "platform-team"
+    }
+  },
+  "deadLetterQueue": {
+    "name": "my-dead-letter-queue",
+    "fifoQueue": false,
+    "visibilityTimeout": 120,
+    "messageRetentionPeriod": 1209600,
+    "policy": {
+      "statements": [
+        {
+          "effect": "Allow",
+          "principal": {
+            "AWS": ["arn:aws:iam::123456789012:role/DLQProcessor", "arn:aws:iam::123456789012:role/DLQMonitor"]
+          },
+          "action": [
+            "sqs:ReceiveMessage",
+            "sqs:DeleteMessage",
+            "sqs:PurgeQueue"
+          ],
+          "resource": "arn:aws:sqs:us-east-1:123456789012:my-dead-letter-queue"
+        }
+      ]
+    },
+    "tags": {
+      "environment": "production",
+      "type": "dead-letter-queue"
+    }
+  },
+  "bindingVersion": "0.3.0"
+}

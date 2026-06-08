@@ -1,0 +1,41 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/solace/0.4.0/server.json",
+  "$comment": "Solace 0.4.0 server binding test",
+  "tests": [
+    {
+      "description": "Valid server with all properties",
+      "valid": true,
+      "dataPath": "./server/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid server with only bindingVersion",
+      "valid": true,
+      "dataPath": "./server/minimal-valid.json"
+    },
+    {
+      "description": "Valid server with extension property (x-extra)",
+      "valid": true,
+      "dataPath": "./server/extension-property.json"
+    },
+    {
+      "description": "Invalid server with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./server/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid server with wrong property name (msvVpn)",
+      "valid": false,
+      "dataPath": "./server/invalid-property-name.json"
+    },
+    {
+      "description": "Invalid server with additional property",
+      "valid": false,
+      "dataPath": "./server/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid server with msgVpn as number instead of string",
+      "valid": false,
+      "dataPath": "./server/invalid-msgVpn-type.json"
+    }
+  ]
+} 

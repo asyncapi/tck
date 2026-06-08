@@ -1,0 +1,33 @@
+{
+  "queues": [
+    {
+      "name": "order-processing.fifo",
+      "fifoQueue": true,
+      "deduplicationScope": "messageGroup",
+      "fifoThroughputLimit": "perMessageGroupId",
+      "deliveryDelay": 0,
+      "visibilityTimeout": 45,
+      "receiveMessageWaitTime": 10,
+      "messageRetentionPeriod": 86400,
+      "policy": {
+        "statements": [
+          {
+            "effect": "Allow",
+            "principal": "arn:aws:iam::123456789012:role/FIFOQueueConsumer",
+            "action": [
+              "sqs:ReceiveMessage",
+              "sqs:DeleteMessage",
+              "sqs:GetQueueAttributes"
+            ]
+          }
+        ]
+      },
+      "tags": {
+        "environment": "production",
+        "queueType": "fifo",
+        "application": "order-processing"
+      }
+    }
+  ],
+  "bindingVersion": "0.2.0"
+}

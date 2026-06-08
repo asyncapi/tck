@@ -1,0 +1,18 @@
+{
+  "ordering": {
+    "type": "standard"
+  },
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": {
+          "AWS": "arn:aws:iam::123456789012:root"
+        },
+        "action": "sns:Publish",
+        "resource": "arn:aws:sns:us-east-1:123456789012:missing-name-topic"
+      }
+    ]
+  },
+  "bindingVersion": "0.2.0"
+}

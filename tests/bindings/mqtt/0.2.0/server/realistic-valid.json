@@ -1,0 +1,14 @@
+{
+  "clientId": "mqtt-client-v2-001",
+  "cleanSession": true,
+  "lastWill": {
+    "topic": "/last-wills/client-v2-001",
+    "qos": 2,
+    "message": "Client V2 001 has gone offline unexpectedly",
+    "retain": false
+  },
+  "keepAlive": 60,
+  "sessionExpiryInterval": 3600,
+  "maximumPacketSize": 1024,
+  "bindingVersion": "0.2.0"
+} 

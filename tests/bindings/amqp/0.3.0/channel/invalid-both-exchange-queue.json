@@ -1,0 +1,12 @@
+{
+  "is": "routingKey",
+  "exchange": {
+    "name": "orders",
+    "type": "topic"
+  },
+  "queue": {
+    "name": "orders-processing",
+    "durable": true
+  },
+  "bindingVersion": "0.3.0"
+}

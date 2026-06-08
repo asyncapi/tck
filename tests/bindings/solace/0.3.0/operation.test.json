@@ -1,0 +1,56 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/solace/0.3.0/operation.json",
+  "$comment": "Solace 0.3.0 operation binding test",
+  "tests": [
+    {
+      "description": "Valid operation with all properties (queue and topic)",
+      "valid": true,
+      "dataPath": "./operation/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid operation with only bindingVersion",
+      "valid": true,
+      "dataPath": "./operation/minimal-valid.json"
+    },
+    {
+      "description": "Valid operation with extension property",
+      "valid": true,
+      "dataPath": "./operation/extension-property.json"
+    },
+    {
+      "description": "Invalid operation with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./operation/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid operation with wrong destinationType",
+      "valid": false,
+      "dataPath": "./operation/invalid-destination-type.json"
+    },
+    {
+      "description": "Invalid operation with wrong deliveryMode",
+      "valid": false,
+      "dataPath": "./operation/invalid-delivery-mode.json"
+    },
+    {
+      "description": "Invalid operation with wrong accessType",
+      "valid": false,
+      "dataPath": "./operation/invalid-access-type.json"
+    },
+    {
+      "description": "Invalid operation with additional property at root",
+      "valid": false,
+      "dataPath": "./operation/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid operation with missing destinationType",
+      "valid": false,
+      "dataPath": "./operation/invalid-missing-destination-type.json"
+    },
+    {
+      "description": "Invalid operation with destinations as object instead of array",
+      "valid": false,
+      "dataPath": "./operation/invalid-destinations-type.json"
+    }
+  ]
+} 

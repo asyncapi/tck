@@ -1,0 +1,41 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/googlepubsub/0.2.0/message.json",
+  "$comment": "Google Pub/Sub 0.2.0 message binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid Google Pub/Sub 0.2.0 message binding (all properties)",
+      "valid": true,
+      "dataPath": "./message/realistic-message.json"
+    },
+    {
+      "description": "Minimal valid Google Pub/Sub 0.2.0 message binding (only required)",
+      "valid": true,
+      "dataPath": "./message/minimal-valid.json"
+    },
+    {
+      "description": "Valid Google Pub/Sub 0.2.0 message binding with extension property",
+      "valid": true,
+      "dataPath": "./message/extension-property.json"
+    },
+    {
+      "description": "Invalid Google Pub/Sub 0.2.0 message binding with additional property",
+      "valid": false,
+      "dataPath": "./message/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid Google Pub/Sub 0.2.0 message binding missing required property",
+      "valid": false,
+      "dataPath": "./message/invalid-missing-required.json"
+    },
+    {
+      "description": "Invalid Google Pub/Sub 0.2.0 message binding with schema missing required property",
+      "valid": false,
+      "dataPath": "./message/invalid-schema-missing-required.json"
+    },
+    {
+      "description": "Invalid Google Pub/Sub 0.2.0 message binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./message/invalid-binding-version.json"
+    }
+  ]
+} 

@@ -1,0 +1,10 @@
+{
+  "topic": {
+    "name": "missing-consumers-topic"
+  },
+  "deliveryPolicy": {
+    "numRetries": 3,
+    "backoffFunction": "exponential"
+  },
+  "bindingVersion": "0.1.0"
+}

@@ -1,0 +1,43 @@
+{
+  "queue": {
+    "name": "extended-queue",
+    "fifoQueue": false,
+    "x-queue-type": "standard",
+    "x-created-by": "infrastructure-team",
+    "visibilityTimeout": 40,
+    "messageRetentionPeriod": 172800,
+    "x-monitoring": {
+      "alarmThresholds": {
+        "messageAge": 300,
+        "queueDepth": 1000
+      },
+      "metrics": ["ApproximateAgeOfOldestMessage", "ApproximateNumberOfMessages"]
+    },
+    "policy": {
+      "statements": [
+        {
+          "effect": "Allow",
+          "principal": "arn:aws:iam::123456789012:role/QueueConsumer",
+          "action": "sqs:ReceiveMessage",
+          "x-statement-id": "AllowReceiveMessages"
+        }
+      ],
+      "x-policy-version": "2023-06-01"
+    },
+    "tags": {
+      "environment": "staging",
+      "x-cost-center": "12345",
+      "x-owner-email": "team@example.com"
+    }
+  },
+  "x-encryption": {
+    "kmsKeyId": "arn:aws:kms:us-east-1:123456789012:key/1234abcd-12ab-34cd-56ef-1234567890ab",
+    "dataKeyReusePeriodSeconds": 300
+  },
+  "x-metadata": {
+    "description": "Queue with extension properties for testing",
+    "version": "1.0.0",
+    "documentation": "https://example.com/docs/extended-queue"
+  },
+  "bindingVersion": "0.2.0"
+}

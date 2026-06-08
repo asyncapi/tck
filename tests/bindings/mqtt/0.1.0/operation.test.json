@@ -1,0 +1,51 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/mqtt/0.1.0/operation.json",
+  "$comment": "MQTT 0.1.0 operation binding test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid operation with all properties",
+      "valid": true,
+      "dataPath": "./operation/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid operation with only binding version",
+      "valid": true,
+      "dataPath": "./operation/minimal-valid.json"
+    },
+    {
+      "description": "Valid operation with extension properties",
+      "valid": true,
+      "dataPath": "./operation/extension-property.json"
+    },
+    {
+      "description": "Invalid operation with incorrect QoS value",
+      "valid": false,
+      "dataPath": "./operation/invalid-qos.json"
+    },
+    {
+      "description": "Invalid operation with incorrect QoS type",
+      "valid": false,
+      "dataPath": "./operation/invalid-qos-type.json"
+    },
+    {
+      "description": "Invalid operation with incorrect retain type",
+      "valid": false,
+      "dataPath": "./operation/invalid-retain-type.json"
+    },
+    {
+      "description": "Invalid operation with incorrect binding version",
+      "valid": false,
+      "dataPath": "./operation/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid operation with additional property",
+      "valid": false,
+      "dataPath": "./operation/invalid-additional-property.json"
+    }
+  ]
+} 

@@ -1,0 +1,46 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/amqp/0.1.0/operation.json",
+  "$comment": "AMQP operation test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid operation with all properties",
+      "valid": true,
+      "dataPath": "./operation/valid-operation.json"
+    },
+    {
+      "description": "Minimal valid operation with only required properties",
+      "valid": true,
+      "dataPath": "./operation/minimal-valid-operation.json"
+    },
+    {
+      "description": "Valid operation with extension properties",
+      "valid": true,
+      "dataPath": "./operation/extension-properties-operation.json"
+    },
+    {
+      "description": "Invalid operation with incorrect binding version",
+      "valid": false,
+      "dataPath": "./operation/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid operation with incorrect delivery mode",
+      "valid": false,
+      "dataPath": "./operation/invalid-delivery-mode.json"
+    },
+    {
+      "description": "Invalid operation with negative expiration",
+      "valid": false,
+      "dataPath": "./operation/invalid-expiration.json"
+    },
+    {
+      "description": "Invalid operation with additional property",
+      "valid": false,
+      "dataPath": "./operation/invalid-additional-property.json"
+    }
+  ]
+}

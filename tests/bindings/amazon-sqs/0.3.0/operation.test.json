@@ -1,0 +1,61 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/amazon-sqs/0.3.0/operation.json",
+  "$comment": "Amazon SQS operation test",
+  "tests": [
+    {
+      "description": "The empty object is not valid",
+      "valid": false,
+      "data": {}
+    },
+    {
+      "description": "Valid operation with all properties",
+      "valid": true,
+      "dataPath": "./operation/valid-operation.json"
+    },
+    {
+      "description": "Minimal valid operation with only required properties",
+      "valid": true,
+      "dataPath": "./operation/minimal-valid-operation.json"
+    },
+    {
+      "description": "Valid FIFO operation",
+      "valid": true,
+      "dataPath": "./operation/fifo-operation.json"
+    },
+    {
+      "description": "Valid operation with dead letter queue configuration",
+      "valid": true,
+      "dataPath": "./operation/dead-letter-queue-operation.json"
+    },
+    {
+      "description": "Valid operation with extension properties",
+      "valid": true,
+      "dataPath": "./operation/extension-properties-operation.json"
+    },
+    {
+      "description": "Invalid operation missing required queues property",
+      "valid": false,
+      "dataPath": "./operation/invalid-missing-queues.json"
+    },
+    {
+      "description": "Invalid operation with empty queues array",
+      "valid": false,
+      "dataPath": "./operation/invalid-empty-queues.json"
+    },
+    {
+      "description": "Invalid operation with queue missing required name property",
+      "valid": false,
+      "dataPath": "./operation/invalid-queue-missing-name.json"
+    },
+    {
+      "description": "Invalid operation with delivery delay exceeding maximum",
+      "valid": false,
+      "dataPath": "./operation/invalid-delivery-delay.json"
+    },
+    {
+      "description": "Invalid operation with additional property",
+      "valid": false,
+      "dataPath": "./operation/invalid-additional-property.json"
+    }
+  ]
+}

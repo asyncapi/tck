@@ -1,0 +1,10 @@
+{
+  "queues": [
+    {
+      "fifoQueue": false,
+      "visibilityTimeout": 30,
+      "messageRetentionPeriod": 345600
+    }
+  ],
+  "bindingVersion": "0.3.0"
+}

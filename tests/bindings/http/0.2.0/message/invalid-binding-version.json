@@ -1,0 +1,11 @@
+{
+  "headers": {
+    "type": "object",
+    "properties": {
+      "Content-Type": {
+        "type": "string"
+      }
+    }
+  },
+  "bindingVersion": "1.0.0"
+} 

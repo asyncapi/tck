@@ -1,0 +1,11 @@
+{
+  "headers": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "description": "This should be an object, not an array"
+  },
+  "statusCode": 200,
+  "bindingVersion": "0.3.0"
+} 

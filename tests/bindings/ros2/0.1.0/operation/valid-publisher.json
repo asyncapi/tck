@@ -1,0 +1,14 @@
+{
+  "bindingVersion": "0.1.0",
+  "node": "/sensor_node",
+  "role": "publisher",
+  "qosPolicies": {
+    "deadline": 100,
+    "durability": "volatile",
+    "history": "keep_last",
+    "leaseDuration": 5000,
+    "lifespan": 200,
+    "liveliness": "automatic",
+    "reliability": "reliable"
+  }
+} 

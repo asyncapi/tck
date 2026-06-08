@@ -1,0 +1,10 @@
+{
+  "bindingVersion": "0.1.0",
+  "node": "/parameter_server",
+  "role": "service_server",
+  "qosPolicies": {
+    "reliability": "reliable",
+    "durability": "transient_local",
+    "liveliness": "automatic"
+  }
+} 

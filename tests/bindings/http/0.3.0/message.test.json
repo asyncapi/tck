@@ -1,0 +1,51 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/http/0.3.0/message.json",
+  "$comment": "HTTP 0.3.0 message binding test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid message with all properties",
+      "valid": true,
+      "dataPath": ".//message/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid message with only binding version",
+      "valid": true,
+      "dataPath": ".//message/minimal-valid.json"
+    },
+    {
+      "description": "Valid message with extension properties",
+      "valid": true,
+      "dataPath": ".//message/extension-property.json"
+    },
+    {
+      "description": "Valid message with only statusCode and binding version",
+      "valid": true,
+      "dataPath": ".//message/with-status-code-only.json"
+    },
+    {
+      "description": "Invalid message with incorrect binding version",
+      "valid": false,
+      "dataPath": ".//message/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid message with additional property",
+      "valid": false,
+      "dataPath": ".//message/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid message with wrong headers schema type",
+      "valid": false,
+      "dataPath": ".//message/invalid-headers-type.json"
+    },
+    {
+      "description": "Invalid message with wrong statusCode type",
+      "valid": false,
+      "dataPath": ".//message/invalid-status-code-type.json"
+    }
+  ]
+} 

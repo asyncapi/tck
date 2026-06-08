@@ -1,0 +1,12 @@
+{
+  "clientId": "test-client-v2",
+  "cleanSession": false,
+  "keepAlive": 30,
+  "sessionExpiryInterval": 1800,
+  "maximumPacketSize": 512,
+  "bindingVersion": "0.2.0",
+  "x-custom-extension": "custom-value",
+  "x-another-extension": {
+    "nested": "value"
+  }
+} 

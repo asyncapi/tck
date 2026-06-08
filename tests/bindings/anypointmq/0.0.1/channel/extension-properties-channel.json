@@ -1,0 +1,16 @@
+{
+  "destination": "user-notifications",
+  "destinationType": "fifo-queue",
+  "bindingVersion": "0.0.1",
+  "x-custom-property": "custom value",
+  "x-metadata": {
+    "description": "Channel with extension properties",
+    "version": "1.0.0",
+    "environment": "production"
+  },
+  "x-region": "us-west-2",
+  "x-retention-policy": {
+    "enabled": true,
+    "days": 7
+  }
+}

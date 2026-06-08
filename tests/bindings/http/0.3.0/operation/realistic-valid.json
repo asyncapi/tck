@@ -1,0 +1,26 @@
+{
+  "method": "POST",
+  "query": {
+    "type": "object",
+    "required": ["userId", "action"],
+    "properties": {
+      "userId": {
+        "type": "integer",
+        "minimum": 1,
+        "description": "The ID of the user"
+      },
+      "action": {
+        "type": "string",
+        "enum": ["create", "update", "delete"],
+        "description": "The action to perform"
+      },
+      "timestamp": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Optional timestamp"
+      }
+    },
+    "additionalProperties": false
+  },
+  "bindingVersion": "0.2.0"
+} 

@@ -1,0 +1,52 @@
+{
+  "queue": {
+    "name": "primary-processing-queue",
+    "fifoQueue": false,
+    "visibilityTimeout": 30,
+    "messageRetentionPeriod": 259200,
+    "redrivePolicy": {
+      "deadLetterQueue": {
+        "arn": "arn:aws:sqs:us-east-1:123456789012:failed-messages-dlq"
+      },
+      "maxReceiveCount": 3
+    },
+    "tags": {
+      "environment": "production",
+      "application": "payment-processing",
+      "criticality": "high"
+    }
+  },
+  "deadLetterQueue": {
+    "name": "failed-messages-dlq",
+    "fifoQueue": false,
+    "visibilityTimeout": 60,
+    "messageRetentionPeriod": 1209600,
+    "policy": {
+      "statements": [
+        {
+          "effect": "Allow",
+          "principal": "arn:aws:iam::123456789012:role/DLQProcessor",
+          "action": [
+            "sqs:ReceiveMessage",
+            "sqs:DeleteMessage",
+            "sqs:GetQueueAttributes"
+          ]
+        },
+        {
+          "effect": "Allow",
+          "principal": "arn:aws:iam::123456789012:role/DLQMonitor",
+          "action": [
+            "sqs:GetQueueAttributes",
+            "sqs:ListDeadLetterSourceQueues"
+          ]
+        }
+      ]
+    },
+    "tags": {
+      "environment": "production",
+      "type": "dead-letter-queue",
+      "retention": "14-days"
+    }
+  },
+  "bindingVersion": "0.2.0"
+}

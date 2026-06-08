@@ -1,0 +1,10 @@
+{
+  "headers": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "description": "This should be an object, not an array"
+  },
+  "bindingVersion": "0.2.0"
+} 

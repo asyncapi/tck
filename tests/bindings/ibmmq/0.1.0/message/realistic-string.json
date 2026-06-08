@@ -1,0 +1,6 @@
+{
+  "type": "string",
+  "description": "A string message with MQMD and MQRFH2 headers.",
+  "expiry": 60000,
+  "bindingVersion": "0.1.0"
+} 

@@ -1,0 +1,49 @@
+{
+  "queues": [
+    {
+      "name": "order-processing.fifo",
+      "fifoQueue": true,
+      "deduplicationScope": "messageGroup",
+      "fifoThroughputLimit": "perMessageGroupId",
+      "deliveryDelay": 5,
+      "visibilityTimeout": 45,
+      "receiveMessageWaitTime": 10,
+      "messageRetentionPeriod": 86400,
+      "policy": {
+        "statements": [
+          {
+            "effect": "Allow",
+            "principal": {
+              "AWS": "arn:aws:iam::123456789012:role/FIFOQueueConsumer"
+            },
+            "action": [
+              "sqs:ReceiveMessage",
+              "sqs:DeleteMessage",
+              "sqs:GetQueueAttributes"
+            ],
+            "resource": "arn:aws:sqs:us-east-1:123456789012:order-processing.fifo"
+          },
+          {
+            "effect": "Allow",
+            "principal": {
+              "AWS": "arn:aws:iam::123456789012:role/FIFOQueueProducer"
+            },
+            "action": "sqs:SendMessage",
+            "resource": "arn:aws:sqs:us-east-1:123456789012:order-processing.fifo",
+            "condition": {
+              "StringEquals": {
+                "aws:PrincipalTag/Department": "Fulfillment"
+              }
+            }
+          }
+        ]
+      },
+      "tags": {
+        "environment": "production",
+        "queueType": "fifo",
+        "application": "order-processing"
+      }
+    }
+  ],
+  "bindingVersion": "0.3.0"
+}

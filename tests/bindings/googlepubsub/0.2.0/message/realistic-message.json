@@ -1,0 +1,11 @@
+{
+  "attributes": {
+    "attr1": "value1",
+    "attr2": "value2"
+  },
+  "orderingKey": "order-123",
+  "schema": {
+    "name": "projects/your-project-id/schemas/your-avro-schema-id"
+  },
+  "bindingVersion": "0.2.0"
+} 

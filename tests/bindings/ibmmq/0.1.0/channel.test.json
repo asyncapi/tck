@@ -1,0 +1,46 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/ibmmq/0.1.0/channel.json",
+  "$comment": "IBM MQ 0.1.0 channel binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid IBM MQ 0.1.0 channel binding for topic (all properties)",
+      "valid": true,
+      "dataPath": "./channel/realistic-topic.json"
+    },
+    {
+      "description": "Realistic valid IBM MQ 0.1.0 channel binding for queue (all properties)",
+      "valid": true,
+      "dataPath": "./channel/realistic-queue.json"
+    },
+    {
+      "description": "Minimal valid IBM MQ 0.1.0 channel binding for topic",
+      "valid": true,
+      "dataPath": "./channel/minimal-topic.json"
+    },
+    {
+      "description": "Minimal valid IBM MQ 0.1.0 channel binding for queue",
+      "valid": true,
+      "dataPath": "./channel/minimal-queue.json"
+    },
+    {
+      "description": "Valid IBM MQ 0.1.0 channel binding with extension property",
+      "valid": true,
+      "dataPath": "./channel/extension-property.json"
+    },
+    {
+      "description": "Invalid IBM MQ 0.1.0 channel binding with additional property",
+      "valid": false,
+      "dataPath": "./channel/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid IBM MQ 0.1.0 channel binding with invalid destinationType enum",
+      "valid": false,
+      "dataPath": "./channel/invalid-destinationType-enum.json"
+    },
+    {
+      "description": "Invalid IBM MQ 0.1.0 channel binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./channel/invalid-binding-version.json"
+    }
+  ]
+}

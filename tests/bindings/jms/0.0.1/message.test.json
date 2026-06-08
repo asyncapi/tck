@@ -1,0 +1,36 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/jms/0.0.1/message.json",
+  "$comment": "JMS 0.0.1 message binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid JMS 0.0.1 message binding (all properties)",
+      "valid": true,
+      "dataPath": "./message/realistic-message.json"
+    },
+    {
+      "description": "Minimal valid JMS 0.0.1 message binding (only bindingVersion)",
+      "valid": true,
+      "dataPath": "./message/minimal-valid.json"
+    },
+    {
+      "description": "Valid JMS 0.0.1 message binding with extension property",
+      "valid": true,
+      "dataPath": "./message/extension-property.json"
+    },
+    {
+      "description": "Invalid JMS 0.0.1 message binding with additional property",
+      "valid": false,
+      "dataPath": "./message/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid JMS 0.0.1 message binding with headers as string",
+      "valid": false,
+      "dataPath": "./message/invalid-headers-type.json"
+    },
+    {
+      "description": "Invalid JMS 0.0.1 message binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./message/invalid-binding-version.json"
+    }
+  ]
+} 

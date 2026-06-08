@@ -1,0 +1,41 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/http/0.2.0/message.json",
+  "$comment": "HTTP message binding test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid message with all properties",
+      "valid": true,
+      "dataPath": ".//message/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid message with only binding version",
+      "valid": true,
+      "dataPath": ".//message/minimal-valid.json"
+    },
+    {
+      "description": "Valid message with extension properties",
+      "valid": true,
+      "dataPath": ".//message/extension-property.json"
+    },
+    {
+      "description": "Invalid message with incorrect binding version",
+      "valid": false,
+      "dataPath": ".//message/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid message with additional property",
+      "valid": false,
+      "dataPath": ".//message/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid message with wrong headers schema type",
+      "valid": false,
+      "dataPath": ".//message/invalid-headers-type.json"
+    }
+  ]
+} 

@@ -1,0 +1,18 @@
+{
+  "method": "GET",
+  "query": {
+    "type": "object",
+    "properties": {
+      "page": {
+        "type": "integer",
+        "minimum": 1,
+        "default": 1
+      }
+    }
+  },
+  "bindingVersion": "0.2.0",
+  "x-custom-extension": "custom-value",
+  "x-another-extension": {
+    "nested": "value"
+  }
+} 

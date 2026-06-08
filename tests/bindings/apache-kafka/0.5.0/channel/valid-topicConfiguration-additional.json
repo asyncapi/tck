@@ -1,0 +1,6 @@
+{
+  "topicConfiguration": {
+    "my.custom.config": "custom-value"
+  },
+  "bindingVersion": "0.5.0"
+} 

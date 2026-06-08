@@ -1,0 +1,66 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/amqp/0.1.0/channel.json",
+  "$comment": "AMQP channel test",
+  "tests": [
+    {
+      "description": "The empty object is not valid",
+      "valid": false,
+      "data": {}
+    },
+    {
+      "description": "Valid routing key channel with all properties",
+      "valid": true,
+      "dataPath": "./channel/valid-routing-key-channel.json"
+    },
+    {
+      "description": "Valid queue channel with all properties",
+      "valid": true,
+      "dataPath": "./channel/valid-queue-channel.json"
+    },
+    {
+      "description": "Minimal valid routing key channel with only required properties",
+      "valid": true,
+      "dataPath": "./channel/minimal-valid-routing-key-channel.json"
+    },
+    {
+      "description": "Minimal valid queue channel with only required properties",
+      "valid": true,
+      "dataPath": "./channel/minimal-valid-queue-channel.json"
+    },
+    {
+      "description": "Valid channel with extension properties",
+      "valid": true,
+      "dataPath": "./channel/extension-properties-channel.json"
+    },
+    {
+      "description": "Invalid channel missing required is property",
+      "valid": false,
+      "dataPath": "./channel/invalid-missing-is.json"
+    },
+    {
+      "description": "Invalid routing key channel missing required exchange property",
+      "valid": false,
+      "dataPath": "./channel/invalid-missing-exchange.json"
+    },
+    {
+      "description": "Invalid queue channel missing required queue property",
+      "valid": false,
+      "dataPath": "./channel/invalid-missing-queue.json"
+    },
+    {
+      "description": "Invalid channel with both exchange and queue properties",
+      "valid": false,
+      "dataPath": "./channel/invalid-both-exchange-queue.json"
+    },
+    {
+      "description": "Invalid channel with incorrect exchange type",
+      "valid": false,
+      "dataPath": "./channel/invalid-exchange-type.json"
+    },
+    {
+      "description": "Invalid channel with additional property",
+      "valid": false,
+      "dataPath": "./channel/invalid-additional-property.json"
+    }
+  ]
+}

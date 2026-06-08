@@ -1,0 +1,17 @@
+{
+  "bindingVersion": "0.1.0",
+  "node": "/custom_node",
+  "role": "publisher",
+  "qosPolicies": {
+    "reliability": "reliable",
+    "durability": "volatile"
+  },
+  "x-custom-config": {
+    "priority": "high",
+    "timeout": 5000
+  },
+  "x-ros2-metadata": {
+    "version": "1.0.0",
+    "author": "test-team"
+  }
+} 

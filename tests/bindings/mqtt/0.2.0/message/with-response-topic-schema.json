@@ -1,0 +1,9 @@
+{
+  "contentType": "application/xml",
+  "responseTopic": {
+    "type": "string",
+    "pattern": "^responses/[a-zA-Z0-9-]+$",
+    "description": "Response topic pattern"
+  },
+  "bindingVersion": "0.2.0"
+} 

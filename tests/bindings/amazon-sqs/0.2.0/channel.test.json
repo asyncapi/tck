@@ -1,0 +1,61 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/amazon-sqs/0.2.0/channel.json",
+  "$comment": "Amazon SQS channel test",
+  "tests": [
+    {
+      "description": "The empty object is not valid",
+      "valid": false,
+      "data": {}
+    },
+    {
+      "description": "Valid channel with all properties",
+      "valid": true,
+      "dataPath": "./channel/valid-channel.json"
+    },
+    {
+      "description": "Minimal valid channel with only required properties",
+      "valid": true,
+      "dataPath": "./channel/minimal-valid-channel.json"
+    },
+    {
+      "description": "Valid FIFO channel",
+      "valid": true,
+      "dataPath": "./channel/fifo-channel.json"
+    },
+    {
+      "description": "Valid channel with dead letter queue configuration",
+      "valid": true,
+      "dataPath": "./channel/dead-letter-queue-channel.json"
+    },
+    {
+      "description": "Valid channel with extension properties",
+      "valid": true,
+      "dataPath": "./channel/extension-properties-channel.json"
+    },
+    {
+      "description": "Invalid channel missing required queue property",
+      "valid": false,
+      "dataPath": "./channel/invalid-missing-queue.json"
+    },
+    {
+      "description": "Invalid channel with incorrect fifoThroughputLimit value",
+      "valid": false,
+      "dataPath": "./channel/invalid-fifo-throughput-limit.json"
+    },
+    {
+      "description": "Invalid channel with visibility timeout exceeding maximum",
+      "valid": false,
+      "dataPath": "./channel/invalid-visibility-timeout.json"
+    },
+    {
+      "description": "Invalid channel with delivery delay exceeding maximum",
+      "valid": false,
+      "dataPath": "./channel/invalid-delivery-delay.json"
+    },
+    {
+      "description": "Invalid channel with additional property",
+      "valid": false,
+      "dataPath": "./channel/invalid-additional-property.json"
+    }
+  ]
+}

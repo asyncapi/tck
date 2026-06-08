@@ -1,0 +1,11 @@
+{
+  "bindingVersion": "0.1.0",
+  "node": "/navigation_client",
+  "role": "action_client",
+  "qosPolicies": {
+    "reliability": "reliable",
+    "durability": "volatile",
+    "deadline": 1000,
+    "leaseDuration": 5000
+  }
+} 

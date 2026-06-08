@@ -1,0 +1,41 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/anypointmq/0.0.1/channel.json",
+  "$comment": "Anypoint MQ channel test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid channel with all properties",
+      "valid": true,
+      "dataPath": "./channel/valid-channel.json"
+    },
+    {
+      "description": "Minimal valid channel with only required properties",
+      "valid": true,
+      "dataPath": "./channel/minimal-valid-channel.json"
+    },
+    {
+      "description": "Valid channel with extension properties",
+      "valid": true,
+      "dataPath": "./channel/extension-properties-channel.json"
+    },
+    {
+      "description": "Invalid channel with incorrect binding version",
+      "valid": false,
+      "dataPath": "./channel/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid channel with incorrect destination type",
+      "valid": false,
+      "dataPath": "./channel/invalid-destination-type.json"
+    },
+    {
+      "description": "Invalid channel with additional property",
+      "valid": false,
+      "dataPath": "./channel/invalid-additional-property.json"
+    }
+  ]
+}

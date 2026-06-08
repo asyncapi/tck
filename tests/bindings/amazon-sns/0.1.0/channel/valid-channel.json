@@ -1,0 +1,20 @@
+{
+  "name": "my-sns-topic",
+  "ordering": {
+    "type": "standard"
+  },
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": "*",
+        "action": "SNS:Publish"
+      }
+    ]
+  },
+  "tags": {
+    "environment": "production",
+    "project": "asyncapi"
+  },
+  "bindingVersion": "0.1.0"
+}
