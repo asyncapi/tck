@@ -1,0 +1,14 @@
+asyncapi: 3.0.0
+
+info:
+  # Missing required 'title' field
+  version: 1.0.0
+  description: Invalid info object
+
+channels:
+  test/channel:
+    address: test/channel
+    messages:
+      TestMessage:
+        payload:
+          type: object

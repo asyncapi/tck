@@ -1,0 +1,29 @@
+asyncapi: 3.0.0
+
+info:
+  title: Server Variables Test
+  version: 1.0.0
+
+servers:
+  production:
+    host: '{environment}.example.com:{port}'
+    protocol: kafka
+    variables:
+      environment:
+        default: api
+        description: Environment name
+        enum:
+          - api
+          - staging
+          - dev
+      port:
+        default: '9092'
+        description: Kafka port
+
+channels:
+  user/events:
+    address: user/events
+    messages:
+      UserEvent:
+        payload:
+          type: object
