@@ -1,0 +1,11 @@
+asyncapi: 3.0.0
+info:
+  title: Invalid Operation Object
+  version: 1.0.0
+channels:
+  userSignup:
+    address: users/signup
+operations:
+  processSignup:
+    channel:
+      $ref: '#/channels/userSignup'
