@@ -1,0 +1,21 @@
+asyncapi: 3.0.0
+
+info:
+  title: Operation Traits Test
+  version: 1.0.0
+
+channels:
+  user/events:
+    address: user/events
+    messages:
+      UserEvent:
+        payload:
+          type: object
+
+operations:
+  receiveUserEvents:
+    action: receive
+    channel:
+      $ref: '#/channels/user~1events'
+    summary: Receive user events
+    description: Operation with common traits

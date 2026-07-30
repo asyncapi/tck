@@ -1,0 +1,21 @@
+asyncapi: 3.0.0
+
+info:
+  title: Operations Test
+  version: 1.0.0
+
+channels:
+  user/signup:
+    address: user/signup
+    messages:
+      UserSignedUp:
+        payload:
+          type: object
+
+operations:
+  onUserSignup:
+    action: receive
+    channel:
+      $ref: '#/channels/user~1signup'
+    summary: Receive user signup events
+    description: Triggered when a new user signs up

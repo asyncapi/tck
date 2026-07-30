@@ -1,0 +1,22 @@
+asyncapi: 3.0.0
+
+info:
+  title: External Docs Test
+  version: 1.0.0
+  externalDocs:
+    description: Full API documentation
+    url: https://docs.example.com
+
+channels:
+  user/events:
+    address: user/events
+    externalDocs:
+      description: Channel-specific documentation
+      url: https://docs.example.com/channels/user-events
+    messages:
+      UserEvent:
+        payload:
+          type: object
+        externalDocs:
+          description: Message schema documentation
+          url: https://docs.example.com/schemas/user-event

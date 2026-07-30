@@ -1,0 +1,20 @@
+asyncapi: 3.0.0
+
+info:
+  title: Invalid Operation Action Test
+  version: 1.0.0
+
+channels:
+  test:
+    address: test
+    messages:
+      Test:
+        payload:
+          type: object
+
+operations:
+  testOp:
+    # Invalid: action must be 'send' or 'receive'
+    action: publish
+    channel:
+      $ref: '#/channels/test'

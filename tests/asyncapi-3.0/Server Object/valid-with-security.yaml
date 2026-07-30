@@ -1,0 +1,27 @@
+asyncapi: 3.0.0
+
+info:
+  title: Server Security Test
+  version: 1.0.0
+
+servers:
+  production:
+    host: api.example.com
+    protocol: kafka
+    security:
+      - type: userPassword
+        description: SASL/PLAIN authentication
+
+channels:
+  user/events:
+    address: user/events
+    messages:
+      UserEvent:
+        payload:
+          type: object
+
+components:
+  securitySchemes:
+    userPassword:
+      type: userPassword
+      description: Username and password authentication

@@ -1,0 +1,30 @@
+asyncapi: 3.0.0
+
+info:
+  title: Security Schemes Test
+  version: 1.0.0
+
+servers:
+  production:
+    host: api.example.com
+    protocol: kafka
+    security:
+      - $ref: '#/components/securitySchemes/saslPlain'
+
+channels:
+  user/events:
+    address: user/events
+    messages:
+      UserEvent:
+        payload:
+          type: object
+
+components:
+  securitySchemes:
+    saslPlain:
+      type: plain
+      description: SASL/PLAIN authentication
+    apiKey:
+      type: httpApiKey
+      name: X-API-Key
+      in: header

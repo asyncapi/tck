@@ -1,0 +1,16 @@
+asyncapi: 3.0.0
+
+info:
+  title: Invalid Info Type Test
+  version: 1.0.0
+  # Invalid: description should be string, not object
+  description:
+    text: This is invalid
+
+channels:
+  test:
+    address: test
+    messages:
+      Test:
+        payload:
+          type: object

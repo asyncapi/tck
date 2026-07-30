@@ -1,0 +1,14 @@
+asyncapi: 3.0.0
+
+info:
+  title: Invalid Message Test
+  version: 1.0.0
+
+channels:
+  user/signup:
+    address: user/signup
+    messages:
+      UserSignedUp:
+        payload:
+          # Invalid: payload should be an object or reference
+          type: invalid-type
