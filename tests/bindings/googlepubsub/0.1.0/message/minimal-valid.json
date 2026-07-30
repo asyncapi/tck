@@ -1,0 +1,6 @@
+{
+  "schema": {
+    "name": "projects/your-project-id/schemas/your-avro-schema-id",
+    "type": "avro"
+  }
+} 

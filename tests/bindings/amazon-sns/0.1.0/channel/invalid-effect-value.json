@@ -1,0 +1,13 @@
+{
+  "name": "invalid-effect-topic",
+  "policy": {
+    "statements": [
+      {
+        "effect": "Permit",
+        "principal": "*",
+        "action": "SNS:Publish"
+      }
+    ]
+  },
+  "bindingVersion": "0.1.0"
+}

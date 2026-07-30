@@ -1,0 +1,41 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/apache-kafka/0.3.0/server.json",
+  "$comment": "Apache Kafka 0.3.0 server binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid Kafka 0.3.0 server binding (all properties)",
+      "valid": true,
+      "dataPath": "./server/realistic-server.json"
+    },
+    {
+      "description": "Minimal valid Kafka 0.3.0 server binding",
+      "valid": true,
+      "dataPath": "./server/minimal-valid.json"
+    },
+    {
+      "description": "Valid Kafka 0.3.0 server binding with extension property",
+      "valid": true,
+      "dataPath": "./server/extension-property.json"
+    },
+    {
+      "description": "Invalid Kafka 0.3.0 server binding with additional property",
+      "valid": false,
+      "dataPath": "./server/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid Kafka 0.3.0 server binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./server/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid Kafka 0.3.0 server binding with schemaRegistryUrl as integer",
+      "valid": false,
+      "dataPath": "./server/invalid-schemaRegistryUrl-type.json"
+    },
+    {
+      "description": "Invalid Kafka 0.3.0 server binding with schemaRegistryVendor as integer",
+      "valid": false,
+      "dataPath": "./server/invalid-schemaRegistryVendor-type.json"
+    }
+  ]
+}

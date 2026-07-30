@@ -1,0 +1,36 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/apache-pulsar/0.1.0/server.json",
+  "$comment": "Apache Pulsar 0.1.0 server binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid Apache Pulsar 0.1.0 server binding (all properties)",
+      "valid": true,
+      "dataPath": "./server/realistic-server.json"
+    },
+    {
+      "description": "Minimal valid Apache Pulsar 0.1.0 server binding (only bindingVersion)",
+      "valid": true,
+      "dataPath": "./server/minimal-valid.json"
+    },
+    {
+      "description": "Valid Apache Pulsar 0.1.0 server binding with extension property",
+      "valid": true,
+      "dataPath": "./server/extension-property.json"
+    },
+    {
+      "description": "Invalid Apache Pulsar 0.1.0 server binding with additional property",
+      "valid": false,
+      "dataPath": "./server/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid Apache Pulsar 0.1.0 server binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./server/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid Apache Pulsar 0.1.0 server binding with tenant as integer",
+      "valid": false,
+      "dataPath": "./server/invalid-tenant-type.json"
+    }
+  ]
+} 

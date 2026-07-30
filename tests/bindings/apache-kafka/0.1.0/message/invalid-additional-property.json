@@ -1,0 +1,9 @@
+{
+  "key": {
+    "type": "string",
+    "description": "Order ID used as the message key"
+  },
+  "bindingVersion": "0.1.0",
+  "invalidProperty": "This property is not allowed",
+  "unexpected": "not allowed"
+}

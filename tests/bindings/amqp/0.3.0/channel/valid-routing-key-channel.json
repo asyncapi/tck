@@ -1,0 +1,10 @@
+{
+  "is": "routingKey",
+  "exchange": {
+    "name": "orders",
+    "type": "topic",
+    "durable": true,
+    "autoDelete": false
+  },
+  "bindingVersion": "0.3.0"
+}

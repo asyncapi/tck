@@ -1,0 +1,51 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/apache-kafka/0.1.0/message.json",
+  "$comment": "Apache Kafka message binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid Kafka message binding",
+      "valid": true,
+      "dataPath": "./message/realistic-message.json"
+    },
+    {
+      "description": "Minimal valid Kafka message binding",
+      "valid": true,
+      "dataPath": "./message/minimal-valid.json"
+    },
+    {
+      "description": "Valid Kafka message binding with extension property",
+      "valid": true,
+      "dataPath": "./message/extension-property.json"
+    },
+    {
+      "description": "Valid Kafka message binding with multiple extension properties",
+      "valid": true,
+      "dataPath": "./message/extension-properties-message.json"
+    },
+    {
+      "description": "Minimal valid Kafka message binding (alternate)",
+      "valid": true,
+      "dataPath": "./message/minimal-valid-message.json"
+    },
+    {
+      "description": "Another valid Kafka message binding",
+      "valid": true,
+      "dataPath": "./message/valid-message.json"
+    },
+    {
+      "description": "Invalid Kafka message binding with additional property",
+      "valid": false,
+      "dataPath": "./message/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid Kafka message binding with wrong key type",
+      "valid": false,
+      "dataPath": "./message/invalid-key-type.json"
+    },
+    {
+      "description": "Invalid Kafka message binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./message/invalid-binding-version.json"
+    }
+  ]
+} 

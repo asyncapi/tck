@@ -1,0 +1,6 @@
+{
+  "qos": 1,
+  "retain": false,
+  "messageExpiryInterval": -1,
+  "bindingVersion": "0.2.0"
+} 

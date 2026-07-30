@@ -1,0 +1,6 @@
+{
+  "type": "request",
+  "method": "POST",
+  "unexpected": "not allowed",
+  "bindingVersion": "0.1.0"
+} 

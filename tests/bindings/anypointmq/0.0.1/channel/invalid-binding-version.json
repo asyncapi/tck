@@ -1,0 +1,5 @@
+{
+  "destination": "order-events",
+  "destinationType": "queue",
+  "bindingVersion": "1.0.0"
+}

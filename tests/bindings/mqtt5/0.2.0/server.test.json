@@ -1,0 +1,61 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/mqtt5/0.2.0/server.json",
+  "$comment": "MQTT5 0.2.0 server binding test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid server with all properties",
+      "valid": true,
+      "dataPath": "./server/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid server with only binding version",
+      "valid": true,
+      "dataPath": "./server/minimal-valid.json"
+    },
+    {
+      "description": "Valid server with extension properties",
+      "valid": true,
+      "dataPath": "./server/extension-property.json"
+    },
+    {
+      "description": "Valid server with sessionExpiryInterval as schema",
+      "valid": true,
+      "dataPath": "./server/with-session-expiry-schema.json"
+    },
+    {
+      "description": "Valid server with sessionExpiryInterval as reference",
+      "valid": true,
+      "dataPath": "./server/with-session-expiry-reference.json"
+    },
+    {
+      "description": "Invalid server with negative sessionExpiryInterval",
+      "valid": false,
+      "dataPath": "./server/invalid-session-expiry-negative.json"
+    },
+    {
+      "description": "Invalid server with incorrect sessionExpiryInterval type",
+      "valid": false,
+      "dataPath": "./server/invalid-session-expiry-type.json"
+    },
+    {
+      "description": "Invalid server with incorrect binding version",
+      "valid": false,
+      "dataPath": "./server/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid server with additional property",
+      "valid": false,
+      "dataPath": "./server/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid server with sessionExpiryInterval schema having wrong type",
+      "valid": false,
+      "dataPath": "./server/invalid-session-expiry-schema-type.json"
+    }
+  ]
+} 

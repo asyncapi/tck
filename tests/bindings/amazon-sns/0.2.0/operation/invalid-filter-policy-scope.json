@@ -1,0 +1,16 @@
+{
+  "consumers": [
+    {
+      "protocol": "sqs",
+      "endpoint": {
+        "name": "my-queue"
+      },
+      "filterPolicy": {
+        "event_type": ["order_created", "order_updated"]
+      },
+      "filterPolicyScope": "InvalidScope",
+      "rawMessageDelivery": true
+    }
+  ],
+  "bindingVersion": "0.1.0"
+}

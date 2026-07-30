@@ -1,0 +1,10 @@
+{
+  "is": "queue",
+  "queue": {
+    "name": "orders-processing",
+    "durable": true,
+    "exclusive": false,
+    "autoDelete": false
+  },
+  "bindingVersion": "0.1.0"
+}

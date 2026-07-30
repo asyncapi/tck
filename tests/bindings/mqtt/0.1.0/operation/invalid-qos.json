@@ -1,0 +1,5 @@
+{
+  "qos": 3,
+  "retain": true,
+  "bindingVersion": "0.1.0"
+} 

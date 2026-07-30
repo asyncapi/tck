@@ -1,0 +1,6 @@
+{
+  "is": "queue",
+  "queue": {
+    "name": "minimal-queue"
+  }
+}

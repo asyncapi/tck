@@ -1,0 +1,10 @@
+{
+  "bindingVersion": "0.1.0",
+  "domainId": 10,
+  "rmwImplementation": "rmw_cyclonedds_cpp",
+  "x-custom-property": "custom-value",
+  "x-ros2-config": {
+    "enable-security": true,
+    "security-profile": "permissive"
+  }
+} 

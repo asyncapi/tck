@@ -1,0 +1,6 @@
+{
+  "destination": "order-events",
+  "destinationType": "queue",
+  "bindingVersion": "0.0.1",
+  "invalidProperty": "This property is not allowed"
+}

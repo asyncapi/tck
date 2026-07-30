@@ -1,0 +1,56 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/apache-pulsar/0.1.0/channel.json",
+  "$comment": "Apache Pulsar 0.1.0 channel binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid Apache Pulsar 0.1.0 channel binding (all properties)",
+      "valid": true,
+      "dataPath": "./channel/realistic-channel.json"
+    },
+    {
+      "description": "Minimal valid Apache Pulsar 0.1.0 channel binding (only required)",
+      "valid": true,
+      "dataPath": "./channel/minimal-valid.json"
+    },
+    {
+      "description": "Valid Apache Pulsar 0.1.0 channel binding with extension property",
+      "valid": true,
+      "dataPath": "./channel/extension-property.json"
+    },
+    {
+      "description": "Invalid Apache Pulsar 0.1.0 channel binding with additional property",
+      "valid": false,
+      "dataPath": "./channel/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid Apache Pulsar 0.1.0 channel binding missing required property",
+      "valid": false,
+      "dataPath": "./channel/invalid-missing-required.json"
+    },
+    {
+      "description": "Invalid Apache Pulsar 0.1.0 channel binding with invalid persistence enum",
+      "valid": false,
+      "dataPath": "./channel/invalid-persistence-enum.json"
+    },
+    {
+      "description": "Invalid Apache Pulsar 0.1.0 channel binding with compaction as string",
+      "valid": false,
+      "dataPath": "./channel/invalid-compaction-type.json"
+    },
+    {
+      "description": "Invalid Apache Pulsar 0.1.0 channel binding with retention.time as string",
+      "valid": false,
+      "dataPath": "./channel/invalid-retention-type.json"
+    },
+    {
+      "description": "Invalid Apache Pulsar 0.1.0 channel binding with geo-replication as string",
+      "valid": false,
+      "dataPath": "./channel/invalid-geo-replication-type.json"
+    },
+    {
+      "description": "Invalid Apache Pulsar 0.1.0 channel binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./channel/invalid-binding-version.json"
+    }
+  ]
+} 

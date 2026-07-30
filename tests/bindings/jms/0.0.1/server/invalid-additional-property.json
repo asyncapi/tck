@@ -1,0 +1,4 @@
+{
+  "jmsConnectionFactory": "org.apache.activemq.ActiveMQConnectionFactory",
+  "unexpected": "not allowed"
+} 

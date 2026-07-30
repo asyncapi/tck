@@ -1,0 +1,6 @@
+{
+  "type": "request",
+  "method": "POST",
+  "x-operation-type": "custom",
+  "bindingVersion": "0.1.0"
+} 

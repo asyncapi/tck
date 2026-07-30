@@ -1,0 +1,7 @@
+{
+  "destinationType": "queue",
+  "queue": {
+    "objectName": "myQueueName"
+  },
+  "bindingVersion": "0.1.0"
+} 

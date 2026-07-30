@@ -1,0 +1,39 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/nats/0.1.0/operation.json",
+  "$comment": "NATS operation test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid with binding version",
+      "valid": true,
+      "data": {
+        "bindingVersion": "0.1.0"
+      }
+    },
+    {
+      "description": "Valid with allowed queue name length",
+      "valid": true,
+      "data": {
+        "queue": "queue name"
+      }
+    },
+    {
+      "description": "Invalid with not allowed queue name length",
+      "valid": false,
+      "data": {
+        "queue": "this is very long queue name with exceed 255 characters limit this is very long queue name with exceed 255 characters limit this is very long queue name with exceed 255 characters limit this is very long queue name with exceed 255 characters limit this is very long queue name with exceed 255 characters"
+      }
+    },
+    {
+      "description": "Invalid width additional property",
+      "valid": false,
+      "data": {
+        "vhost": "/"
+      }
+    }
+  ]
+}

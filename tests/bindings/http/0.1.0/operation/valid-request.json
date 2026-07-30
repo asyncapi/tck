@@ -1,0 +1,13 @@
+{
+  "type": "request",
+  "method": "POST",
+  "query": {
+    "type": "object",
+    "required": ["userId"],
+    "properties": {
+      "userId": { "type": "string" }
+    },
+    "additionalProperties": false
+  },
+  "bindingVersion": "0.1.0"
+} 

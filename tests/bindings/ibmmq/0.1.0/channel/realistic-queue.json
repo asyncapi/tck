@@ -1,0 +1,10 @@
+{
+  "destinationType": "queue",
+  "queue": {
+    "objectName": "myQueueName",
+    "isPartitioned": true,
+    "exclusive": true
+  },
+  "maxMsgLength": 1048576,
+  "bindingVersion": "0.1.0"
+} 

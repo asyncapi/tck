@@ -1,0 +1,12 @@
+{
+  "name": "invalid-policy-topic",
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": "*"
+      }
+    ]
+  },
+  "bindingVersion": "0.1.0"
+}

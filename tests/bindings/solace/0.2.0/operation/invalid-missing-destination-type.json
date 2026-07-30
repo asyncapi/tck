@@ -1,0 +1,10 @@
+{
+  "bindingVersion": "0.2.0",
+  "destinations": [
+    {
+      "queue": {
+        "name": "queue1"
+      }
+    }
+  ]
+} 

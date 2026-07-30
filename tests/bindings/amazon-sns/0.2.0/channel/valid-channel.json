@@ -1,0 +1,29 @@
+{
+  "name": "my-sns-topic",
+  "ordering": {
+    "type": "standard"
+  },
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": {
+          "AWS": "arn:aws:iam::123456789012:root"
+        },
+        "action": "sns:Publish",
+        "resource": "arn:aws:sns:us-east-1:123456789012:my-sns-topic",
+        "condition": {
+          "StringEquals": {
+            "aws:SourceAccount": "123456789012"
+          }
+        }
+      }
+    ]
+  },
+  "tags": {
+    "environment": "production",
+    "project": "asyncapi",
+    "owner": "platform-team"
+  },
+  "bindingVersion": "0.2.0"
+}

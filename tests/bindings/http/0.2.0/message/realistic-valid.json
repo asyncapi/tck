@@ -1,0 +1,25 @@
+{
+  "headers": {
+    "type": "object",
+    "required": ["Content-Type", "Authorization"],
+    "properties": {
+      "Content-Type": {
+        "type": "string",
+        "enum": ["application/json", "application/xml", "text/plain"],
+        "description": "The content type of the message"
+      },
+      "Authorization": {
+        "type": "string",
+        "pattern": "^Bearer [A-Za-z0-9-_=]+\\.[A-Za-z0-9-_=]+\\.?[A-Za-z0-9-_.+/=]*$",
+        "description": "Bearer token for authentication"
+      },
+      "X-Request-ID": {
+        "type": "string",
+        "format": "uuid",
+        "description": "Unique request identifier"
+      }
+    },
+    "additionalProperties": false
+  },
+  "bindingVersion": "0.2.0"
+} 

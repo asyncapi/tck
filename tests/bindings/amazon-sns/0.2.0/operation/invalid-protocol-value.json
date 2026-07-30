@@ -1,0 +1,12 @@
+{
+  "consumers": [
+    {
+      "protocol": "invalid-protocol",
+      "endpoint": {
+        "url": "https://example.com/webhook"
+      },
+      "rawMessageDelivery": true
+    }
+  ],
+  "bindingVersion": "0.1.0"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "multi-policy-topic",
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": ["arn:aws:iam::123456789012:root", "arn:aws:iam::987654321098:root"],
+        "action": ["SNS:Publish", "SNS:Subscribe"]
+      },
+      {
+        "effect": "Deny",
+        "principal": "*",
+        "action": "SNS:DeleteTopic"
+      }
+    ]
+  },
+  "tags": {
+    "environment": "staging",
+    "security": "enhanced"
+  },
+  "bindingVersion": "0.1.0"
+}

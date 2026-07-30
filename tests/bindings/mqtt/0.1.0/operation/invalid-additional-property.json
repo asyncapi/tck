@@ -1,0 +1,6 @@
+{
+  "qos": 1,
+  "retain": false,
+  "bindingVersion": "0.1.0",
+  "invalidProperty": "should-not-be-allowed"
+} 

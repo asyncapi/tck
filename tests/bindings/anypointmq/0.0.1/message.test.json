@@ -1,0 +1,36 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/anypointmq/0.0.1/message.json",
+  "$comment": "Anypoint MQ message test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid message with all properties",
+      "valid": true,
+      "dataPath": "./message/valid-message.json"
+    },
+    {
+      "description": "Minimal valid message with only required properties",
+      "valid": true,
+      "dataPath": "./message/minimal-valid-message.json"
+    },
+    {
+      "description": "Valid message with extension properties",
+      "valid": true,
+      "dataPath": "./message/extension-properties-message.json"
+    },
+    {
+      "description": "Invalid message with incorrect binding version",
+      "valid": false,
+      "dataPath": "./message/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid message with additional property",
+      "valid": false,
+      "dataPath": "./message/invalid-additional-property.json"
+    }
+  ]
+}

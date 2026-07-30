@@ -1,0 +1,12 @@
+{
+  "headers": {
+    "type": "object",
+    "properties": {
+      "Content-Type": {
+        "type": "string"
+      }
+    }
+  },
+  "statusCode": 200,
+  "bindingVersion": "0.2.0"
+} 

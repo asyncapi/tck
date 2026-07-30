@@ -1,0 +1,12 @@
+{
+  "queues": [
+    {
+      "name": "additional-property-queue",
+      "fifoQueue": false,
+      "visibilityTimeout": 30,
+      "messageRetentionPeriod": 345600
+    }
+  ],
+  "invalidProperty": "This property is not allowed by the schema",
+  "bindingVersion": "0.3.0"
+}

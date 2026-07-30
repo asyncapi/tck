@@ -1,0 +1,46 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/http/0.3.0/operation.json",
+  "$comment": "HTTP 0.3.0 operation binding test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid operation with all properties",
+      "valid": true,
+      "dataPath": ".//operation/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid operation with only binding version",
+      "valid": true,
+      "dataPath": ".//operation/minimal-valid.json"
+    },
+    {
+      "description": "Valid operation with extension properties",
+      "valid": true,
+      "dataPath": ".//operation/extension-property.json"
+    },
+    {
+      "description": "Invalid operation with incorrect HTTP method",
+      "valid": false,
+      "dataPath": ".//operation/invalid-method.json"
+    },
+    {
+      "description": "Invalid operation with incorrect binding version",
+      "valid": false,
+      "dataPath": ".//operation/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid operation with additional property",
+      "valid": false,
+      "dataPath": ".//operation/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid operation with wrong query schema type",
+      "valid": false,
+      "dataPath": ".//operation/invalid-query-type.json"
+    }
+  ]
+} 

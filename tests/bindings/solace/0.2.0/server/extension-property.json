@@ -1,0 +1,6 @@
+{
+  "msvVpn": "TestVPN",
+  "bindingVersion": "0.2.0",
+  "x-custom-extension": "custom-value",
+  "x-another-extension": {"nested": "value"}
+} 

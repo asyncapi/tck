@@ -1,0 +1,16 @@
+{
+  "name": "invalid-ordering-topic",
+  "ordering": {
+    "type": "invalid-type"
+  },
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": "*",
+        "action": "SNS:Publish"
+      }
+    ]
+  },
+  "bindingVersion": "0.1.0"
+}

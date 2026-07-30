@@ -1,0 +1,41 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/jms/0.0.1/server.json",
+  "$comment": "JMS 0.0.1 server binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid JMS 0.0.1 server binding (all properties)",
+      "valid": true,
+      "dataPath": "./server/realistic-server.json"
+    },
+    {
+      "description": "Minimal valid JMS 0.0.1 server binding (only required)",
+      "valid": true,
+      "dataPath": "./server/minimal-valid.json"
+    },
+    {
+      "description": "Valid JMS 0.0.1 server binding with extension property",
+      "valid": true,
+      "dataPath": "./server/extension-property.json"
+    },
+    {
+      "description": "Invalid JMS 0.0.1 server binding with additional property",
+      "valid": false,
+      "dataPath": "./server/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid JMS 0.0.1 server binding missing required property",
+      "valid": false,
+      "dataPath": "./server/invalid-missing-required.json"
+    },
+    {
+      "description": "Invalid JMS 0.0.1 server binding with property missing required name field",
+      "valid": false,
+      "dataPath": "./server/invalid-property-missing-required.json"
+    },
+    {
+      "description": "Invalid JMS 0.0.1 server binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./server/invalid-binding-version.json"
+    }
+  ]
+} 

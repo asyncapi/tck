@@ -1,0 +1,8 @@
+{
+  "groupId": "PRODCLSTR1",
+  "ccdtQueueManagerName": "QM1",
+  "cipherSpec": "ANY_TLS12_OR_HIGHER",
+  "multiEndpointServer": true,
+  "heartBeatInterval": 600,
+  "bindingVersion": "0.1.0"
+} 

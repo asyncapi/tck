@@ -1,0 +1,30 @@
+{
+  "name": "my-fifo-topic.fifo",
+  "ordering": {
+    "type": "FIFO",
+    "contentBasedDeduplication": true
+  },
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": {
+          "AWS": ["arn:aws:iam::123456789012:role/SNSPublisherRole", "arn:aws:iam::987654321098:user/publisher"]
+        },
+        "action": ["sns:Publish", "sns:GetTopicAttributes"],
+        "resource": "arn:aws:sns:us-west-2:123456789012:my-fifo-topic.fifo",
+        "condition": {
+          "StringLike": {
+            "aws:PrincipalTag/Department": ["Engineering", "Operations"]
+          }
+        }
+      }
+    ]
+  },
+  "tags": {
+    "environment": "development",
+    "type": "fifo",
+    "priority": "high"
+  },
+  "bindingVersion": "0.2.0"
+}

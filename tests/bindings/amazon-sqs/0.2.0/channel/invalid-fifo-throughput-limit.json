@@ -1,0 +1,11 @@
+{
+  "queue": {
+    "name": "invalid-fifo-queue.fifo",
+    "fifoQueue": true,
+    "fifoThroughputLimit": "invalid-value",
+    "deduplicationScope": "queue",
+    "visibilityTimeout": 30,
+    "messageRetentionPeriod": 86400
+  },
+  "bindingVersion": "0.2.0"
+}

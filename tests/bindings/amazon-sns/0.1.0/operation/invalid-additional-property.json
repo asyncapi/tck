@@ -1,0 +1,13 @@
+{
+  "consumers": [
+    {
+      "protocol": "sqs",
+      "endpoint": {
+        "name": "my-queue"
+      },
+      "rawMessageDelivery": true
+    }
+  ],
+  "invalidProperty": "This property is not allowed",
+  "bindingVersion": "0.1.0"
+}

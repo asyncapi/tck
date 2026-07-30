@@ -1,0 +1,12 @@
+{
+  "headers": {
+    "type": "object",
+    "properties": {
+      "Content-Type": {
+        "type": "string"
+      }
+    }
+  },
+  "bindingVersion": "0.2.0",
+  "invalidProperty": "should-not-be-allowed"
+} 

@@ -1,0 +1,7 @@
+{
+  "qos": 1,
+  "retain": false,
+  "messageExpiryInterval": 60,
+  "bindingVersion": "0.2.0",
+  "invalidProperty": "should-not-be-allowed"
+} 

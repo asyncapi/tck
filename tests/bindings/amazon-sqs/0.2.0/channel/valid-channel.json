@@ -1,0 +1,63 @@
+{
+  "queue": {
+    "name": "my-standard-queue",
+    "fifoQueue": false,
+    "deliveryDelay": 30,
+    "visibilityTimeout": 60,
+    "receiveMessageWaitTime": 20,
+    "messageRetentionPeriod": 345600,
+    "redrivePolicy": {
+      "deadLetterQueue": {
+        "arn": "arn:aws:sqs:us-east-1:123456789012:my-dead-letter-queue"
+      },
+      "maxReceiveCount": 5
+    },
+    "policy": {
+      "statements": [
+        {
+          "effect": "Allow",
+          "principal": "arn:aws:iam::123456789012:role/SQSConsumerRole",
+          "action": [
+            "sqs:ReceiveMessage",
+            "sqs:DeleteMessage",
+            "sqs:GetQueueAttributes"
+          ]
+        },
+        {
+          "effect": "Allow",
+          "principal": "arn:aws:iam::123456789012:role/SQSProducerRole",
+          "action": "sqs:SendMessage"
+        }
+      ]
+    },
+    "tags": {
+      "environment": "production",
+      "application": "order-processing",
+      "owner": "platform-team"
+    }
+  },
+  "deadLetterQueue": {
+    "name": "my-dead-letter-queue",
+    "fifoQueue": false,
+    "visibilityTimeout": 120,
+    "messageRetentionPeriod": 1209600,
+    "policy": {
+      "statements": [
+        {
+          "effect": "Allow",
+          "principal": "arn:aws:iam::123456789012:role/SQSAdminRole",
+          "action": [
+            "sqs:ReceiveMessage",
+            "sqs:DeleteMessage",
+            "sqs:PurgeQueue"
+          ]
+        }
+      ]
+    },
+    "tags": {
+      "environment": "production",
+      "type": "dead-letter-queue"
+    }
+  },
+  "bindingVersion": "0.2.0"
+}

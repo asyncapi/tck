@@ -1,0 +1,14 @@
+{
+  "name": "invalid-policy-topic",
+  "policy": {
+    "statements": [
+      {
+        "effect": "Allow",
+        "principal": {
+          "AWS": "arn:aws:iam::123456789012:root"
+        }
+      }
+    ]
+  },
+  "bindingVersion": "0.2.0"
+}

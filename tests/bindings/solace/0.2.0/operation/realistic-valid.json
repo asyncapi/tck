@@ -1,0 +1,19 @@
+{
+  "bindingVersion": "0.2.0",
+  "destinations": [
+    {
+      "destinationType": "queue",
+      "deliveryMode": "persistent",
+      "queue": {
+        "name": "ordersQueue",
+        "topicSubscriptions": ["orders/created", "orders/updated"],
+        "accessType": "exclusive"
+      }
+    },
+    {
+      "destinationType": "topic",
+      "deliveryMode": "direct",
+      "topicSubscriptions": ["orders/created", "orders/updated"]
+    }
+  ]
+} 

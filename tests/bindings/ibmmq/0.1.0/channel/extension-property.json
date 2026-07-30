@@ -1,0 +1,8 @@
+{
+  "destinationType": "topic",
+  "topic": {
+    "objectName": "myTopicName"
+  },
+  "bindingVersion": "0.1.0",
+  "x-channel-type": "secure"
+} 

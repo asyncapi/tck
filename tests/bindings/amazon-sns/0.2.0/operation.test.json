@@ -1,0 +1,61 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/amazon-sns/0.2.0/operation.json",
+  "$comment": "Amazon SNS operation test",
+  "tests": [
+    {
+      "description": "The empty object is not valid",
+      "valid": false,
+      "data": {}
+    },
+    {
+      "description": "Valid operation with all properties",
+      "valid": true,
+      "dataPath": "./operation/valid-operation.json"
+    },
+    {
+      "description": "Minimal valid operation with only required properties",
+      "valid": true,
+      "dataPath": "./operation/minimal-valid-operation.json"
+    },
+    {
+      "description": "Valid operation with multiple consumer protocols",
+      "valid": true,
+      "dataPath": "./operation/multiple-protocols-operation.json"
+    },
+    {
+      "description": "Valid operation with extension properties",
+      "valid": true,
+      "dataPath": "./operation/extension-properties-operation.json"
+    },
+    {
+      "description": "Invalid operation missing required consumers property",
+      "valid": false,
+      "dataPath": "./operation/invalid-missing-consumers.json"
+    },
+    {
+      "description": "Invalid operation with consumer missing required properties",
+      "valid": false,
+      "dataPath": "./operation/invalid-consumer-missing-properties.json"
+    },
+    {
+      "description": "Invalid operation with incorrect protocol value",
+      "valid": false,
+      "dataPath": "./operation/invalid-protocol-value.json"
+    },
+    {
+      "description": "Invalid operation with incorrect filterPolicyScope value",
+      "valid": false,
+      "dataPath": "./operation/invalid-filter-policy-scope.json"
+    },
+    {
+      "description": "Invalid operation with incorrect backoffFunction value",
+      "valid": false,
+      "dataPath": "./operation/invalid-backoff-function.json"
+    },
+    {
+      "description": "Invalid operation with additional property",
+      "valid": false,
+      "dataPath": "./operation/invalid-additional-property.json"
+    }
+  ]
+}

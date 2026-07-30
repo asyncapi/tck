@@ -1,0 +1,56 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/apache-kafka/0.4.0/channel.json",
+  "$comment": "Apache Kafka 0.4.0 channel binding tests",
+  "tests": [
+    {
+      "description": "Realistic valid Kafka 0.4.0 channel binding (all properties)",
+      "valid": true,
+      "dataPath": "./channel/realistic-channel.json"
+    },
+    {
+      "description": "Minimal valid Kafka 0.4.0 channel binding",
+      "valid": true,
+      "dataPath": "./channel/minimal-valid.json"
+    },
+    {
+      "description": "Valid Kafka 0.4.0 channel binding with extension property",
+      "valid": true,
+      "dataPath": "./channel/extension-property.json"
+    },
+    {
+      "description": "Invalid Kafka 0.4.0 channel binding with additional property",
+      "valid": false,
+      "dataPath": "./channel/invalid-additional-property.json"
+    },
+    {
+      "description": "Invalid Kafka 0.4.0 channel binding with wrong bindingVersion",
+      "valid": false,
+      "dataPath": "./channel/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid Kafka 0.4.0 channel binding with partitions as string",
+      "valid": false,
+      "dataPath": "./channel/invalid-partitions-type.json"
+    },
+    {
+      "description": "Invalid Kafka 0.4.0 channel binding with replicas as string",
+      "valid": false,
+      "dataPath": "./channel/invalid-replicas-type.json"
+    },
+    {
+      "description": "Invalid Kafka 0.4.0 channel binding with partitions less than minimum",
+      "valid": false,
+      "dataPath": "./channel/invalid-partitions-minimum.json"
+    },
+    {
+      "description": "Invalid Kafka 0.4.0 channel binding with replicas less than minimum",
+      "valid": false,
+      "dataPath": "./channel/invalid-replicas-minimum.json"
+    },
+    {
+      "description": "Invalid Kafka 0.4.0 channel binding with topicConfiguration.cleanup.policy containing invalid value",
+      "valid": false,
+      "dataPath": "./channel/invalid-topicConfiguration-cleanup-policy.json"
+    }
+  ]
+} 

@@ -1,0 +1,16 @@
+{
+  "consumers": [
+    {
+      "protocol": "http",
+      "endpoint": {
+        "url": "https://example.com/webhook"
+      },
+      "rawMessageDelivery": true,
+      "deliveryPolicy": {
+        "numRetries": 3,
+        "backoffFunction": "invalid-function"
+      }
+    }
+  ],
+  "bindingVersion": "0.1.0"
+}

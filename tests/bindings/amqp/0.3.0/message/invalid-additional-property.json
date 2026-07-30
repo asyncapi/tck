@@ -1,0 +1,6 @@
+{
+  "contentEncoding": "gzip",
+  "messageType": "user.signup",
+  "bindingVersion": "0.3.0",
+  "invalidProperty": "This property is not allowed"
+}

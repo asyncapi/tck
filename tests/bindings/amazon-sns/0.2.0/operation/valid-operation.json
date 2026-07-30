@@ -1,0 +1,57 @@
+{
+  "topic": {
+    "name": "my-sns-topic"
+  },
+  "consumers": [
+    {
+      "protocol": "sqs",
+      "endpoint": {
+        "arn": "arn:aws:sqs:us-east-1:123456789012:my-queue"
+      },
+      "filterPolicy": {
+        "store": [
+          "asyncapi_corp"
+        ],
+        "event_name": "order_cancelled",
+        "event": {
+          "anything-but": "order_cancelled"
+        },
+        "customer_interests": [
+          "rugby",
+          "football",
+          "baseball"
+        ]
+      },
+      "filterPolicyScope": "MessageAttributes",
+      "rawMessageDelivery": true,
+      "redrivePolicy": {
+        "deadLetterQueue": {
+          "arn": "arn:aws:sqs:us-east-1:123456789012:dead-letter-queue"
+        },
+        "maxReceiveCount": 25
+      },
+      "deliveryPolicy": {
+        "minDelayTarget": 10,
+        "maxDelayTarget": 100,
+        "numRetries": 5,
+        "numNoDelayRetries": 2,
+        "numMinDelayRetries": 3,
+        "numMaxDelayRetries": 5,
+        "backoffFunction": "linear",
+        "maxReceivesPerSecond": 2
+      },
+      "displayName": "My SQS Subscription"
+    }
+  ],
+  "deliveryPolicy": {
+    "minDelayTarget": 5,
+    "maxDelayTarget": 50,
+    "numRetries": 3,
+    "numNoDelayRetries": 1,
+    "numMinDelayRetries": 1,
+    "numMaxDelayRetries": 1,
+    "backoffFunction": "exponential",
+    "maxReceivesPerSecond": 10
+  },
+  "bindingVersion": "0.1.0"
+}

@@ -1,0 +1,5 @@
+{
+  "namespace": "ns1",
+  "persistence": "persistent",
+  "compaction": "a lot"
+} 

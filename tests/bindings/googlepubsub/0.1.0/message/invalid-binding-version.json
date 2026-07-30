@@ -1,0 +1,7 @@
+{
+  "schema": {
+    "name": "projects/your-project-id/schemas/your-avro-schema-id",
+    "type": "avro"
+  },
+  "bindingVersion": "1.0.0"
+} 

@@ -1,0 +1,7 @@
+{
+  "destinationType": "topic",
+  "topic": {
+    "objectName": "myTopicName"
+  },
+  "bindingVersion": "1.0.0"
+} 

@@ -1,0 +1,8 @@
+{
+  "qos": 1,
+  "retain": true,
+  "messageExpiryInterval": {
+    "$ref": "#/components/schemas/MessageExpiry"
+  },
+  "bindingVersion": "0.2.0"
+} 

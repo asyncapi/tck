@@ -1,0 +1,61 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/amazon-sns/0.2.0/channel.json",
+  "$comment": "Amazon SNS channel test",
+  "tests": [
+    {
+      "description": "The empty object is not valid",
+      "valid": false,
+      "data": {}
+    },
+    {
+      "description": "Valid channel with all properties",
+      "valid": true,
+      "dataPath": "./channel/valid-channel.json"
+    },
+    {
+      "description": "Minimal valid channel with only required properties",
+      "valid": true,
+      "dataPath": "./channel/minimal-valid-channel.json"
+    },
+    {
+      "description": "Valid FIFO channel",
+      "valid": true,
+      "dataPath": "./channel/fifo-channel.json"
+    },
+    {
+      "description": "Valid channel with multiple policy statements",
+      "valid": true,
+      "dataPath": "./channel/multiple-policy-channel.json"
+    },
+    {
+      "description": "Valid channel with extension properties",
+      "valid": true,
+      "dataPath": "./channel/extension-properties-channel.json"
+    },
+    {
+      "description": "Invalid channel missing required name property",
+      "valid": false,
+      "dataPath": "./channel/invalid-missing-name.json"
+    },
+    {
+      "description": "Invalid channel with incorrect ordering type",
+      "valid": false,
+      "dataPath": "./channel/invalid-ordering-type.json"
+    },
+    {
+      "description": "Invalid channel with incomplete policy statement",
+      "valid": false,
+      "dataPath": "./channel/invalid-policy-statement.json"
+    },
+    {
+      "description": "Invalid channel with incorrect effect value",
+      "valid": false,
+      "dataPath": "./channel/invalid-effect-value.json"
+    },
+    {
+      "description": "Invalid channel with additional property",
+      "valid": false,
+      "dataPath": "./channel/invalid-additional-property.json"
+    }
+  ]
+}

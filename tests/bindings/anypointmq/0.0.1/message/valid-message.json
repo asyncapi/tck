@@ -1,0 +1,33 @@
+{
+  "headers": {
+    "type": "object",
+    "properties": {
+      "messageId": {
+        "type": "string",
+        "description": "Unique identifier for the message"
+      },
+      "messageGroupId": {
+        "type": "string",
+        "description": "Group identifier for related messages"
+      },
+      "contentType": {
+        "type": "string",
+        "description": "MIME type of the message content"
+      },
+      "correlationId": {
+        "type": "string",
+        "description": "Identifier for correlating request with response"
+      },
+      "priority": {
+        "type": "integer",
+        "description": "Message priority level"
+      },
+      "ttl": {
+        "type": "integer",
+        "description": "Time to live in milliseconds"
+      }
+    },
+    "required": ["messageId"]
+  },
+  "bindingVersion": "0.0.1"
+}

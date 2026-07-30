@@ -1,0 +1,25 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/anypointmq/0.0.1/server.json",
+  "$comment": "AMQP server test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid with binding version",
+      "valid": true,
+      "data": {
+        "bindingVersion": "0.0.1"
+      }
+    },
+    {
+      "description": "Invalid width additional property",
+      "valid": false,
+      "data": {
+        "vhost": "/"
+      }
+    }
+  ]
+}

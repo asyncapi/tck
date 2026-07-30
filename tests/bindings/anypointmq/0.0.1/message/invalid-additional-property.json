@@ -1,0 +1,12 @@
+{
+  "headers": {
+    "type": "object",
+    "properties": {
+      "messageId": {
+        "type": "string"
+      }
+    }
+  },
+  "bindingVersion": "0.0.1",
+  "invalidProperty": "This property is not allowed"
+}

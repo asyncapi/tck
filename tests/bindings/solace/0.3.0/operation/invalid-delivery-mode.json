@@ -1,0 +1,12 @@
+{
+  "bindingVersion": "0.3.0",
+  "destinations": [
+    {
+      "destinationType": "queue",
+      "deliveryMode": "fast",
+      "queue": {
+        "name": "q1"
+      }
+    }
+  ]
+} 

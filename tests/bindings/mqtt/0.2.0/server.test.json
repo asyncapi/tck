@@ -1,0 +1,66 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/mqtt/0.2.0/server.json",
+  "$comment": "MQTT 0.2.0 server binding test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid server with all properties",
+      "valid": true,
+      "dataPath": "./server/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid server with only binding version",
+      "valid": true,
+      "dataPath": "./server/minimal-valid.json"
+    },
+    {
+      "description": "Valid server with extension properties",
+      "valid": true,
+      "dataPath": "./server/extension-property.json"
+    },
+    {
+      "description": "Valid server with sessionExpiryInterval as schema",
+      "valid": true,
+      "dataPath": "./server/with-session-expiry-schema.json"
+    },
+    {
+      "description": "Valid server with maximumPacketSize as reference",
+      "valid": true,
+      "dataPath": "./server/with-packet-size-reference.json"
+    },
+    {
+      "description": "Invalid server with negative sessionExpiryInterval",
+      "valid": false,
+      "dataPath": "./server/invalid-session-expiry-negative.json"
+    },
+    {
+      "description": "Invalid server with zero maximumPacketSize",
+      "valid": false,
+      "dataPath": "./server/invalid-packet-size-zero.json"
+    },
+    {
+      "description": "Invalid server with maximumPacketSize exceeding maximum",
+      "valid": false,
+      "dataPath": "./server/invalid-packet-size-too-large.json"
+    },
+    {
+      "description": "Invalid server with incorrect lastWill QoS value",
+      "valid": false,
+      "dataPath": "./server/invalid-lastwill-qos.json"
+    },
+    {
+      "description": "Invalid server with incorrect binding version",
+      "valid": false,
+      "dataPath": "./server/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid server with additional property",
+      "valid": false,
+      "dataPath": "./server/invalid-additional-property.json"
+    }
+  ]
+} 

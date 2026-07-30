@@ -1,0 +1,7 @@
+{
+  "queue": {
+    "name": "minimal-queue",
+    "fifoQueue": false
+  },
+  "bindingVersion": "0.2.0"
+}

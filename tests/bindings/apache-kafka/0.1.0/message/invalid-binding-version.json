@@ -1,0 +1,7 @@
+{
+  "key": {
+    "type": "string",
+    "description": "Order ID used as the message key"
+  },
+  "bindingVersion": "1.0.0"
+}

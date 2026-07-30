@@ -1,0 +1,11 @@
+{
+  "destinationType": "topic",
+  "topic": {
+    "objectName": "myTopicName",
+    "string": "my/topic/string",
+    "durablePermitted": true,
+    "lastMsgRetained": true
+  },
+  "maxMsgLength": 1048576,
+  "bindingVersion": "0.1.0"
+} 

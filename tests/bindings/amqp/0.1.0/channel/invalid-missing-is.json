@@ -1,0 +1,9 @@
+{
+  "exchange": {
+    "name": "orders",
+    "type": "topic",
+    "durable": true,
+    "autoDelete": false
+  },
+  "bindingVersion": "0.1.0"
+}

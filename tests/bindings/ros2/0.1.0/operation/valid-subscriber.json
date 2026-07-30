@@ -1,0 +1,14 @@
+{
+  "bindingVersion": "0.1.0",
+  "node": "/vision_node",
+  "role": "subscriber",
+  "qosPolicies": {
+    "deadline": 100,
+    "durability": "transient_local",
+    "history": "keep_last",
+    "leaseDuration": -1,
+    "lifespan": 500,
+    "liveliness": "automatic",
+    "reliability": "reliable"
+  }
+} 

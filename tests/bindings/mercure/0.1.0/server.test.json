@@ -1,0 +1,25 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/mercure/0.1.0/server.json",
+  "$comment": "Mercure server test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid with binding version",
+      "valid": true,
+      "data": {
+        "bindingVersion": "0.1.0"
+      }
+    },
+    {
+      "description": "Invalid width additional property",
+      "valid": false,
+      "data": {
+        "vhost": "/"
+      }
+    }
+  ]
+}

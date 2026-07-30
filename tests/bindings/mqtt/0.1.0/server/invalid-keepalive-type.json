@@ -1,0 +1,5 @@
+{
+  "clientId": "test-client",
+  "keepAlive": "60",
+  "bindingVersion": "0.1.0"
+} 

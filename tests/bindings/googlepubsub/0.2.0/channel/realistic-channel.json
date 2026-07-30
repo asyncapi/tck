@@ -1,0 +1,15 @@
+{
+  "labels": {
+    "label1": "value1",
+    "label2": "value2"
+  },
+  "messageRetentionDuration": "86400s",
+  "messageStoragePolicy": {
+    "allowedPersistenceRegions": ["us-central1", "us-east1"]
+  },
+  "schemaSettings": {
+    "encoding": "json",
+    "name": "projects/your-project-id/schemas/your-schema"
+  },
+  "bindingVersion": "0.2.0"
+} 

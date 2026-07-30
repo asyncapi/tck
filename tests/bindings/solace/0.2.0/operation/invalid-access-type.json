@@ -1,0 +1,12 @@
+{
+  "bindingVersion": "0.2.0",
+  "destinations": [
+    {
+      "destinationType": "queue",
+      "queue": {
+        "name": "queue1",
+        "accessType": "shared"
+      }
+    }
+  ]
+} 

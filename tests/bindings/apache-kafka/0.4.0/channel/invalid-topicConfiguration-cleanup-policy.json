@@ -1,0 +1,6 @@
+{
+  "topicConfiguration": {
+    "cleanup.policy": ["archive"]
+  },
+  "bindingVersion": "0.4.0"
+} 

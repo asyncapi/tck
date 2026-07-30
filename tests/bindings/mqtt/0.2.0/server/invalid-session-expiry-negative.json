@@ -1,0 +1,6 @@
+{
+  "clientId": "test-client",
+  "cleanSession": true,
+  "sessionExpiryInterval": -1,
+  "bindingVersion": "0.2.0"
+} 

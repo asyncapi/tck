@@ -1,0 +1,61 @@
+{
+  "target": "https://asyncapi.pavelon.dev/bindings/mqtt/0.2.0/message.json",
+  "$comment": "MQTT 0.2.0 message binding test",
+  "tests": [
+    {
+      "description": "The empty object is valid",
+      "valid": true,
+      "data": {}
+    },
+    {
+      "description": "Valid message with all properties",
+      "valid": true,
+      "dataPath": "./message/realistic-valid.json"
+    },
+    {
+      "description": "Minimal valid message with only binding version",
+      "valid": true,
+      "dataPath": "./message/minimal-valid.json"
+    },
+    {
+      "description": "Valid message with extension properties",
+      "valid": true,
+      "dataPath": "./message/extension-property.json"
+    },
+    {
+      "description": "Valid message with correlationData as reference",
+      "valid": true,
+      "dataPath": "./message/with-correlation-data-reference.json"
+    },
+    {
+      "description": "Valid message with responseTopic as schema",
+      "valid": true,
+      "dataPath": "./message/with-response-topic-schema.json"
+    },
+    {
+      "description": "Invalid message with incorrect payloadFormatIndicator value",
+      "valid": false,
+      "dataPath": "./message/invalid-payload-format.json"
+    },
+    {
+      "description": "Invalid message with incorrect payloadFormatIndicator type",
+      "valid": false,
+      "dataPath": "./message/invalid-payload-format-type.json"
+    },
+    {
+      "description": "Invalid message with empty responseTopic string",
+      "valid": false,
+      "dataPath": "./message/invalid-response-topic-empty.json"
+    },
+    {
+      "description": "Invalid message with incorrect binding version",
+      "valid": false,
+      "dataPath": "./message/invalid-binding-version.json"
+    },
+    {
+      "description": "Invalid message with additional property",
+      "valid": false,
+      "dataPath": "./message/invalid-additional-property.json"
+    }
+  ]
+} 

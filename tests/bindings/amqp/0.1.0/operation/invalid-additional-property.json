@@ -1,0 +1,6 @@
+{
+  "expiration": 100000,
+  "userId": "guest",
+  "bindingVersion": "0.1.0",
+  "invalidProperty": "This property is not allowed"
+}

@@ -1,0 +1,11 @@
+{
+  "consumers": [
+    {
+      "protocol": "sqs",
+      "endpoint": {
+        "name": "minimal-queue"
+      },
+      "rawMessageDelivery": false
+    }
+  ]
+}
