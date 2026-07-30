@@ -20,16 +20,35 @@ async function asyncapiParse (fpath) {
 // https://github.com/aml-org/amf
 async function amfParse (fpath) {
   await amf.AMF.init()
-  const parser = amf.Core.parser('ASYNC 2.0', 'application/yaml')
-  const model = await parser.parseFileAsync(`file://${fpath}`)
-  const report = await amf.AMF.validate(
-    model, amf.ProfileNames.ASYNC20, amf.MessageStyles.ASYNC)
-  if (!report.conforms) {
-    report.results.map(res => {
-      if (res.level.toLowerCase() === 'violation') {
-        throw new Error(res.message)
-      }
-    })
+  // Try v3 first, fallback to v2
+  let parser = amf.Core.parser('ASYNC 3.0', 'application/yaml')
+  let model = await parser.parseFileAsync(`file://${fpath}`)
+  let profileName = amf.ProfileNames.ASYNC30
+  
+  // If v3 parsing fails, try v2
+  try {
+    const report = await amf.AMF.validate(
+      model, profileName, amf.MessageStyles.ASYNC)
+    if (!report.conforms) {
+      report.results.map(res => {
+        if (res.level.toLowerCase() === 'violation') {
+          throw new Error(res.message)
+        }
+      })
+    }
+  } catch (e) {
+    parser = amf.Core.parser('ASYNC 2.0', 'application/yaml')
+    model = await parser.parseFileAsync(`file://${fpath}`)
+    profileName = amf.ProfileNames.ASYNC20
+    const report = await amf.AMF.validate(
+      model, profileName, amf.MessageStyles.ASYNC)
+    if (!report.conforms) {
+      report.results.map(res => {
+        if (res.level.toLowerCase() === 'violation') {
+          throw new Error(res.message)
+        }
+      })
+    }
   }
 }
 
