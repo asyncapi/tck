@@ -1,0 +1,15 @@
+info:
+  title: Invalid AsyncAPI 3.0.0 Document
+  version: 1.0.0
+channels:
+  userSignup:
+    address: users/signup
+    messages:
+      userSignedUp:
+        payload:
+          type: string
+operations:
+  processSignup:
+    action: receive
+    channel:
+      $ref: '#/channels/userSignup'

@@ -1,0 +1,7 @@
+asyncapi: 3.0.0
+info:
+  title: Invalid Channel Object
+  version: 1.0.0
+channels:
+  userSignup:
+    address: 123

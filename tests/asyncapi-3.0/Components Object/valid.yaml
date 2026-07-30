@@ -1,0 +1,16 @@
+asyncapi: 3.0.0
+info:
+  title: Valid Components Object
+  version: 1.0.0
+components:
+  messages:
+    UserSignedUp:
+      payload:
+        type: string
+  channels:
+    userSignup:
+      address: users/signup
+  replies:
+    SuccessReply:
+      channel:
+        $ref: '#/components/channels/userSignup'
