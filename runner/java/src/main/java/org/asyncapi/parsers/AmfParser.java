@@ -17,16 +17,16 @@ import java.util.List;
 public class AmfParser implements IParser {
   public void parse(String fpath) throws InterruptedException, ExecutionException, IllegalArgumentException {
     AMF.init().get();
-    // Try v3 first, fallback to v2
-    BaseUnit model;
-    ValidationReport report;
-    try {
-      model = (BaseUnit) new Async30Parser().parseFileAsync("file://" + fpath).get();
-      report = AMF.validate(model, ProfileNames.ASYNC30(), MessageStyles.ASYNC()).get();
-    } catch (Exception e) {
-      model = (BaseUnit) new Async20Parser().parseFileAsync("file://" + fpath).get();
-      report = AMF.validate(model, ProfileNames.ASYNC20(), MessageStyles.ASYNC()).get();
-    }
+    boolean isV3 = fpath.contains("asyncapi-3.0");
+    String fileUrl = "file://" + fpath;
+    BaseUnit model = isV3
+      ? (BaseUnit) new Async30Parser().parseFileAsync(fileUrl).get()
+      : (BaseUnit) new Async20Parser().parseFileAsync(fileUrl).get();
+    ValidationReport report = AMF.validate(
+      model,
+      isV3 ? ProfileNames.ASYNC30() : ProfileNames.ASYNC20(),
+      MessageStyles.ASYNC()
+    ).get();
     List<ValidationResult> results = report.results();
     for (ValidationResult res : results) {
       if (!report.conforms() && res.level().toLowerCase().equals("violation")) {
