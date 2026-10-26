@@ -20,10 +20,13 @@ async function asyncapiParse (fpath) {
 // https://github.com/aml-org/amf
 async function amfParse (fpath) {
   await amf.AMF.init()
-  const parser = amf.Core.parser('ASYNC 2.0', 'application/yaml')
+  const isV3 = fpath.includes('asyncapi-3.0')
+  const spec = isV3 ? 'ASYNC 3.0' : 'ASYNC 2.0'
+  const profile = isV3 ? amf.ProfileNames.ASYNC30 : amf.ProfileNames.ASYNC20
+  const parser = amf.Core.parser(spec, 'application/yaml')
   const model = await parser.parseFileAsync(`file://${fpath}`)
   const report = await amf.AMF.validate(
-    model, amf.ProfileNames.ASYNC20, amf.MessageStyles.ASYNC)
+    model, profile, amf.MessageStyles.ASYNC)
   if (!report.conforms) {
     report.results.map(res => {
       if (res.level.toLowerCase() === 'violation') {
